@@ -135,7 +135,7 @@ pre{
 }
 pre code{background:none;padding:0;color:inherit;font-size:inherit;word-break:normal}
 .prompt{
-  background:var(--bg-2);border:1px solid var(--line);border-left:3px solid var(--accent);
+  background:var(--bg-2);border:1px solid var(--line);
   border-radius:6px;padding:14px 18px;margin:0 0 20px;
   font-family:var(--mono);font-size:13.5px;line-height:1.7;letter-spacing:0;
   white-space:pre-wrap;color:var(--ink);
@@ -155,7 +155,7 @@ td code{font-size:13px}
 
 /* ---------- callouts ---------- */
 .box{
-  border:1px solid var(--line);border-left:3px solid var(--ink-3);
+  border:1px solid var(--line);
   background:var(--bg-2);border-radius:6px;
   padding:16px 20px;margin:0 0 22px;max-width:44em;
 }
@@ -164,13 +164,13 @@ td code{font-size:13px}
   display:block;font-family:var(--small);font-size:12px;font-weight:600;letter-spacing:.04em;
   text-transform:uppercase;margin-bottom:7px;color:var(--ink-3);
 }
-.box.note{border-left-color:var(--accent);background:var(--accent-soft)}
+.box.note{background:var(--accent-soft);border-color:#cfe4f7}
 .box.note .t{color:var(--accent)}
-.box.tip{border-left-color:var(--ok);background:var(--ok-soft)}
+.box.tip{background:var(--ok-soft);border-color:#cfe7cf}
 .box.tip .t{color:var(--ok)}
-.box.warn{border-left-color:var(--warn);background:var(--warn-soft)}
+.box.warn{background:var(--warn-soft);border-color:#f0e0c0}
 .box.warn .t{color:var(--warn)}
-.box.stop{border-left-color:var(--stop);background:var(--stop-soft)}
+.box.stop{background:var(--stop-soft);border-color:#f0d4d6}
 .box.stop .t{color:var(--stop)}
 
 /* ---------- key ---------- */
@@ -249,8 +249,7 @@ hr{border:none;border-top:1px solid var(--line);margin:56px 0}
   display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;
   font-family:var(--small);font-size:13px;
   margin:-8px 0 26px;padding:9px 14px;
-  background:var(--bg-2);border:1px solid var(--line);
-  border-left:3px solid var(--accent);border-radius:6px;
+  background:var(--bg-2);border:1px solid var(--line);border-radius:6px;
 }
 .srclink .lbl{color:var(--ink-3);font-weight:600;white-space:nowrap}
 .srclink a{color:var(--accent);border-bottom:1px solid rgba(15,108,189,.28);word-break:break-all}
@@ -258,7 +257,7 @@ hr{border:none;border-top:1px solid var(--line);margin:56px 0}
 .srclink .en{color:var(--ink-3)}
 
 .notice{
-  border:1px solid var(--line);border-left:3px solid var(--warn);
+  border:1px solid #f0e0c0;
   background:var(--warn-soft);border-radius:6px;
   padding:18px 22px;margin:0 0 32px;max-width:44em;
 }
@@ -270,6 +269,24 @@ hr{border:none;border-top:1px solid var(--line);margin:56px 0}
 .notice p:last-child{margin-bottom:0}
 .notice a{font-weight:600}
 @media print{
-  .srclink{background:none;border-left-width:2px}
+  .srclink{background:none}
   .srclink a{color:#333;border:none}
 }
+/* ---------- 사이트 내비게이션 ---------- */
+.sitenav{
+  border-bottom:1px solid var(--line);background:var(--bg-2);
+  padding:10px 0;font-family:var(--small);font-size:13.5px;
+}
+.sitenav .inner{
+  display:flex;gap:4px;align-items:center;flex-wrap:wrap;
+  max-width:1360px;margin:0 auto;padding:0 28px;
+}
+.sitenav a{
+  color:var(--ink-2);text-decoration:none;border:none;
+  padding:5px 11px;border-radius:6px;
+}
+.sitenav a:hover{background:#fff;color:var(--accent)}
+.sitenav a.here{background:#fff;color:var(--accent);font-weight:600}
+.sitenav .sep{color:var(--ink-3);opacity:.4;padding:0 4px}
+@media (max-width:640px){ .sitenav .inner{padding:0 18px} }
+@media print{.sitenav{display:none}}
