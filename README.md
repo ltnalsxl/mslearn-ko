@@ -1,15 +1,36 @@
-# mslearn-copilotstudio-ko
+# mslearn-ko
 
-Microsoft Learn의 Copilot Studio 학습 자료 **비공식 한국어 번역본**
+Microsoft Learn의 Copilot 학습 자료 **비공식 한국어 번역본**
 
-**https://ltnalsxl.github.io/mslearn-copilotstudio-ko/**
+**https://ltnalsxl.github.io/mslearn-ko/**
 
 ## 구성
 
-| 문서 | 내용 | 원문 |
-|---|---|---|
-| [Copilot Studio 시작하기](https://ltnalsxl.github.io/mslearn-copilotstudio-ko/ms-learn/get-started/) | 12개 단원 · 이미지 36장 | [Get started with Microsoft Copilot Studio](https://learn.microsoft.com/en-us/training/modules/power-virtual-agents-bots/) |
-| [Copilot Studio 실습](https://ltnalsxl.github.io/mslearn-copilotstudio-ko/ms-learn/exercises/) | 랩 6개 · 이미지 81장 | [Copilot Studio exercises](https://microsoftlearning.github.io/mslearn-copilotstudio/) |
+### Copilot Studio
+
+| 문서 | 원문 |
+|---|---|
+| [Copilot Studio 시작하기](https://ltnalsxl.github.io/mslearn-ko/ms-learn/get-started/) | [Get started with Microsoft Copilot Studio](https://learn.microsoft.com/en-us/training/modules/power-virtual-agents-bots/) |
+| [Copilot Studio 실습](https://ltnalsxl.github.io/mslearn-ko/ms-learn/exercises/) | [mslearn-copilotstudio](https://microsoftlearning.github.io/mslearn-copilotstudio/) |
+| [Copilot Studio로 Microsoft 365 Copilot 확장하기](https://ltnalsxl.github.io/mslearn-ko/courses/ms-4022-extend-copilot-studio/) | [MS-4022](https://microsoftlearning.github.io/MS-4022-Extend-Microsoft-365-Copilot-in-Copilot-Studio/) |
+
+### Microsoft 365 Copilot
+
+| 문서 | 원문 |
+|---|---|
+| [Microsoft 365 Copilot Chat 살펴보기](https://ltnalsxl.github.io/mslearn-ko/courses/ms-4023-copilot-chat/) | [MS-4023](https://github.com/MicrosoftLearning/MS-4023-Explore-Microsoft-365-Copilot-Chat) |
+| [웹용 Microsoft 365 Copilot 실습](https://ltnalsxl.github.io/mslearn-ko/courses/m365-web-copilot/) | [mslearn-copilot](https://microsoftlearning.github.io/mslearn-copilot/) |
+| [Microsoft 365 Copilot으로 작성하고 분석하고 발표하기](https://ltnalsxl.github.io/mslearn-ko/courses/ms-4018-draft-analyze-present/) | [MS-4018](https://microsoftlearning.github.io/MS-4018-Draft-analyze-present-Microsoft-365-Copilot/) |
+| [직군별 Microsoft 365 Copilot 활용](https://ltnalsxl.github.io/mslearn-ko/courses/ms-4004-use-cases/) | [MS-4004](https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/) |
+| [Copilot 몰입 체험](https://ltnalsxl.github.io/mslearn-ko/courses/ms-4021-immersion/) | [MS-4021](https://microsoftlearning.github.io/MS-4021-Copilot-Immersion-Experience/) |
+
+### 관리자와 보안
+
+| 문서 | 원문 |
+|---|---|
+| [Microsoft 365 Copilot 확장 기반 만들기](https://ltnalsxl.github.io/mslearn-ko/courses/ms-4014-connections/) | [MS-4014](https://github.com/MicrosoftLearning/MS-4014-Build-a-foundation-to-extend-Microsoft-365-Copilot) |
+| Copilot 도입을 위한 보안과 규정 준수 준비 (준비 중) | [MS-4002](https://github.com/MicrosoftLearning/MS-4002-Prepare-security-and-compliance-to-support-Microsoft-365-Copilot) |
+| [Purview로 Copilot 상호작용 보호하고 통제하기](https://ltnalsxl.github.io/mslearn-ko/courses/sc-5010-purview/) | [SC-5010](https://github.com/MicrosoftLearning/SC-5010-Secure-and-govern-Microsoft-365-Copilot-interactions-with-Microsoft-Purview) |
 
 ## 번역 원칙
 

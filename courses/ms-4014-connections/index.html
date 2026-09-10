@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Microsoft 365 Copilot 확장 기반 만들기 · 한국어 가이드</title>
+<meta name="description" content="Microsoft 365 관리 센터에서 File Share 커넥터로 Microsoft Graph 커넥션을 구성하는 관리자 실습 랩을 한국어로 옮긴 가이드입니다.">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="sitenav"><div class="inner"><a href="../../">Microsoft Learn 한국어판</a><span class="sep">/</span><a href="../../#copilot-studio">Copilot Studio</a><a href="../../#m365-copilot">Microsoft 365 Copilot</a><a href="../../#admin">관리자·보안</a><span class="sep">|</span><a href="./" class="here">MS-4014 커넥션 구성</a></div></div>
+<div class="wrap">
+
+<nav class="toc">
+  <h2>실습 목차</h2>
+  <a href="#top" class="lead">개요</a>
+  <a href="#before" class="sub">시작하기 전에</a>
+
+  <a href="#task1" class="lead">태스크 1 · Azure 권한 부여</a>
+  <a href="#task2" class="lead">태스크 2 · GCA 설치</a>
+  <a href="#task3" class="lead">태스크 3 · 리소스 파일 준비</a>
+  <a href="#task4" class="lead">태스크 4 · 관리 센터에서 커넥션 구성</a>
+
+  <div class="rule"></div>
+  <a href="#src" class="lead">원문 링크</a>
+</nav>
+
+<main id="top">
+
+<header class="hero">
+  <span class="eyebrow">Microsoft Learn 실습 한국어 가이드</span>
+  <h1>Microsoft 365 Copilot 확장 기반 만들기</h1>
+  <p class="sub">Contoso의 고객 서비스 관리자가 되어, Microsoft 365 관리 센터에서 File Share 커넥터로 고객 파일에 연결하는 Microsoft Graph 커넥션을 만듭니다. 상담원이 고객 파일을 빠르게 찾아 참조할 수 있게 하는 것이 목표입니다.</p>
+  <div class="meta">
+    <span>태스크 4개</span>
+    <span>관리자 대상</span>
+    <span>약 25분</span>
+    <span>수준 200</span>
+  </div>
+</header>
+
+<div class="notice">
+  <span class="t">원문을 함께 확인해 주세요</span>
+  <p>이 문서는 Microsoft Learn 실습 랩 <a href="https://github.com/MicrosoftLearning/MS-4014-Build-a-foundation-to-extend-Microsoft-365-Copilot/blob/master/Instructions/Labs/LAB_01_configure-connections-in-admin-center.md" target="_blank" rel="noopener">Build a foundation to extend Microsoft 365 Copilot</a>를 한국어로 옮기고 설명을 덧붙인 자료입니다. 원문 랩은 영어로만 제공됩니다.</p>
+  <p>관리 센터와 Azure 포털은 화면이 빠르게 바뀝니다. 이 문서는 2026년 9월 기준이므로, 정확한 내용은 아래 <strong>원문 링크</strong>를 눌러 최신 상태로 확인해 주세요.</p>
+  <p>애플리케이션 이름, 폴더 경로, 권한 이름, URL은 원문 그대로 옮겼으니 영어 표기 그대로 입력하시면 됩니다.</p>
+  <p>화면 이미지와 원문 내용의 저작권은 Microsoft에 있습니다.</p>
+</div>
+
+<div class="srclink" id="src"><span class="lbl">원문</span><a href="https://github.com/MicrosoftLearning/MS-4014-Build-a-foundation-to-extend-Microsoft-365-Copilot/blob/master/Instructions/Labs/LAB_01_configure-connections-in-admin-center.md" target="_blank" rel="noopener"><span class="en">Practice Lab 1: Configure the connections for your Microsoft Graph connector</span></a></div>
+
+<div class="key">
+  <div class="t">이 랩에서 하는 일</div>
+  <p>Azure 포털에서 앱을 등록하고 권한을 부여한 뒤, Graph 커넥터 에이전트(GCA)를 설치해 등록합니다. 그런 다음 관리 센터에서 File Share 커넥터로 <code>C:\ResourceFiles</code>의 고객 파일을 색인화하는 커넥션을 만듭니다. 이렇게 만든 커넥션은 Microsoft 365 Copilot 검색과 에이전트가 참조할 수 있습니다.</p>
+</div>
+
+<div class="box note">
+  <span class="t">WWL 테넌트 사용 약관</span>
+  <p>강사 주도 교육의 일부로 테넌트를 제공받았다면, 이 테넌트는 실습 지원용입니다. 실습 외 목적으로 공유하거나 사용하지 않습니다. 이 과정의 테넌트는 평가판이며 수업이 끝난 뒤에는 사용하거나 접근할 수 없고 연장 대상도 아닙니다. 유료 구독으로 전환할 수 없으며, 이 과정으로 얻은 테넌트는 Microsoft Corporation의 자산으로 남습니다.</p>
+</div>
+
+<h2 id="before">시작하기 전에</h2>
+<p>실습 호스팅 공급자가 기본 테넌트 관리자인 MOD Administrator 계정의 암호를 제공합니다. 보안을 위해 평가판 테넌트의 미리 정의된 사용자는 다음 로그인 때 암호를 바꾸도록 설정돼 있습니다.</p>
+<ol class="steps">
+  <li><span class="ui">LON-CL1</span>에 실습 호스팅 공급자가 만든 로컬 <span class="ui">Administrator</span> 계정으로 로그인합니다. 암호는 <code>Pa55w.rd</code>입니다.</li>
+</ol>
+
+<h2 id="task1">태스크 1 · Azure 포털에서 권한 부여</h2>
+<p>먼저 Azure 포털에서 앱을 등록하고, Graph 커넥터 에이전트가 쓸 권한을 부여합니다.</p>
+<ol class="steps">
+  <li>Azure 포털 <code>https://www.portal.azure.com</code>으로 이동해 관리자 자격 증명으로 로그인합니다. 암호는 저장하지 않고, <span class="ui">Stay signed in?</span>에는 <span class="ui">Yes</span>를 선택합니다.</li>
+  <li><span class="ui">Welcome to Microsoft Azure</span> 화면에서 <span class="ui">Cancel</span>을 선택합니다.</li>
+  <li>화면 왼쪽의 드롭다운 메뉴 아이콘을 선택해 포털 메뉴를 엽니다. <span class="ui">Microsoft Entra ID</span> → <span class="ui">Manage</span> → <span class="ui">App registrations</span>를 선택합니다.</li>
+  <li>위쪽 메뉴 막대에서 <span class="ui">New registration</span>을 선택합니다. <span class="ui">Register an application</span> 페이지가 나타납니다. 앱 이름으로 <code>Contoso Fileshare</code>를 입력합니다. 지원되는 계정 유형은 기본값인 <span class="ui">Accounts in this organizational directory only (Contoso only - Single tenant)</span>로 둡니다. 선택 사항인 <span class="ui">Redirect URI</span>는 지정하지 않습니다.</li>
+  <li><span class="ui">Register</span>를 선택합니다. 앱이 만들어지고 애플리케이션 ID가 부여됩니다. 이 정보는 다음 단계에서 Graph 커넥터 에이전트(GCA)를 만들 때 씁니다.</li>
+</ol>
+<p>다음으로 Azure 포털에서 Graph 커넥터 에이전트에 권한을 부여합니다.</p>
+<ol class="steps" start="6">
+  <li>왼쪽 메뉴에서 <span class="ui">Manage</span> → <span class="ui">API Permissions</span>를 선택합니다.</li>
+  <li><span class="ui">Add a permission</span> → <span class="ui">Microsoft Graph</span> → <span class="ui">Application permissions</span>를 선택하고, 다음 API에 권한을 부여합니다.
+    <ul>
+      <li><code>Directory</code> → <code>Directory.Read.All</code></li>
+      <li><code>ExternalConnection</code> → <code>ExternalConnection.ReadWrite.OwnedBy</code></li>
+      <li><code>ExternalItem</code> → <code>ExternalItem.ReadWrite.All</code></li>
+    </ul>
+  </li>
+  <li><span class="ui">Add permissions</span> 버튼을 선택합니다.</li>
+  <li><span class="ui">Grant admin consent for Contoso</span>를 선택하고 <span class="ui">Yes</span>로 확인합니다.</li>
+</ol>
+<div class="box warn">
+  <span class="t">이 탭을 닫지 마세요</span>
+  <p>이 Edge 브라우저 탭을 닫지 마세요. 다음 태스크에서 Azure 포털의 정보를 복사해 붙여 넣어야 합니다.</p>
+</div>
+
+<h2 id="task2">태스크 2 · GCA 설치</h2>
+<p>Graph 커넥터 에이전트(GCA)를 내려받아 설치하고, 앞에서 만든 앱과 연결합니다.</p>
+<ol class="steps">
+  <li>새 Microsoft Edge 탭을 엽니다. 다음 URL로 이동해 Graph 커넥터 에이전트를 내려받습니다. <code>https://www.microsoft.com/en-us/download/details.aspx?id=104045</code> 페이지에서 <span class="ui">Download</span> 버튼을 선택합니다.</li>
+  <li><code>GcaInstaller_3.1.1.0.msi</code> 파일을 열고 설치 마법사의 안내를 따릅니다.</li>
+  <li>화면 아래 <span class="ui">Search</span> 상자에 <code>Graph connector agent config</code>를 입력하고, 나타난 앱을 선택합니다.</li>
+  <li>앱이 장치를 변경하도록 <span class="ui">Yes</span>를 선택해 허용합니다.</li>
+  <li><span class="ui">MOD Administrative</span> 계정으로 로그인해 GCA를 등록합니다. 인증이 끝나면 Edge 브라우저에 확인 메시지가 나타납니다. 이 창은 닫아도 됩니다.</li>
+  <li>화면 아래의 아이콘을 선택해 GCA 앱을 엽니다.</li>
+  <li>이 에이전트 이름을 <code>ContosoFiles</code>로 지정합니다.</li>
+  <li>Azure 포털 Edge 탭(<span class="ui">Contoso Fileshare - Microsoft Azure</span>)을 선택하고 <span class="ui">Overview</span> 화면으로 이동해 <span class="ui">Application (client) ID</span>를 복사합니다. GCA 설치 앱에 붙여 넣습니다.</li>
+</ol>
+<p>다음으로 Azure 포털에서 이 앱의 클라이언트 비밀을 설정합니다.</p>
+<ol class="steps" start="9">
+  <li>Azure 포털 Edge 탭으로 돌아가 <span class="ui">Certificates &amp; secrets</span>로 이동합니다.</li>
+  <li><span class="ui">+ New client secret</span>를 선택합니다. <span class="ui">Description</span>에 <code>Contoso Files</code>를 입력합니다. 만료 기간은 기본값인 180일로 두어도 됩니다.</li>
+  <li><span class="ui">Add</span>를 선택합니다.</li>
+  <li>비밀의 <span class="ui">Value</span> 필드를 복사합니다.</li>
+  <li>Graph 커넥터 에이전트 앱으로 돌아가 GCA 설치 앱의 <span class="ui">Application password (client secret)</span> 필드에 값을 붙여 넣습니다.</li>
+  <li><span class="ui">Register</span>를 선택합니다.</li>
+  <li>등록이 끝나면 설치 앱을 닫습니다.</li>
+</ol>
+<div class="box tip">
+  <span class="t">클라이언트 비밀 값은 지금 복사</span>
+  <p>클라이언트 비밀의 <span class="ui">Value</span>는 화면을 떠나면 다시 볼 수 없습니다. 만든 직후 바로 복사해 GCA 앱에 붙여 넣으세요.</p>
+</div>
+
+<h2 id="task3">태스크 3 · 리소스 파일 준비</h2>
+<p>GCA로 커넥터를 구성하려면 시스템에 로컬 파일이 있어야 합니다. GitHub에서 샘플 파일을 내려받아 <code>C:\ResourceFiles</code>에 모읍니다.</p>
+<ol class="steps">
+  <li>새 Edge 브라우저를 열고 주소 표시줄에 <code>https://github.com/MicrosoftLearning/MS-4014-Build-a-foundation-to-extend-Microsoft-365-Copilot/tree/master/ResourceFiles</code>를 입력합니다.</li>
+  <li>폴더의 첫 번째 파일 <code>Contoso Chai Tea market trends 2023.xls</code>를 선택해 엽니다.</li>
+  <li>화면 오른쪽 위의 <span class="ui">ellipsis</span>(추가 파일 작업) 버튼을 선택하고 <span class="ui">Download</span>를 선택합니다.</li>
+  <li>나머지 파일에도 3번을 반복합니다.</li>
+  <li>다운로드가 끝나면 이 창을 닫습니다.</li>
+  <li>파일 탐색기에서 <code>C:\</code> 디렉터리로 이동해 <code>ResourceFiles</code>라는 새 폴더를 만듭니다.</li>
+  <li>새 파일 탐색기 창을 열어 <span class="ui">Download</span> 폴더로 이동합니다. GitHub에서 내려받은 Contoso 파일을 <code>C:\ResourceFiles</code> 디렉터리로 복사합니다.</li>
+</ol>
+<p>이 파일들이 관리 센터에서 만들 커넥션의 원본 콘텐츠가 됩니다.</p>
+
+<h2 id="task4">태스크 4 · 관리 센터에서 커넥션 구성</h2>
+<p>Microsoft 365 관리 센터를 열고 File Share 커넥터로 커넥션을 만듭니다.</p>
+<ol class="steps">
+  <li>새 Microsoft Edge 탭을 엽니다. 주소 표시줄에 <code>https://portal.office.com</code>을 입력해 <span class="ui">Microsoft 365 Home</span> 페이지로 이동합니다.</li>
+  <li>로그인하라는 안내가 나오면 실습 호스팅 공급자가 제공한 Microsoft 365 평가판 테넌트의 <span class="ui">Username</span>과 <span class="ui">Password</span>를 입력합니다. 사용자 이름은 <code>&lt;admin@xxxxxZZZZZZ.onmicrosoft.com&gt;</code> 형식입니다. <code>xxxxxZZZZZZ</code>는 실습 호스팅 공급자가 지정한 테넌트 접두사입니다.</li>
+  <li>Edge 브라우저의 <span class="ui">Home | Microsoft 365</span> 탭에 <span class="ui">Welcome to Microsoft 365</span> 페이지가 나타납니다. 이 페이지가 MOD Administrator의 Microsoft 365 홈입니다.</li>
+  <li>탐색 창의 애플리케이션 아이콘 중 <span class="ui">Admin</span>을 선택합니다. 새 탭에서 <span class="ui">Microsoft 365 admin center</span>가 열립니다.</li>
+  <li><span class="ui">… Show all</span>을 선택해 전체 탐색 메뉴를 표시합니다. <span class="ui">Settings</span> → <span class="ui">Search &amp; intelligence</span>를 선택합니다.</li>
+  <li>나타난 <span class="ui">Overview</span> 탭에서 아래로 스크롤합니다. <span class="ui">Connectors</span> 상자에서 <span class="ui">Add your first connection</span>을 선택합니다.</li>
+</ol>
+<p>사용할 수 있는 데이터 원본 목록이 나타납니다. 여기서는 File Share 커넥터로 커넥션을 구성합니다. 이 커넥터를 쓰면 Microsoft 365 Copilot 검색이 고객 파일을 참조할 수 있어, 상담원이 더 빠르고 정확하게 답을 찾습니다.</p>
+<ol class="steps" start="7">
+  <li><span class="ui">File Share</span>를 선택하고 <span class="ui">Next</span>를 선택합니다.</li>
+  <li><span class="ui">Display Name</span>을 입력합니다. 표시 이름은 사용자에게 보이는 고유한 이름입니다. <code>Contoso Files</code>를 입력합니다.</li>
+  <li><span class="ui">Folder path</span>를 입력합니다. 샘플 파일은 다음 디렉터리에 있습니다.
+    <div class="ascii">C:\ResourceFiles</div>
+    이 경로가 파일이 저장된 디렉터리입니다.
+  </li>
+  <li><span class="ui">Graph connector agent</span> 필드에서 앞 단계에서 만든 GCA(<code>ContosoFiles</code>)를 선택합니다. 기본값이 아니라면 직접 선택합니다.</li>
+  <li>인증 유형으로 <span class="ui">Windows</span>를 선택하고, Windows 인증용 LON-CL1 <span class="ui">Username</span>과 <span class="ui">Password</span>를 입력합니다.</li>
+  <li>Microsoft가 테넌트에서 타사 데이터를 색인화하도록 권한을 부여하는 확인란을 선택합니다.</li>
+  <li><span class="ui">Create</span>를 선택합니다. 성공 화면이 나타나고 커넥션이 동기화를 시작합니다. <span class="ui">Connector description</span> 상자에 콘텐츠 종류, 도움이 될 부서, 워크플로 예시를 입력할 수 있습니다. 예를 들면 다음과 같습니다.
+    <div class="ascii">This connector contains information contained in the on-premises file share server. It includes customer profiles and customer questions that may benefit the support desk in answering customer queries.</div>
+  </li>
+  <li><span class="ui">Done</span>을 선택합니다. 이제 커넥션이 Microsoft 365 관리 센터의 <span class="ui">Search &amp; intelligence</span> 탭에 나타나며, 검색 결과나 Microsoft 365 Copilot 에이전트를 만들 때 참조할 수 있습니다.</li>
+</ol>
+<div class="key">
+  <div class="t">랩 완료</div>
+  <p>Azure 앱 등록, GCA 설치와 등록, File Share 커넥션 구성까지 마쳤습니다. 이 커넥션이 Microsoft 365 Copilot이 사내 파일을 참조하는 기반이 됩니다.</p>
+</div>
+
+<div class="footer">
+  <p>Microsoft Learn 실습 랩을 한국어로 옮기고 설명을 덧붙인 학습 자료입니다. 화면 이미지와 원문 내용의 저작권은 Microsoft에 있습니다. 제품 화면은 계속 바뀌므로 최신 정보는 원문을 함께 확인하세요.</p>
+  <p>원문 · <a href="https://github.com/MicrosoftLearning/MS-4014-Build-a-foundation-to-extend-Microsoft-365-Copilot/blob/master/Instructions/Labs/LAB_01_configure-connections-in-admin-center.md" target="_blank" rel="noopener">Build a foundation to extend Microsoft 365 Copilot</a></p>
+</div>
+
+</main>
+</div>
+</body>
+</html>

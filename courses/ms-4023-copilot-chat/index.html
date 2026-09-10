@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Microsoft 365 Copilot Chat 살펴보기 · 한국어 가이드</title>
+<meta name="description" content="Microsoft 365 Copilot Chat 웹 모드로 고객 서밋을 기획하는 실습 랩을 한국어로 옮긴 학습 가이드입니다.">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="sitenav"><div class="inner"><a href="../../">Microsoft Learn 한국어판</a><span class="sep">/</span><a href="../../#copilot-studio">Copilot Studio</a><a href="../../#m365-copilot">Microsoft 365 Copilot</a><a href="../../#admin">관리자·보안</a><span class="sep">|</span><a href="./" class="here">MS-4023 Copilot Chat</a></div></div>
+<div class="wrap">
+
+<nav class="toc">
+  <h2>실습 목차</h2>
+  <a href="#top" class="lead">개요</a>
+  <a href="#before" class="sub">시작하기 전에</a>
+
+  <a href="#task1" class="lead">태스크 1 · 업계 동향 요약</a>
+  <a href="#task2" class="lead">태스크 2 · 세션 아이디어 구상</a>
+  <a href="#task3" class="lead">태스크 3 · 일정 시각화와 로고</a>
+  <a href="#task4" class="lead">태스크 4 · 기획 문서 작성</a>
+  <a href="#task5" class="lead">태스크 5 · 파일에서 콘텐츠 생성</a>
+  <a href="#task6" class="lead">태스크 6 · Copilot Pages 협업</a>
+  <a href="#wrap" class="lead">마무리 · 돌아보기</a>
+
+  <div class="rule"></div>
+  <a href="#src" class="lead">원문 링크</a>
+</nav>
+
+<main id="top">
+
+<header class="hero">
+  <span class="eyebrow">Microsoft Learn 실습 한국어 가이드</span>
+  <h1>Microsoft 365 Copilot Chat 살펴보기</h1>
+  <p class="sub">중견 컨설팅 회사의 운영 담당자가 되어 고객 혁신 서밋을 기획합니다. Microsoft 365 Copilot Chat 웹 모드로 동향을 조사하고, 아이디어를 만들고, 일정을 시각화하고, 문서를 작성하고, 동료와 협업하는 과정을 따라갑니다.</p>
+  <div class="meta">
+    <span>태스크 6개</span>
+    <span>선택 마무리 1개</span>
+    <span>웹 모드</span>
+    <span>수준 100</span>
+  </div>
+</header>
+
+<div class="notice">
+  <span class="t">원문을 함께 확인해 주세요</span>
+  <p>이 문서는 Microsoft Learn 실습 랩 <a href="https://github.com/MicrosoftLearning/MS-4023-Explore-Microsoft-365-Copilot-Chat/blob/master/Instructions/Labs/Lab_01_Plan_event_Copilot_Chat.md" target="_blank" rel="noopener">Explore Microsoft 365 Copilot Chat</a>를 한국어로 옮기고 설명을 덧붙인 자료입니다. 원문 랩은 영어로만 제공됩니다.</p>
+  <p>Copilot Chat은 기능과 화면이 빠르게 바뀝니다. 이 문서는 2026년 9월 기준이므로, 정확한 내용은 아래 <strong>원문 링크</strong>를 눌러 최신 상태로 확인해 주세요.</p>
+  <p>프롬프트와 입력값은 원문 그대로 옮겼으니 영어 표기 그대로 입력하시면 됩니다.</p>
+  <p>화면 이미지와 원문 내용의 저작권은 Microsoft에 있습니다.</p>
+</div>
+
+<div class="srclink" id="src"><span class="lbl">원문</span><a href="https://github.com/MicrosoftLearning/MS-4023-Explore-Microsoft-365-Copilot-Chat/blob/master/Instructions/Labs/Lab_01_Plan_event_Copilot_Chat.md" target="_blank" rel="noopener"><span class="en">Lab 1 - Plan a Client Summit with Microsoft 365 Copilot Chat</span></a></div>
+
+<div class="key">
+  <div class="t">이 랩에서 하는 일</div>
+  <p>Copilot Chat 하나로 조사, 아이디어 도출, 시각화, 문서 작성, 요약, 협업까지 이어 갑니다. 이 랩을 끝까지 완료하려면 Microsoft 365 구독이 필요합니다.</p>
+</div>
+
+<div class="box warn">
+  <span class="t">웹 모드로 전환하세요</span>
+  <p>이 태스크는 Microsoft 365 Copilot Chat의 <strong>웹 모드(web mode)</strong>에 맞춰 설계됐습니다. Microsoft 365 Copilot 라이선스가 있으면 Copilot Chat이 작업 모드(work mode)로 먼저 열릴 수 있으므로, 열 때 <strong>직접 웹 모드로 전환</strong>하세요. 웹 모드라야 프롬프트가 의도대로 동작하고 공개 웹 콘텐츠를 근거로 답합니다.</p>
+</div>
+
+<h2 id="before">시작하기 전에</h2>
+<p>랩을 시작하려면 가상 머신에 로그인해 Microsoft 365 Copilot Chat 웹 앱을 실행합니다.</p>
+<ol class="steps">
+  <li>테넌트 공급자가 제공한 가상 머신에 로컬 <span class="ui">Administrator</span> 계정으로 로그인합니다. 암호는 <code>Pa55w.rd</code>입니다.</li>
+  <li>Windows 작업 표시줄에서 <span class="ui">Microsoft Edge</span>를 선택합니다.</li>
+  <li>Microsoft 365 Copilot Chat을 실행하려면 주소 표시줄에 <code>https://m365copilot.com</code>을 입력합니다. 로그인 대화 상자가 나타납니다.</li>
+  <li><span class="ui">Sign-in Prompt</span>에 <code>userx@yourtenant.onmicrosoft.com</code>(테넌트 공급자 제공)을 입력하고 <span class="ui">Next</span>를 선택합니다.</li>
+  <li><span class="ui">Enter password</span> 화면에서 <code>Password1</code>(테넌트 공급자 제공)을 입력하고 <span class="ui">Sign in</span>을 선택합니다.</li>
+  <li><span class="ui">Stay signed in?</span>이 나오면 <span class="ui">Don't show this again</span> 확인란을 선택하고 <span class="ui">Yes</span>를 선택합니다.</li>
+  <li><span class="ui">Unlock Copilot Chat in Microsoft 365 Apps</span> 안내가 나오면 <span class="ui">Skip for now</span>나 <span class="ui">Add Copilot</span> 중 무엇을 선택해도 됩니다. 이 선택은 실습에 영향을 주지 않습니다.</li>
+  <li>Microsoft 365 Copilot Chat 웹 앱이 실행됩니다. 실행되지 않으면 왼쪽 탐색 메뉴의 <span class="ui">Copilot</span> 아이콘을 선택해 Copilot Chat을 엽니다.</li>
+</ol>
+
+<h2 id="task1">태스크 1 · 업계 동향 요약</h2>
+<p>Copilot Chat이 웹에서 서밋과 관련된 핵심 혁신 동향을 빠르게 찾아 주는 방법을 살펴봅니다. 여기서 정리한 동향이 고객의 관심사에 맞는 의제를 짜는 토대가 됩니다.</p>
+<ol class="steps">
+  <li>Copilot Chat 아래쪽 프롬프트 상자에 다음 프롬프트를 입력합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>What are the top three innovation trends in [your industry] for 2025 and how can they shape the agenda for a client summit?</div>
+<div class="box note">
+  <span class="t">참고</span>
+  <p><code>[your industry]</code> 부분을 원하는 업계 이름으로 바꿔 입력합니다.</p>
+</div>
+<ol class="steps" start="2">
+  <li>프롬프트 상자 오른쪽 아래의 <span class="ui">Send</span>(화살표 아이콘)를 선택하거나 키보드에서 <span class="ui">Enter</span>를 누릅니다.</li>
+  <li>Copilot의 답변을 검토하고 필요하면 프롬프트를 다듬습니다.</li>
+</ol>
+
+<h2 id="task2">태스크 2 · 세션 아이디어 구상</h2>
+<p>앞에서 조사한 동향을 바탕으로 참석자에게 가치를 주는 세션 제목과 설명을 만듭니다. 흩어진 정보를 구체적인 의제 항목으로 옮기는 단계입니다.</p>
+<ol class="steps">
+  <li>같은 대화 창에서 다음 프롬프트를 입력합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Based on those trends, suggest 5 engaging session titles and write short descriptions for a client innovation summit.</div>
+<ol class="steps" start="2">
+  <li><span class="ui">Send</span>를 선택하고 답변을 검토한 뒤 필요하면 프롬프트를 다듬습니다.</li>
+  <li>이어서 다음 후속 프롬프트를 입력합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Make the descriptions more compelling by using an energizing and professional tone.</div>
+<ol class="steps" start="4">
+  <li><span class="ui">Send</span>를 선택하고 답변을 검토한 뒤 필요하면 프롬프트를 다듬습니다.</li>
+</ol>
+
+<h2 id="task3">태스크 3 · 일정 시각화와 로고</h2>
+<p>Copilot Chat은 글로 된 아이디어를 시각 자료로 바꿔 줍니다. 여기서는 서밋 일정표와 주제를 담은 로고를 만들어 홍보와 행사 자료에 활용합니다.</p>
+<ol class="steps">
+  <li>같은 대화 창에서 다음 프롬프트를 입력합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Create an agenda timeline for a 1-day summit focused on [trend] with an introduction, closing, sessions at 9:00 AM, 11:00 AM, 1:30 PM, and 3:00 PM, two mini breaks, and an hour break for lunch in a table format.</div>
+<div class="box note">
+  <span class="t">참고</span>
+  <p><code>[trend]</code> 부분을 태스크 1에서 나온 동향 가운데 하나로 바꿔 입력합니다.</p>
+</div>
+<ol class="steps" start="2">
+  <li><span class="ui">Send</span>를 선택하고 답변을 검토한 뒤 필요하면 프롬프트를 다듬습니다.</li>
+  <li>이어서 다음 후속 프롬프트를 입력합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Create a simple and modern logo for this client innovation summit.</div>
+<ol class="steps" start="4">
+  <li><span class="ui">Send</span>를 선택하고 Copilot이 만든 이미지를 검토한 뒤 필요하면 프롬프트를 다듬습니다.</li>
+</ol>
+
+<h2 id="task4">태스크 4 · 기획 문서 작성</h2>
+<p>행사의 구조와 아이디어를 정리했으니, Copilot Chat으로 기획 요약서를 만들어 Word 문서로 옮깁니다. 이 문서가 목표, 세션 세부 내용, 성공 지표를 한곳에 모으는 프로젝트의 기준이 됩니다.</p>
+<ol class="steps">
+  <li>같은 대화 창에서 다음 프롬프트를 입력합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Create a 1-page planning brief for this client innovation summit that includes: goals, audience, session themes, and key planning milestones.</div>
+<ol class="steps" start="2">
+  <li><span class="ui">Send</span>를 선택하고 답변을 검토한 뒤 필요하면 프롬프트를 다듬습니다.</li>
+  <li>이어서 다음 후속 프롬프트를 입력합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Add a section summarizing anticipated outcomes and success metrics for the event.</div>
+<ol class="steps" start="4">
+  <li><span class="ui">Send</span>를 선택하고 답변을 검토한 뒤 필요하면 프롬프트를 다듬습니다.</li>
+  <li>이제 Copilot에게 이 내용으로 Word 문서를 만들게 합니다. 다음 프롬프트를 입력합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Create a Word document of this planning brief.</div>
+<ol class="steps" start="6">
+  <li>생성된 <span class="ui">Word</span> 문서를 엽니다.</li>
+  <li>로그인하라는 안내가 나오면 <code>userx@yourtenant.onmicrosoft.com</code>(테넌트 공급자 제공)을 입력하고 <span class="ui">Next</span>를 선택합니다.</li>
+  <li><span class="ui">Enter password</span> 화면에서 <code>Password1</code>(테넌트 공급자 제공)을 입력하고 <span class="ui">Sign in</span>을 선택합니다.</li>
+  <li><span class="ui">Stay signed in?</span>이 나오면 <span class="ui">Don't show this again</span> 확인란을 선택하고 <span class="ui">Yes</span>를 선택합니다.</li>
+  <li><span class="ui">Blank document</span>를 선택해 새 Word 문서를 엽니다.</li>
+  <li>문서 오른쪽 위에서 <span class="ui">File</span>을 선택하고 <span class="ui">Save As</span>를 선택해 문서를 저장합니다.</li>
+  <li><span class="ui">Other Locations</span> 아래에서 <span class="ui">This PC</span>를 선택하고, 위쪽 텍스트 상자에 파일 이름을 입력해 문서 이름을 정합니다. (예: <code>Client Summit Planning Brief</code>)</li>
+  <li><span class="ui">Save</span>를 선택한 뒤 문서를 닫습니다.</li>
+  <li>Copilot Chat 대화로 돌아가 태스크 5를 이어 갑니다.</li>
+</ol>
+
+<h2 id="task5">태스크 5 · 파일에서 콘텐츠 생성</h2>
+<p>태스크 4에서 만든 기획 요약서를 업로드하고, Copilot에게 요약과 내부 커뮤니케이션 초안을 만들게 합니다. 문서를 바로 쓸 수 있는 형태로 바꿔 시간을 아끼는 방법을 확인합니다.</p>
+<ol class="steps">
+  <li>Copilot Chat에서 다음 프롬프트를 입력하고 태스크 4에서 만든 파일을 업로드합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Summarize the key points from this planning brief into only 5 condensed bullet points:</div>
+<ol class="steps" start="2">
+  <li>프롬프트 상자 오른쪽 아래의 <span class="ui">Add a file</span>(클립 아이콘)을 선택해 파일 탐색기 대화 상자를 엽니다.</li>
+  <li>파일 탐색기 오른쪽에서 <span class="ui">Documents</span>를 선택해 태스크 4에서 저장한 문서를 찾습니다.</li>
+  <li>문서를 선택하고 파일 탐색기 아래쪽의 <span class="ui">Open</span>을 선택해 파일을 프롬프트 상자에 업로드합니다.</li>
+  <li>파일이 프롬프트 상자에 올라온 것을 확인하고 <span class="ui">Send</span>를 선택합니다.</li>
+  <li>답변을 검토하고 필요하면 프롬프트를 다듬습니다.</li>
+  <li>이어서 다음 후속 프롬프트를 입력합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Write a follow-up email to the planning team with these highlights and the next step.</div>
+<ol class="steps" start="8">
+  <li><span class="ui">Send</span>를 선택하고 답변을 검토한 뒤 필요하면 프롬프트를 다듬습니다.</li>
+</ol>
+
+<h2 id="task6">태스크 6 · Copilot Pages 협업</h2>
+<p>태스크 5에서 만든 이메일 초안을 Copilot Pages로 옮겨 협업 공간으로 바꿉니다. 여러 팀원이 실시간으로 내용을 다듬는 흐름을 체험합니다.</p>
+<ol class="steps">
+  <li>태스크 5의 마지막 답변(원하는 다른 답변도 됩니다) 아래에서 <span class="ui">Edit in Pages</span>를 선택해 내용을 Copilot Pages로 복사합니다.</li>
+  <li>Copilot Chat 오른쪽 창에 새 Copilot Page가 열립니다. 다음 동작을 살펴봅니다.
+    <ul>
+      <li>페이지 맨 위에서 새 제목을 붙입니다.</li>
+      <li>페이지 아무 곳이나 클릭해 내용을 자유롭게 입력합니다.</li>
+      <li>답변 아래의 <span class="ui">Add to page</span>를 선택해 이전 답변이나 새 답변을 페이지에 추가합니다.</li>
+      <li><code>/</code>를 입력해 표나 체크리스트 같은 콘텐츠 블록을 삽입합니다.</li>
+      <li>동료를 <strong>@mention</strong>하고(또는 그렇게 가정하고), 이름을 추가할 때 나타나는 메시지에서 <span class="ui">Share and notify</span>를 선택해 접근 권한을 부여합니다.</li>
+      <li>필요하면 페이지 오른쪽 위의 <span class="ui">Share</span> 아이콘을 선택하고 두 옵션 중 하나로 링크를 복사해 페이지를 공유합니다.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="wrap">마무리 · 돌아보기 (선택)</h2>
+<p>같은 대화 창에서 다음 프롬프트를 입력합니다.</p>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Create a checklist of what I learned today using Copilot Chat and how I can apply it to my [role].</div>
+<div class="box note">
+  <span class="t">참고</span>
+  <p><code>[role]</code> 부분을 본인의 역할로 바꿔 입력합니다.</p>
+</div>
+<div class="key">
+  <div class="t">랩 완료</div>
+  <p>Copilot Chat 하나로 조사부터 협업까지 이어지는 기획 흐름을 모두 마쳤습니다.</p>
+</div>
+
+<div class="footer">
+  <p>Microsoft Learn 실습 랩을 한국어로 옮기고 설명을 덧붙인 학습 자료입니다. 화면 이미지와 원문 내용의 저작권은 Microsoft에 있습니다. 제품 화면은 계속 바뀌므로 최신 정보는 원문을 함께 확인하세요.</p>
+  <p>원문 · <a href="https://github.com/MicrosoftLearning/MS-4023-Explore-Microsoft-365-Copilot-Chat/blob/master/Instructions/Labs/Lab_01_Plan_event_Copilot_Chat.md" target="_blank" rel="noopener">Explore Microsoft 365 Copilot Chat</a></p>
+</div>
+
+</main>
+</div>
+</body>
+</html>

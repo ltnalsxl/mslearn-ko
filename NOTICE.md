@@ -1,6 +1,6 @@
 # 저작권 고지
 
-이 저장소는 Microsoft Learn의 Copilot Studio 학습 자료를 한국어로 옮긴 **비공식 번역본**입니다.
+이 저장소는 Microsoft Learn의 Copilot 학습 자료를 한국어로 옮긴 **비공식 번역본**입니다.
 
 ## 성격
 
@@ -14,7 +14,7 @@
 | 자료 | 원문 | 저작권·라이선스 |
 |---|---|---|
 | 학습 모듈 | [Get started with Microsoft Copilot Studio](https://learn.microsoft.com/en-us/training/modules/power-virtual-agents-bots/) | © Microsoft. [Microsoft Learn 이용 약관](https://learn.microsoft.com/legal/termsofuse) 적용 |
-| 실습 랩 | [Copilot Studio exercises](https://microsoftlearning.github.io/mslearn-copilotstudio/) · [MicrosoftLearning/mslearn-copilotstudio](https://github.com/MicrosoftLearning/mslearn-copilotstudio) | MIT License |
+| 실습 랩 | [MicrosoftLearning](https://github.com/MicrosoftLearning) 조직이 공개한 각 과정 저장소. 문서마다 해당 원문 링크를 답니다 | MIT License |
 
 본문 내용과 화면 이미지의 저작권은 **Microsoft Corporation**에 있습니다. 화면 이미지는 원문에 실린 것을 그대로 사용했습니다.
 
@@ -28,10 +28,10 @@ Microsoft, Microsoft 365, Copilot, Copilot Studio, Power Platform, Dataverse, Az
 
 ## 내용에 문제가 있다면
 
-번역 오류나 사실과 다른 내용을 발견하시면 [이슈](https://github.com/ltnalsxl/mslearn-copilotstudio-ko/issues)로 알려 주세요.
+번역 오류나 사실과 다른 내용을 발견하시면 [이슈](https://github.com/ltnalsxl/mslearn-ko/issues)로 알려 주세요.
 
 권리자의 요청이 있을 경우 해당 자료를 지체 없이 내리겠습니다.
 
 ## 기준 시점
 
-2026년 8월. Copilot Studio는 기능과 화면이 빠르게 바뀌므로 이후 원문과 차이가 생길 수 있습니다.
+2026년 9월. Copilot과 Copilot Studio는 기능과 화면이 빠르게 바뀌므로 이후 원문과 차이가 생길 수 있습니다.

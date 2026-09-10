@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>직군별 Microsoft 365 Copilot 활용 · 한국어 가이드</title>
+<meta name="description" content="Microsoft Learn MS-4004 코스의 직군별 Copilot 활용 실습 10개 모듈을 한국어로 옮긴 비공식 번역본입니다.">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="sitenav"><div class="inner"><a href="../../">Microsoft Learn 한국어판</a><span class="sep">/</span><a href="../../#copilot-studio">Copilot Studio</a><a href="../../#m365-copilot">Microsoft 365 Copilot</a><a href="../../#admin">관리자·보안</a><span class="sep">|</span><a href="./" class="here">MS-4004 직군별 활용</a></div></div>
+<div class="wrap">
+
+<nav class="toc">
+  <h2>목차</h2>
+  <a href="#top" class="lead">코스 개요</a>
+  <a href="#who" class="sub">누구를 위한 자료인가</a>
+  <a href="#prep" class="sub">공통 사전 준비</a>
+  <a href="#prompt" class="sub">프롬프트 네 가지 요소</a>
+
+  <a href="#modules" class="lead">모듈 10개</a>
+  <a href="m01.html" class="sub">임원</a>
+  <a href="m02.html" class="sub">영업</a>
+  <a href="m03.html" class="sub">IT</a>
+  <a href="m04.html" class="sub">마케팅</a>
+  <a href="m05.html" class="sub">재무</a>
+  <a href="m06.html" class="sub">인사</a>
+  <a href="m07.html" class="sub">운영</a>
+  <a href="m08.html" class="sub">커뮤니케이션</a>
+  <a href="m09.html" class="sub">고객 서비스</a>
+  <a href="m10.html" class="sub">법무</a>
+
+  <div class="rule"></div>
+  <a href="#order" class="lead">권장 진행 방식</a>
+  <a href="#src" class="lead">원문</a>
+</nav>
+
+<main id="top">
+
+<header class="hero">
+  <span class="eyebrow">Microsoft Learn 실습 한국어 가이드</span>
+  <h1>직군별 Microsoft 365 Copilot 활용</h1>
+  <p class="sub">Microsoft Learn MS-4004 코스의 직군별 실습 10개 모듈을 한국어로 옮겼습니다. 임원부터 법무까지 각자 하는 일에 Copilot을 어떻게 붙이는지 프롬프트 단위로 따라갑니다.</p>
+  <div class="meta">
+    <span>모듈 10개</span>
+    <span>모듈당 약 44분</span>
+    <span>수준 200</span>
+    <span>2026년 9월 기준</span>
+  </div>
+</header>
+
+<div class="notice">
+  <span class="t">원문을 함께 확인해 주세요</span>
+  <p>이 문서는 Microsoft Learn 실습 랩 <a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/" target="_blank" rel="noopener">MS-4004 Empower your workforce with Microsoft 365 Copilot use cases</a>를 한국어로 옮긴 자료입니다. 원문 랩은 영어로만 제공됩니다.</p>
+  <p>Copilot은 기능과 화면이 빠르게 바뀝니다. 이 문서는 2026년 9월 기준이므로, 정확한 내용 확인을 위해서는 각 모듈 안의 <strong>원문 링크</strong>를 눌러 최신 내용을 확인해 주세요.</p>
+  <p>Copilot에 입력할 프롬프트는 원문 그대로 두었습니다. 영어 표기 그대로 사용하시면 됩니다.</p>
+  <p>화면 이미지와 원문 내용의 저작권은 Microsoft에 있습니다.</p>
+</div>
+
+<h2 id="who">누구를 위한 자료인가</h2>
+
+<p class="lead-in">Copilot 기능을 개념으로 설명하는 자료가 아닙니다. 직군마다 실제로 처리하는 업무를 시나리오로 잡고, 그 자리에서 어떤 프롬프트를 어떤 앱에 넣는지 하나씩 따라 하는 실습입니다.</p>
+
+<div class="key">
+  <div class="t">이 코스가 다루는 것</div>
+  <ul style="margin-bottom:0">
+    <li>Word, Excel, PowerPoint, Outlook, Teams, Planner에서 Copilot으로 실제 산출물을 만드는 절차</li>
+    <li>업무에 맞춘 에이전트를 만들고 쓰는 방법</li>
+    <li>직군마다 다른 자료와 맥락을 프롬프트에 어떻게 실어 보낼지</li>
+  </ul>
+</div>
+
+<h2 id="prep">공통 사전 준비</h2>
+
+<p>모듈 10개가 같은 준비 과정을 공유합니다. 어느 모듈을 먼저 하든 이 준비를 한 번만 해 두면 됩니다.</p>
+
+<div class="box stop">
+  <span class="t">중요</span>
+  <p>Microsoft 365 Copilot은 <span class="ui">OneDrive</span>에 저장된 파일만 다룰 수 있습니다. PC에 로컬로 저장된 파일은 Copilot이 읽지 못하므로 <span class="ui">OneDrive</span>로 옮겨야 합니다.</p>
+</div>
+
+<h3 id="prep-upload">실습 파일을 OneDrive에 올리기</h3>
+<ol class="steps">
+  <li>테넌트 제공자가 준 가상 머신에 로컬 <span class="ui">Administrator</span> 계정으로 로그인합니다.</li>
+  <li>작업 표시줄에서 <span class="ui">Microsoft Edge</span>를 선택합니다.</li>
+  <li>주소 표시줄에 <code>https://www.office.com</code>을 입력합니다.</li>
+  <li><span class="ui">Welcome to Microsoft 365</span> 아래에서 <span class="ui">Sign in</span>을 선택합니다.</li>
+  <li>로그인 창에 테넌트 제공자가 준 계정(<code>userx@yourtenant.onmicrosoft.com</code> 형식)을 입력하고 <span class="ui">Next</span>를 선택합니다.</li>
+  <li>암호를 입력하고 <span class="ui">Sign in</span>을 선택합니다.</li>
+  <li><span class="ui">Stay signed in</span> 창이 뜨면 <span class="ui">Don't show this again</span>을 체크하고 <span class="ui">Yes</span>를 선택합니다.</li>
+  <li><span class="ui">Apps</span>에서 <span class="ui">OneDrive</span>를 엽니다.</li>
+  <li>왼쪽 위 <span class="ui">+</span>에서 <span class="ui">File upload</span>를 선택합니다.</li>
+  <li>파일 탐색기에서 <span class="ui">This PC</span> &gt; <span class="ui">Local Disk (C:)</span>의 <span class="ui">ResourceFiles</span> 폴더를 엽니다.</li>
+  <li>폴더 안 파일을 모두 선택하고 <span class="ui">Open</span>을 선택해 업로드합니다.</li>
+  <li>화면 아래에 <span class="ui">Uploaded 29 items to My files</span>가 뜨면 업로드가 끝난 것입니다. Edge는 그대로 열어 둡니다.</li>
+</ol>
+
+<h3 id="prep-mru">Copilot이 파일을 찾지 못할 때</h3>
+<p>프롬프트에서 파일을 참조하려는데 후보 목록에 안 뜨는 경우가 있습니다. Copilot 경험에 따라 최근 사용 목록(MRU)만 참조하는 곳과 <span class="ui">OneDrive</span>를 직접 탐색할 수 있는 곳이 나뉘기 때문입니다. 해당 파일을 그 앱에서 한 번 열면 최근 사용 목록에 올라가 곧바로 참조할 수 있습니다.</p>
+
+<h2 id="prompt">프롬프트 네 가지 요소</h2>
+
+<p class="lead-in">모든 모듈이 같은 프롬프트 작성 틀을 씁니다. 실습을 시작하기 전에 이 네 가지를 익혀 두면 남은 내용이 훨씬 빨리 붙습니다.</p>
+
+<div class="cards">
+  <div class="card"><h5>Goal · 목표</h5><p>Copilot이 무엇을 해야 하는지 분명히 적습니다. "최근 프로젝트 업데이트를 요약해 불릿 3~5개로 만들어 줘"처럼 씁니다.</p></div>
+  <div class="card"><h5>Context · 맥락</h5><p>왜 필요한지, 누구와 무엇이 얽혀 있는지 배경을 줍니다. "Client X와의 Phase 3+ 브랜드 캠페인 회의용이야"처럼 씁니다.</p></div>
+  <div class="card"><h5>Sources · 출처</h5><p>어디를 보고 답하라고 지정합니다. 문서, 메일, Teams 대화 등입니다. "6월 이후 메일과 Teams 대화만 봐"처럼 씁니다.</p></div>
+  <div class="card"><h5>Expectations · 기대</h5><p>어떤 형태로 받고 싶은지 정합니다. 어조, 문체, 상세 수준입니다. "빨리 파악할 수 있게 쉬운 말로 써 줘"처럼 씁니다.</p></div>
+</div>
+
+<h2 id="modules">모듈 10개</h2>
+
+<p class="lead-in">모듈은 서로 독립적입니다. 자기 직군만 골라 해도 되고, 교육에 쓸 때는 참가자 직군에 맞춰 나눠 배정해도 됩니다.</p>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>모듈</th><th>대상</th><th>주로 다루는 앱</th></tr></thead>
+<tbody>
+<tr><td><a href="m01.html">임원 업무에서 Copilot 활용하기</a></td><td>임원, 경영진</td><td>Teams, Word, Excel, Planner, 에이전트</td></tr>
+<tr><td><a href="m02.html">영업 업무에서 Copilot 활용하기</a></td><td>영업 담당자</td><td>Researcher, Chat, Word, Outlook, Excel</td></tr>
+<tr><td><a href="m03.html">IT 업무에서 Copilot 활용하기</a></td><td>IT 운영·지원</td><td>Chat, Word, Excel, Teams</td></tr>
+<tr><td><a href="m04.html">마케팅 업무에서 Copilot 활용하기</a></td><td>마케팅 담당자</td><td>Word, PowerPoint, Chat, Outlook</td></tr>
+<tr><td><a href="m05.html">재무 업무에서 Copilot 활용하기</a></td><td>재무·회계</td><td>Excel, Word, PowerPoint, Outlook, Loop</td></tr>
+<tr><td><a href="m06.html">인사 업무에서 Copilot 활용하기</a></td><td>인사 담당자</td><td>Word, Teams, Outlook, Chat</td></tr>
+<tr><td><a href="m07.html">운영 업무에서 Copilot 활용하기</a></td><td>운영·공급망</td><td>Excel, Word, Teams, 에이전트</td></tr>
+<tr><td><a href="m08.html">커뮤니케이션 업무에서 Copilot 활용하기</a></td><td>홍보·사내 커뮤니케이션</td><td>Word, PowerPoint, Outlook, Chat</td></tr>
+<tr><td><a href="m09.html">고객 서비스 업무에서 Copilot 활용하기</a></td><td>고객 지원</td><td>Chat, Word, Outlook, Teams</td></tr>
+<tr><td><a href="m10.html">법무 업무에서 Copilot 활용하기</a></td><td>법무·계약</td><td>Word, Chat, Excel, 에이전트</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="order">권장 진행 방식</h2>
+
+<ol class="steps">
+  <li>위의 <a href="#prep">공통 사전 준비</a>를 한 번 마칩니다. 실습 파일이 <span class="ui">OneDrive</span>에 올라가 있어야 나머지가 진행됩니다.</li>
+  <li><a href="#prompt">프롬프트 네 가지 요소</a>를 읽습니다. 모듈마다 반복되는 틀이라 여기서 한 번 잡아 두면 됩니다.</li>
+  <li>자기 직군 모듈을 처음부터 끝까지 따라 합니다. 모듈 하나가 대략 44분입니다.</li>
+  <li>여유가 있으면 인접 직군 모듈을 하나 더 봅니다. 임원과 재무, 영업과 마케팅, 운영과 고객 서비스가 서로 이어집니다.</li>
+</ol>
+
+<div class="box note">
+  <span class="t">교육에 쓸 때</span>
+  <p>모듈이 독립적이라 참가자를 직군별로 나눠 동시에 진행하기 좋습니다. 공통 사전 준비만 시작 전에 함께 마치면 됩니다.</p>
+</div>
+
+<h2 id="src">원문</h2>
+
+<div class="tablewrap">
+<table>
+<thead><tr><th>자료</th><th>원문</th><th>라이선스</th></tr></thead>
+<tbody>
+<tr><td>실습 랩</td><td><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/" target="_blank" rel="noopener">MS-4004 Empower your workforce with Microsoft 365 Copilot use cases</a></td><td>MIT</td></tr>
+<tr><td>코스 페이지</td><td><a href="https://learn.microsoft.com/ko-kr/training/courses/ms-4004" target="_blank" rel="noopener">Microsoft Learn 코스 MS-4004</a></td><td>Microsoft Learn 이용 약관</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="footer">
+  <p>Microsoft Learn 자료를 한국어로 옮긴 비공식 학습 자료입니다. 원문 내용과 화면 이미지의 저작권은 Microsoft에 있습니다.</p>
+</div>
+
+</main>
+</div>
+</body>
+</html>

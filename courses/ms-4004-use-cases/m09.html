@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>고객 서비스 업무에서 Copilot 활용하기 · 한국어 가이드</title>
+<meta name="description" content="MS-4004 모듈 09. 고객 서비스 관리자가 Microsoft 365 Copilot로 지원 여정 설계, 회의 준비, 문서 표준화, 데이터 분석을 수행하는 실습을 한국어로 옮긴 자료입니다.">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="sitenav"><div class="inner"><a href="../../">Microsoft Learn 한국어판</a><span class="sep">/</span><a href="../../#copilot-studio">Copilot Studio</a><a href="../../#m365-copilot">Microsoft 365 Copilot</a><a href="../../#admin">관리자·보안</a><span class="sep">|</span><a href="./" class="here">MS-4004 직군별 활용</a></div></div>
+<div class="wrap">
+
+<nav class="toc">
+  <h2>모듈 목차</h2>
+  <a href="#top" class="lead">개요와 준비</a>
+  <a href="#setup" class="sub">랩 준비: 파일 업로드</a>
+  <a href="#prompt-basics" class="sub">효과적인 프롬프트 4요소</a>
+
+  <a href="#ex1" class="lead">연습 1 · 지원 효율 높이기</a>
+  <a href="#e1t1" class="sub">과제 1 · Whiteboard 여정 설계</a>
+  <a href="#e1t2" class="sub">과제 2 · Teams 회의 준비</a>
+  <a href="#e1t3" class="sub">과제 3 · OneNote 통화 템플릿</a>
+  <a href="#e1t4" class="sub">과제 4 · Analyst 데이터 분석</a>
+
+  <a href="#ex2" class="lead">연습 2 · 해결 품질 높이기</a>
+  <a href="#e2t1" class="sub">과제 1 · Loop 문제 해결 체크리스트</a>
+  <a href="#e2t2" class="sub">과제 2 · Word와 Writing Coach</a>
+  <a href="#e2t3" class="sub">과제 3 · Ideas Coach 가이드</a>
+  <a href="#e2t4" class="sub">과제 4 · Outlook 인사이트 이메일</a>
+
+  <div class="rule"></div>
+  <a href="#links" class="lead">원문 링크</a>
+</nav>
+
+<main id="top">
+
+<header class="hero">
+  <span class="eyebrow">MS-4004 · 직군별 Microsoft 365 Copilot 활용 사례</span>
+  <h1>고객 서비스 업무에서 Copilot 활용하기</h1>
+  <p class="sub">고객 서비스 관리자가 Microsoft 365 Copilot로 이상적인 지원 여정을 설계하고, 회의를 준비하고, 문서를 표준화하고, 지원 데이터를 분석하는 두 연습을 한국어로 옮긴 자료입니다.</p>
+  <div class="meta">
+    <span>연습 2개</span>
+    <span>과제 8개</span>
+    <span>실습 약 6시간 30분</span>
+    <span>대상 고객 서비스 관리자</span>
+  </div>
+</header>
+
+<p class="lead-in"><a href="./">코스 개요</a> · <a href="m01.html">임원</a> · <a href="m02.html">영업</a> · <a href="m03.html">IT</a> · <a href="m04.html">마케팅</a> · <a href="m05.html">재무</a> · <a href="m06.html">인사</a> · <a href="m07.html">운영</a> · <a href="m08.html">커뮤니케이션</a> · <strong>고객 서비스</strong> · <a href="m10.html">법무</a></p>
+
+<div class="notice">
+  <span class="t">원문을 함께 확인해 주세요</span>
+  <p>이 문서는 Microsoft Learn 과정 <a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/" target="_blank" rel="noopener">MS-4004: Empower your workforce with Microsoft 365 Copilot use cases</a>의 모듈 09를 한국어로 옮긴 비공식 자료입니다. 원문 랩은 영어로만 제공됩니다.</p>
+  <p>Microsoft 365 Copilot은 기능과 화면이 빠르게 바뀝니다. 이 문서는 2026년 9월 기준이므로, 정확한 내용은 <strong>각 단원 머리의 원문 링크</strong>를 눌러 최신 화면과 함께 확인해 주세요.</p>
+  <p>입력할 프롬프트와 값은 영어 원문 그대로 두었습니다. 번역하면 결과가 달라지므로 표기 그대로 입력해 주세요.</p>
+  <p>화면 이미지와 원문 내용의 저작권은 Microsoft에 있습니다.</p>
+</div>
+
+<h2 id="setup">개요와 준비 <span class="badge time">준비 44분</span></h2>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/01-introduction.html" target="_blank" rel="noopener"><span class="en">Lab Setup / Introduction</span></a></div>
+
+<div class="key">
+  <div class="t">이 모듈에서 하는 일</div>
+  <p>고객 서비스 관리자 관점에서 Microsoft 365 Copilot을 실제 업무에 적용합니다. 연습 1에서는 지원 운영의 효율을 높이고, 연습 2에서는 고객 응대의 품질을 끌어올립니다. 응답 초안 작성, 티켓 관리, 지원 콘텐츠 제작, 팀 협업을 Copilot으로 어떻게 앞당기는지 여덟 개 과제로 익힙니다.</p>
+</div>
+
+<p>고객 서비스에서는 빠르고 공감 어린 정확한 지원이 좋은 고객 경험의 바탕입니다. 문제를 해결하든 문의에 답하든 서비스 흐름을 관리하든, 명확하게 소통하고 신속하게 움직이는 능력이 중요합니다. 이 모듈은 Microsoft 365 Copilot이 어떻게 응답 시간을 줄이고, 문제를 더 확실히 해결하고, 일관된 고품질 서비스를 유지하도록 돕는지 보여 줍니다.</p>
+
+<div class="cards">
+  <div class="card"><h5>응답 품질과 속도</h5><p>고객 이메일에 대한 명확하고 전문적인 답변 초안을 만듭니다. 이전 상호작용을 분석해 고객의 어조와 이력에 맞는 응답을 제안합니다.</p></div>
+  <div class="card"><h5>티켓 관리</h5><p>사례를 요약하고, 양식을 자동으로 채우고, 상호작용에 따른 후속 조치를 정리합니다.</p></div>
+  <div class="card"><h5>지원 콘텐츠 제작</h5><p>FAQ, 단계별 안내, 제품 문제 해결 문서를 Word나 Loop에서 빠르게 작성합니다.</p></div>
+  <div class="card"><h5>팀 협업</h5><p>Teams의 대화와 회의를 요약하고, 작업 목록을 만들고, 에스컬레이션 진행 상황을 추적합니다.</p></div>
+</div>
+
+<h3 id="setup-files">랩 준비: OneDrive에 파일 업로드</h3>
+<p>이 모듈의 프롬프트는 파일을 참조합니다. 실습 전에 필요한 파일을 <span class="ui">OneDrive</span>에 올려 두어야 Copilot이 접근할 수 있습니다.</p>
+<ol class="steps">
+  <li>테넌트 공급자가 제공한 가상 머신에 로컬 <span class="ui">Administrator</span> 계정으로 로그인합니다. 암호는 <code>Pa55w.rd</code>입니다.</li>
+  <li>Windows 작업 표시줄에서 <span class="ui">Microsoft Edge</span>를 선택합니다.</li>
+  <li>주소 표시줄에 <code>https://www.office.com</code>을 입력합니다.</li>
+  <li><span class="ui">Welcome to Microsoft 365</span>에서 <span class="ui">Sign in</span>을 선택합니다.</li>
+  <li>로그인 화면에서 <code>userx@yourtenant.onmicrosoft.com</code>(공급자가 제공한 사용자 이름과 테넌트)을 입력하고 <span class="ui">Next</span>를 선택합니다.</li>
+  <li>암호 입력 화면에서 사용자 계정 암호를 입력하고 <span class="ui">Sign in</span>을 선택합니다.</li>
+  <li><span class="ui">Stay signed in</span> 메시지가 나오면 <span class="ui">Don't show this again</span>을 선택한 뒤 <span class="ui">Yes</span>를 선택합니다.</li>
+  <li><span class="ui">Microsoft 365</span>에서 <span class="ui">Apps</span>를 선택하고, 이어서 <span class="ui">OneDrive</span>를 선택합니다.</li>
+  <li><span class="ui">OneDrive</span> 왼쪽 위에서 <span class="ui">+</span>(add new) &gt; <span class="ui">File upload</span>을 선택합니다.</li>
+  <li><span class="ui">File Explorer</span>에서 <span class="ui">This PC</span> &gt; <span class="ui">Local Disk (C:)</span>로 이동해 <span class="ui">ResourceFiles</span> 폴더를 엽니다.</li>
+  <li>폴더 안의 파일을 모두 선택하고 <span class="ui">Open</span>을 선택해 업로드합니다. 완료되면 화면 아래에 <span class="ui">Uploaded 29 items to My files</span>가 표시됩니다.</li>
+  <li><span class="ui">Edge</span>를 열어 둔 채 다음 과제로 넘어갑니다.</li>
+</ol>
+<div class="box stop">
+  <span class="t">중요</span>
+  <p>Microsoft 365 Copilot은 <span class="ui">OneDrive</span>에 저장된 파일만 다룹니다. PC에만 저장한 파일은 Copilot이 읽지 못하므로 <span class="ui">OneDrive</span>로 옮겨야 합니다.</p>
+</div>
+<div class="box note">
+  <span class="t">참고 · MRU 목록</span>
+  <p>일부 Copilot 화면은 <span class="ui">Most Recently Used (MRU)</span> 목록에 있는 파일만 제안합니다. 파일이 제안에 안 보이면 해당 Microsoft 365 앱에서 한 번 열어 두면 MRU 목록에 자동으로 추가됩니다.</p>
+</div>
+
+<h3 id="prompt-basics">효과적인 프롬프트의 네 가지 요소</h3>
+<p>Copilot을 잘 쓰는 핵심은 프롬프트의 품질입니다. 좋은 프롬프트는 다음 네 요소를 갖춥니다. 이 요소를 염두에 두면 요청이 명확하고 실행 가능해지며 결과가 좋아집니다.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>요소</th><th>내용</th><th>예시</th></tr></thead>
+<tbody>
+<tr><td><strong>Goal</strong>(목표)</td><td>Copilot이 무엇을 하기를 바라는지 분명히 밝힙니다.</td><td>“Generate three to five bullet points summarizing the latest project updates.”</td></tr>
+<tr><td><strong>Context</strong>(맥락)</td><td>왜 필요한지, 누구·무엇이 관련되는지 배경을 줍니다.</td><td>“Prepare these bullet points for a meeting with Client X about their ‘Phase 3+’ brand campaign.”</td></tr>
+<tr><td><strong>Sources</strong>(출처)</td><td>어디에서 정보를 찾아야 하는지 지정합니다.</td><td>“Focus on emails and Teams chats since June.”</td></tr>
+<tr><td><strong>Expectations</strong>(기대)</td><td>어조, 형식, 상세 수준 등 결과 형태를 정합니다.</td><td>“Use simple language so I can get up to speed quickly.”</td></tr>
+</tbody>
+</table>
+</div>
+<div class="box tip">
+  <span class="t">팁</span>
+  <p>이 연습에서는 첫 과제에만 완성된 예시 프롬프트가 주어집니다. 나머지 프롬프트는 직접 작성해야 하므로, 네 요소를 기준으로 삼아 연습하면 실무 감각을 기를 수 있습니다.</p>
+</div>
+
+<!-- ==================== 연습 1 ==================== -->
+<h2 id="ex1">연습 1 · Microsoft 365 Copilot으로 고객 서비스 효율 높이기 <span class="badge time">Level 200</span></h2>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/02-Ex1-introduction-improve-service-exercise.html" target="_blank" rel="noopener"><span class="en">Exercise 1: Improve customer service efficiency</span></a></div>
+<p>고객 서비스 팀은 정보가 여러 채널에 흩어져 있고 업무 흐름이 문서보다 빠르게 바뀌는 환경에서 일합니다. Copilot은 채팅, 이메일, 회의, 공유 문서에서 얻은 정보를 정리된 요약과 우선순위, 실행 계획으로 바꿔 이 복잡함에 질서를 부여합니다. 문제 해결 가이드, 여정 지도, 표준 템플릿 같은 자료 제작도 앞당깁니다.</p>
+
+<div class="box note">
+  <span class="t">시나리오 · Lamna Healthcare Company</span>
+  <p>Lamna Healthcare Company는 지역 내 클리닉과 소규모 의료 그룹이 쓰는 예약 관리, 환자 일정, 임상 워크플로 플랫폼을 제공합니다. 지난 한 해 도입이 급증하면서 지원 문제도 함께 늘었습니다. 예약 동기화 지연, 간헐적 인증 오류, 모듈별로 제각각인 오류 처리, 예상보다 긴 사례 해결 시간이 보고되고 있습니다. 새로 부임한 고객 서비스 관리자로서 병목을 찾고, 지원팀의 행정 부담을 줄이며, Support·IT·Engineering·Compliance가 신뢰할 문서와 워크플로를 만드는 종합 평가를 이끌게 됩니다. Copilot을 전략 파트너로 삼아 흩어진 정보를 모으고, 실행 가능한 인사이트를 끌어내고, 워크플로와 함께 진화하는 문서를 만듭니다.</p>
+</div>
+
+<h3 id="e1t1">과제 1 · Whiteboard에서 Copilot으로 이상적인 지원 여정 설계</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/03-Ex1-1-use-whiteboard-map-support-journey.html" target="_blank" rel="noopener"><span class="en">Task 1: Use Copilot in Whiteboard to map the ideal customer support journey</span></a></div>
+<p>현재 프로세스를 기록하는 대신 백지에서 시작해, 처음부터 끝까지 매끄럽고 고객 중심적인 지원 여정이 어떤 모습이어야 하는지 팀과 함께 그립니다. Microsoft 365 Copilot for Whiteboard로 시각적이고 협업 중심인 계획 세션을 이끌어, 이상적인 클리닉 지원 사례 워크플로의 뼈대를 빠르게 잡습니다.</p>
+<ol class="steps">
+  <li>Edge에서 <span class="ui">Microsoft 365</span> 홈(<code>https://www.microsoft365.com</code>)에 로그인합니다.</li>
+  <li><span class="ui">Microsoft 365 Copilot Chat</span> 창의 탐색 창에서 <span class="ui">Apps</span> 아이콘을 선택하고 <span class="ui">All apps</span>를 선택합니다. <span class="ui">All apps</span> 창에서 아래로 스크롤해 <span class="ui">Whiteboard</span>를 선택합니다.</li>
+  <li><span class="ui">Whiteboard for the web</span>에서 새 세션을 시작합니다.</li>
+  <li>기본 이름 <span class="ui">Whiteboard X</span>를 선택해 <span class="ui">Board name</span>을 <span class="ui">Lamna's ideal clinic support case workflow</span>로 바꿉니다.</li>
+  <li>아래 메뉴 막대 옆의 <span class="ui">Copilot</span> 아이콘을 선택하고 <span class="ui">Suggest</span>를 선택합니다.</li>
+  <li><span class="ui">Suggest content with Copilot</span> 창에 다음 프롬프트를 입력합니다.</li>
+</ol>
+<div class="box note">
+  <span class="t">참고</span>
+  <p>이 첫 프롬프트는 네 요소(Goal, Context, Sources, Expectations)를 갖춘 예시로 제공됩니다. 나머지 프롬프트는 직접 작성하되 이 프롬프트를 본보기로 삼으세요.</p>
+</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>I'm the Customer Service Manager at Lamna Healthcare Company. Lamna Healthcare Company provides an integrated appointment management, patient scheduling, and clinical workflow platform used by clinics and small healthcare groups across the region. Please map out the ideal clinic support case workflow for Lamna. The workflow should cover patient scheduling platform issues, intake, triage, medical-data troubleshooting, escalation paths, support workflow redesign, and so on.</div>
+<p class="lead-in">Lamna의 이상적인 클리닉 지원 사례 워크플로를 예약 문제, 접수, 분류, 의료 데이터 문제 해결, 에스컬레이션 경로까지 아우르도록 설계해 달라는 요청입니다.</p>
+<ol class="steps" start="7">
+  <li>Copilot은 아이디어를 여섯 개씩 만듭니다. 여섯 개로는 부족하므로 <span class="ui">Generate more</span>를 눌러 더 생성하면 버튼이 <span class="ui">Insert (12)</span>로 바뀝니다. 한 번 더 생성해 <span class="ui">Insert (18)</span> 버튼을 선택합니다.</li>
+  <li>Copilot이 아이디어를 노란색 스티커 메모로 화이트보드에 붙입니다. 실제 브레인스토밍처럼 메모를 편집, 삭제, 잠금 처리할 수 있습니다. 메모를 두 번 눌러 나타나는 메뉴에서 <span class="ui">Edit text</span>(연필) 아이콘이나 줄임표 메뉴를 써 보며 필요한 메모를 다듬습니다.</li>
+  <li>편집을 마쳤으면 Copilot에게 메모를 범주별로 정리하게 합니다. 범주 이름은 Copilot이 정하고 그에 맞춰 메모를 자동으로 묶습니다.</li>
+</ol>
+<div class="box warn">
+  <span class="t">주의</span>
+  <p>범주화를 고르면 Whiteboard는 화면에 <strong>보이는</strong> 메모만 선택해 테두리 안에 넣습니다. 화면 밖 메모는 포함되지 않으니, 바로 진행하면 그 메모는 범주화에서 빠집니다.</p>
+</div>
+<ol class="steps" start="10">
+  <li>모든 메모를 포함하려면 화면을 축소·이동해 전부 보이게 하거나, <span class="ui">Ctrl+A</span>로 캔버스의 모든 개체를 선택합니다. 이 과제에서는 <span class="ui">Ctrl+A</span>를 사용합니다.</li>
+  <li>일부 메모가 화면 밖에 있으면 테두리 가장자리를 잡고 전체 선택을 캔버스 안으로 끌어와 모두 보이게 합니다.</li>
+  <li>모든 메모가 보이는 상태에서 아래 <span class="ui">Copilot</span> 아이콘을 선택하고 <span class="ui">Categorize</span>를 선택합니다. <span class="ui">Categorize selected notes</span> 창에서 <span class="ui">Categorize</span> 버튼을 선택합니다.</li>
+  <li>Copilot이 범주를 만들고 메모를 재배치합니다. 범주마다 다른 색이 지정됩니다. 글자가 작아 읽기 어려우면 오른쪽 아래 <span class="ui">Fit to Screen</span> 아이콘을 눌러 크기를 맞춥니다.</li>
+  <li>범주가 마음에 들지 않으면 아이콘 트레이의 <span class="ui">Regenerate</span> 버튼을 선택합니다.</li>
+</ol>
+<div class="box tip">
+  <span class="t">팁</span>
+  <p><span class="ui">Regenerate</span>는 만족할 때까지 여러 번 눌러도 됩니다. 누를 때마다 범주 이름과 배치는 물론 범주 개수까지 달라질 수 있습니다.</p>
+</div>
+<ol class="steps" start="15">
+  <li>여러 번 재생성한 뒤 어떤 결과가 가장 좋았는지 헷갈릴 수 있습니다. Copilot은 이전 범주화로 돌아가는 기능은 없지만 <span class="ui">Revert</span> 버튼으로 처음의 18개 노란 메모 상태로 되돌릴 수 있습니다.</li>
+  <li>다시 범주화하려면 <span class="ui">Copilot</span> 아이콘 &gt; <span class="ui">Categorize</span> &gt; <span class="ui">Categorize</span> 버튼을 선택합니다.</li>
+  <li><span class="ui">Regenerate</span>의 동작을 익혔으니 시간을 아끼기 위해 만족할 때까지 한두 번만 눌러 결과를 확정합니다.</li>
+  <li>이제 각 단계의 흔한 고충을 제안받습니다. <span class="ui">Copilot</span> 아이콘 &gt; <span class="ui">Suggest</span>를 선택하고 다음 프롬프트를 입력합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Suggest common pain points that customers might encounter within each category</div>
+<p class="lead-in">각 범주에서 고객이 겪을 만한 흔한 고충을 제안해 달라는 요청입니다.</p>
+<ol class="steps" start="19">
+  <li>여섯 개 제안이 나오면 <span class="ui">Generate more</span>를 눌러 열두 개로 늘린 뒤 <span class="ui">Insert (12)</span>를 선택합니다.</li>
+  <li>12개 고충 메모는 하나의 블록(노트 그리드)으로 묶여 표시됩니다. 세로 테두리를 잡아 범주화된 그리드 위에서 옆으로 끌어 옮깁니다. 공간이 부족하면 <span class="ui">Fit to Screen</span> 아이콘으로 화면에 맞춥니다.</li>
+  <li>결과가 만족스러우면 <span class="ui">Keep it</span>을 선택합니다.</li>
+  <li>세션 요약을 화이트보드에 추가하려면 <span class="ui">Copilot</span> 아이콘 &gt; <span class="ui">Summarize</span>를 선택합니다. Copilot이 주요 주제를 요약하면 <span class="ui">Summary</span> 창을 끝까지 확인하고 <span class="ui">Keep it</span>을 선택합니다.</li>
+  <li>내용이 화면에 다 안 들어가면 <span class="ui">Fit to Screen</span> 아이콘으로 맞춥니다.</li>
+</ol>
+<div class="box note">
+  <span class="t">결과물</span>
+  <p>이 세션의 목표는 Lamna의 지향점을 담은, 시각적으로 명확한 여정 지도를 얻는 것입니다. 이 산출물은 프로세스 개선의 설계 밑그림이자 이해관계자를 정렬하는 소통 도구로 쓰입니다.</p>
+</div>
+
+<h3 id="e1t2">과제 2 · Teams에서 Copilot으로 고객 지원 회의 준비</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/04-Ex1-2-use-teams-prepare-support-meeting.html" target="_blank" rel="noopener"><span class="en">Task 2: Use Copilot in Teams to prepare for a client support meeting</span></a></div>
+<p>Lamna의 오래된 주요 고객 Trey Research에서 최근 문제가 늘었습니다. Trey Research는 다지점 임상 연구와 환자 시험을 수행하는 의료 연구 기관으로, Lamna의 일정·참가자 추적 플랫폼에 크게 의존합니다. 예약 동기화 실패, 간헐적 환자 기록 지연, 다음 단계 안내의 불일치가 보고되었습니다. 지도부와 만나기 전에 상황을 한눈에 파악하려 합니다.</p>
+<div class="box note">
+  <span class="t">참고 · 연습용 샘플 파일</span>
+  <p>학습 환경에는 실제 데모 데이터가 없으므로, Trey Research 관련 샘플 통신·요약·데이터를 담은 파일 네 개가 제공됩니다. 이 파일을 OneDrive에 올리면 Copilot이 조직 데이터처럼 분석합니다.</p>
+</div>
+<div class="tablewrap">
+<table>
+<thead><tr><th>파일</th><th>내용</th></tr></thead>
+<tbody>
+<tr><td><code>TreyResearch_EmailThread.docx</code></td><td>클리닉 직원과 Lamna 지원팀 사이의 짧은 이메일 체인</td></tr>
+<tr><td><code>TreyResearch_MeetingNotes.docx</code></td><td>최근 Trey Research 에스컬레이션에 관한 내부 지원팀 논의 노트</td></tr>
+<tr><td><code>TreyResearch_TicketSummary.xlsx</code></td><td>이슈 유형과 해결 시간을 담은 소규모 지원 티켓 데이터셋</td></tr>
+<tr><td><code>TreyResearch_ChatLog.txt</code></td><td>내부 문제 해결 논의를 옮긴 가상 채팅 로그 요약</td></tr>
+</tbody>
+</table>
+</div>
+<ol class="steps">
+  <li>다음 링크에서 네 개 파일을 내려받아 OneDrive 폴더에 저장합니다.
+    <ul>
+      <li><a href="https://go.microsoft.com/fwlink/?linkid=2347621" target="_blank" rel="noopener"><span class="ui">TreyResearch_EmailThread.docx</span></a></li>
+      <li><a href="https://go.microsoft.com/fwlink/?linkid=2347815" target="_blank" rel="noopener"><span class="ui">TreyResearch_MeetingNotes.docx</span></a></li>
+      <li><a href="https://go.microsoft.com/fwlink/?linkid=2347525" target="_blank" rel="noopener"><span class="ui">TreyResearch_TicketSummary.xlsx</span></a></li>
+      <li><a href="https://go.microsoft.com/fwlink/?linkid=2347814" target="_blank" rel="noopener"><span class="ui">TreyResearch_ChatLog.txt</span></a></li>
+    </ul>
+  </li>
+  <li>Edge에서 <span class="ui">Microsoft 365</span> 홈으로 이동해 <span class="ui">Apps</span> &gt; <span class="ui">Teams</span>를 선택합니다.</li>
+  <li><span class="ui">Teams for the web</span> 왼쪽 탐색 창에서 <span class="ui">Copilot</span>을 선택합니다. Teams 안에서 Microsoft 365 Copilot Chat이 열립니다.</li>
+  <li>프롬프트 필드에 앞서 내려받은 네 파일을 첨부합니다. 그런 다음 첨부 파일을 분석해 Trey Research가 제기한 핵심 이슈, 주제, 추세, 우려를 요약해 달라고 요청합니다.</li>
+  <li>생성된 요약을 검토하며 성능 추세, 파일 간 반복 이슈, 운영상의 공백이나 지연을 확인합니다. Copilot이 제안 프롬프트로 다음 단계를 제시하면 활용합니다.</li>
+  <li>이어서 파일을 근거로 Trey Research에 영향을 주는 반복 이슈 상위 세 가지를 나열해 달라고 요청합니다.</li>
+  <li>Copilot이 답하면, 이 상위 세 이슈를 고려할 때 다가오는 지도부 회의에서 무엇을 최우선으로 다뤄야 할지 물어봅니다.</li>
+  <li>각 우선 항목별로 권장 다음 단계와, 각 조치에 관여해야 할 내부 팀을 알려 달라고 요청합니다.</li>
+  <li>인사이트를 회의용 자료로 바꾸기 위해, 이 이슈들을 해결하기 위한 지원 리더십 회의 의제를 간결한 임원용 형식으로 작성해 달라고 요청합니다.</li>
+  <li>최종 요약, 실행 항목, 의제를 Word 기획 문서에 옮겨 OneDrive에 저장합니다.</li>
+</ol>
+
+<h3 id="e1t3">과제 3 · OneNote에서 Copilot으로 통화 요약 템플릿 만들기</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/05-Ex1-3-use-onenote-create-call-template.html" target="_blank" rel="noopener"><span class="en">Task 3: Use Copilot in OneNote to create a call summary template</span></a></div>
+<p>지금은 상담원마다 통화 메모 형식이 달라 고객 우려, 조치, 후속 사항의 기록이 들쭉날쭉합니다. 모든 고객 상담에 쓸 표준 통화 요약 템플릿을 만들어 내부 소통을 개선하고 다음 단계를 분명히 하며 중요한 정보를 놓치지 않게 합니다.</p>
+<ol class="steps">
+  <li>Edge에서 <span class="ui">Microsoft 365</span> 홈 &gt; <span class="ui">Apps</span> &gt; <span class="ui">OneNote</span>를 선택합니다.</li>
+  <li><span class="ui">OneNote for the web</span>에서 <span class="ui">Support team shared notebook</span>이라는 빈 전자 필기장을 만듭니다.</li>
+  <li><span class="ui">Call Templates</span>라는 섹션을 추가합니다. 여기에 통화 문서용 재사용 템플릿을 모아 둡니다.</li>
+  <li><span class="ui">Call Templates</span> 섹션을 추가하면 기본으로 <span class="ui">Untitled Page</span>가 만들어집니다. 실수로 <span class="ui">+Add page</span>를 눌러 빈 페이지가 두 개가 되면 하나를 마우스 오른쪽 버튼으로 눌러 <span class="ui">Delete Page</span>로 지웁니다. 페이지 위쪽 제목 필드에 <span class="ui">Customer Service Call Summary Template</span>을 입력합니다.</li>
+</ol>
+<div class="box note">
+  <span class="t">참고</span>
+  <p>제목을 복사해 붙여 넣으면 OneNote는 본문에 붙여 넣습니다. 제목 필드에는 직접 입력해야 합니다.</p>
+</div>
+<ol class="steps" start="5">
+  <li>위쪽 리본에서 <span class="ui">Copilot</span>을 선택합니다.</li>
+  <li><span class="ui">Copilot</span> 창에서 고객 우려, 취한 조치, 후속 단계를 기록할 상담원용 통화 요약 템플릿을 만들어 달라고 요청합니다.</li>
+  <li>Copilot의 응답은 OneNote 페이지가 아니라 세부 창에 표시됩니다. 응답 아래의 <span class="ui">Copy response</span> 아이콘을 누른 뒤 페이지의 날짜 아래를 선택하고 <span class="ui">Ctrl+V</span>로 붙여 넣습니다. 앞뒤에 딸려 온 대화체 문구는 지웁니다.</li>
+  <li>템플릿에 심각도 수준을 넣고 싶으므로 Copilot에게 심각도 태그를 추가해 달라고 요청합니다.</li>
+  <li>수정된 템플릿을 복사해 기존 템플릿을 대체하도록 페이지에 붙여 넣습니다.</li>
+  <li>다음 필드가 빠졌으니 추가하도록 요청합니다: Client Name, Date, Contact Method, Summary of Issue, Resolution, Follow-Up Needed.</li>
+  <li>응답을 검토합니다. 테스트에서는 Copilot이 새 필드가 포함된 전체 템플릿 대신 새 정보 섹션만 표시하기도 했습니다. 그런 경우 그 섹션을 템플릿 끝에 붙여 넣고, 전체 템플릿을 다시 준 경우에는 기존 것을 지우고 새 템플릿으로 교체합니다.</li>
+  <li>라이브 통화 중 빠르게 채울 수 있도록 스캔하기 쉬운 레이아웃을 어떻게 개선할지 Copilot에게 물어봅니다.</li>
+  <li>Copilot은 표, 머리글, 글머리 기호, 색 구분 같은 서식 개선을 제안할 수 있습니다. 원하는 대로 수락하거나 수정합니다.</li>
+  <li>변경을 마치면 브라우저 탭을 닫습니다.</li>
+</ol>
+
+<h3 id="e1t4">과제 4 · Copilot Analyst 에이전트로 지원 데이터 분석</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/06-Ex1-4-use-analyst-agent-analyze-data.html" target="_blank" rel="noopener"><span class="en">Task 4: Use the Copilot Analyst agent to analyze customer support data</span></a></div>
+<p>지난 90일 동안 Trey Research가 보고한 문제가 급증했습니다. 예약 동기화 지연, EHR(전자 건강 기록) 동기화 지연, 간헐적 동기화 실패, Scheduling과 EHR-Sync 구성 요소의 느린 로드가 이어졌습니다. 지도부가 우선순위를 정하고 Engineering·Product와 조율하도록, Copilot의 Analyst 에이전트로 90일 사례 이력을 분석하고 의미 있는 시각화를 만듭니다.</p>
+<ol class="steps">
+  <li>다음 링크에서 <a href="https://go.microsoft.com/fwlink/?linkid=2347816" target="_blank" rel="noopener"><span class="ui">TreyResearch_Support_Cases.xlsx</span></a> 파일을 내려받아 OneDrive에 저장합니다.</li>
+  <li>스프레드시트를 열어 내용을 확인합니다. 열 너비를 늘려야 전체 값이 보일 수 있습니다. 확인 후 닫습니다.</li>
+  <li>Edge에서 <span class="ui">Microsoft 365</span> 홈으로 이동해 탐색 창에서 <span class="ui">Analyst</span> 에이전트를 선택합니다.</li>
+  <li><span class="ui">Analyst</span> 에이전트에 스프레드시트를 첨부합니다. 데이터셋을 분석해 상위 이슈 범주, 심각도 구성, 가장 영향받은 모듈, 에스컬레이션 비율, 해결 시간 분포를 담은 간결한 브리핑을 만들어 달라고 요청합니다.</li>
+  <li>결과를 검토합니다. 이어서 심각도와 에스컬레이션 비율의 상관관계, 모듈과 평균 해결 시간의 상관관계를 검정하고 이를 가장 명확히 전달할 시각화 세 개를 만들어 달라고 요청합니다.</li>
+  <li>세 시각화를 하나의 대시보드형 요약 이미지로 합쳐 달라는 제안 프롬프트가 나오면 선택해 제출합니다. 안 나오면 직접 입력합니다.</li>
+  <li>이 요약 위에 주석과 핵심 인사이트를 직접 얹어 달라는 제안 프롬프트가 나오면 선택해 제출하고, 없으면 직접 입력합니다.</li>
+  <li>주석이 포함된 요약을 검토합니다. 차트 옆에 요약 텍스트 패널을 둔 발표용 버전을 만들어 달라는 제안 프롬프트가 나오면 선택하고, 없으면 직접 입력합니다.</li>
+  <li>발표용 버전이 생성되면 이 이미지를 PowerPoint 슬라이드(PPTX)로 내보낼지 물어볼 수 있습니다. 제안 프롬프트가 있으면 선택하고, 없으면 직접 입력합니다.</li>
+  <li>에이전트가 제공한 링크로 슬라이드를 내려받아 열고 검토합니다.</li>
+</ol>
+
+<!-- ==================== 연습 2 ==================== -->
+<h2 id="ex2">연습 2 · Microsoft 365 Copilot으로 사례 해결 품질 높이기 <span class="badge time">Level 100</span></h2>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/07-Ex2-introduction-enhance-resolution-exercise.html" target="_blank" rel="noopener"><span class="en">Exercise 2: Enhance the resolution quality of customer service cases</span></a></div>
+<p>높은 품질의 해결에는 문제 해결만이 아니라 공감, 명확성, 일관성이 필요합니다. Copilot은 잘 구성된 템플릿을 만들고, 문장을 다듬고, 지식을 접근하기 쉬운 형태로 정리하고, 후속 조치를 빠짐없이 챙기도록 돕습니다. 이 연습에서는 소통 문장을 다시 쓰고, 구조화된 문서 체계를 세우고, 전문적인 템플릿을 만들고, 더 나은 인사이트를 생성합니다.</p>
+<div class="box note">
+  <span class="t">시나리오 · Tailwind Traders</span>
+  <p>Tailwind Traders는 대규모 B2B 딜러 네트워크를 둔 전문 아웃도어 장비 제조사입니다. 제품군이 넓어지고 딜러 수요가 늘면서 제품 품질, 보증 확인, 기술 문제 해결을 둘러싼 문의가 많아지고 복잡해졌습니다. 지도부는 딜러 소통의 불일치, 오래된 문제 해결 자료, 상담원마다 제각각인 해결 과정을 우려합니다. 고객 경험 부문 VP Holly Dickson은 더 정돈되고 예측 가능한 해결 경험을 만들고자 하며, 고객 대면 산출물을 현대화하는 이니셔티브를 맡깁니다. Microsoft 365 Copilot을 전략 파트너로 삼아 지원 추세를 분석하고 콘텐츠 제작을 간소화하며 일관된 산출물을 만듭니다.</p>
+</div>
+
+<h3 id="e2t1">과제 1 · Loop에서 Copilot으로 문제 해결 체크리스트 만들기</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/08-Ex2-1-use-loop-build-troubleshooting-checklist.html" target="_blank" rel="noopener"><span class="en">Task 1: Use Copilot in Loop to build a troubleshooting checklist</span></a></div>
+<p>고객 포털에서 제품 보증 확인 문제가 늘었습니다. 일련번호 불일치부터 구매 증빙 스캔 누락까지 다양합니다. 여러 부서가 함께 만들고 신뢰할 통합 문제 해결 가이드를 마련하려 합니다. Microsoft Loop에서 Copilot으로 Support, Warranty Operations, Product Engineering이 실시간으로 함께 채우는 살아 있는 문서를 만듭니다.</p>
+<ol class="steps">
+  <li>Edge에서 <span class="ui">Microsoft 365</span> 홈(<code>https://www.microsoft365.com</code>)에 로그인해 <span class="ui">Apps</span> &gt; <span class="ui">Loop</span>를 선택합니다.</li>
+  <li><span class="ui">Loop for the web</span>에서 <span class="ui">Troubleshooting Guide</span> 작업 영역을 만듭니다.</li>
+  <li>첫 페이지 제목을 <span class="ui">Untitled</span>에서 <span class="ui">Product Warranty Troubleshooting Guide</span>로 바꿉니다.</li>
+  <li>이 페이지의 <span class="ui">Copilot</span> 창을 엽니다.</li>
+  <li>제품 보증 확인 문제를 해결하기 위한 Product Warranty Validation 문제 해결 체크리스트를 만들어 달라고 요청합니다.</li>
+  <li>항목을 단계별로 나누길 원합니다. 단계로 나눠졌으면 <span class="ui">Copy</span> 아이콘을 눌러 Loop 페이지에 붙여 넣고(<span class="ui">Ctrl+V</span>), 딸려 온 대화체 문구를 지웁니다. 안 나눠졌으면 단계로 나눠 달라고 요청한 뒤 붙여 넣습니다.</li>
+  <li>시작이 좋지만 각 단계의 작업을 더 구체화하고 싶습니다. 좋은 출발점이지만 일부 작업이 너무 상위 수준이라고 알리고, 각 단계에서 식별한 작업을 더 자세히 풀어 달라고 요청합니다.</li>
+  <li>각 단계의 책임자가 빠졌습니다. 각 단계를 Support, Warranty Operations, Product Engineering 중 어느 팀이 맡는지 명시해 달라고 요청합니다.</li>
+  <li>응답을 복사해 기존 체크리스트를 대체하도록 Loop 페이지에 붙여 넣고 불필요한 문구를 지웁니다.</li>
+  <li>핵심 연락처 정보와 회사의 에스컬레이션 정책이 빠졌습니다. 페이지 맨 위에 이 두 항목을 담은 섹션을 추가해 달라고 요청합니다.</li>
+  <li>이 프롬프트에서는 Copilot이 연락처 섹션만 표시했습니다. 이 내용을 복사해 페이지 맨 위 첫 섹션으로 붙여 넣고 불필요한 문구를 지웁니다.</li>
+  <li>단순 목록을 Loop 체크리스트 구성 요소로 바꿔 각 단계를 완료 표시할 수 있게 하려 합니다. 이 목록을 Loop 체크리스트 구성 요소로 바꿔 팀이 실시간으로 갱신하게 해 달라고 요청합니다.</li>
+  <li>응답을 복사해 현재 체크리스트를 대체하도록 붙여 넣고 불필요한 문구를 지웁니다.</li>
+  <li>안전을 위해, 이 가이드를 더 효과적으로 만들 다른 항목이 있는지 Copilot에게 물어봅니다.</li>
+  <li>내용이 좋으면 복사해 페이지 맨 끝 마지막 섹션으로 붙여 넣고 불필요한 문구를 지웁니다.</li>
+</ol>
+
+<h3 id="e2t2">과제 2 · Word와 Writing Coach로 딜러 대면 응답 템플릿 만들기</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/09-Ex2-2-use-word-create-response-template.html" target="_blank" rel="noopener"><span class="en">Task 2: Use Copilot in Word and Writing Coach to create a dealer facing response template</span></a></div>
+<p>B2B 딜러의 제품 품질 문의가 늘었지만 응답 품질이 들쭉날쭉합니다. 모든 상담원이 딜러에게 답할 때 쓸 표준 서면 응답 템플릿을 만듭니다. Word의 Copilot으로 템플릿을 만든 뒤 Writing Coach 에이전트로 어조와 명확성, 문법과 구조를 다듬습니다.</p>
+<div class="box note">
+  <span class="t">참고 · Word의 Copilot 두 가지 동작</span>
+  <p><span class="ui">Edit with Copilot</span>이 켜져 있으면 Copilot은 문서 안에서 직접 작성·편집합니다. 초안 작성, 섹션 재작성, 요약 추가 같은 변경을 보통 확인을 거쳐 문서에 바로 적용합니다. 꺼져 있으면 Copilot Chat처럼 동작해 응답을 창에만 표시하고 문서 반영 여부는 사용자가 정합니다. 이 과제는 <span class="ui">Edit with Copilot</span> 기능을 사용합니다.</p>
+</div>
+<ol class="steps">
+  <li>Edge에서 <span class="ui">Microsoft 365</span> 홈 &gt; <span class="ui">Apps</span> &gt; <span class="ui">Word</span>를 선택합니다.</li>
+  <li><span class="ui">Word for the web</span>에서 빈 문서를 만듭니다.</li>
+  <li><span class="ui">Home</span> 탭 리본에서 <span class="ui">Copilot</span>을 선택합니다. 프롬프트 필드의 <span class="ui">+</span> 옆에 <span class="ui">Edit with Copilot</span> 아이콘이 있는지 확인하고, 없으면 <span class="ui">+</span>를 눌러 <span class="ui">Edit with Copilot</span>을 선택합니다.</li>
+  <li>프롬프트 필드에 다음 프롬프트를 제출합니다.</li>
+</ol>
+<div class="box note">
+  <span class="t">참고</span>
+  <p>이 첫 프롬프트만 예시로 제공됩니다. 네 요소를 갖춘 본보기로 삼되 나머지 프롬프트는 직접 작성합니다.</p>
+</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>I'm the Customer Service Manager for Tailwind Traders. In order for Tailwind to raise the overall professionalism, clarity, and consistency of its outbound communications, please create a standardized written-response template that all Customer Support agents can use when replying to dealers. This template must:
+- Reflect Tailwind's confident and trusted brand voice.
+- Capture all the information needed to properly evaluate a product-quality concern.
+- Clearly outline the actions Tailwind took, as well as next steps the dealer must follow.
+- Work well as a repeatable, clean format for email, Word attachments, or internal documentation.
+The template should include the following sections: Issue Summary, Product Details, Troubleshooting Actions Taken, Required Dealer Follow-Up, Expected Timeline.</div>
+<p class="lead-in">Tailwind의 브랜드 보이스를 담고 제품 품질 문의 평가에 필요한 정보를 모두 담는 표준 응답 템플릿을 지정한 섹션 구성으로 만들어 달라는 요청입니다.</p>
+<ol class="steps" start="5">
+  <li>첫 초안을 검토합니다. 다음 섹션을 각각 명확한 필드 레이블과 함께 추가해 달라고 요청합니다.
+    <ul>
+      <li><strong>Dealer and case metadata</strong> · Dealer Name, Dealer ID, Case ID, Priority, Severity, Date Opened, Date of Reply</li>
+      <li><strong>Intake details</strong> · Original Dealer Request summary, Attachments provided (Photo/Video/Proof of Purchase), Channel, Contact Person</li>
+      <li><strong>Reproduction steps</strong> · Environment, Product version/firmware, Steps tried, Reproduction result (Yes/No)</li>
+      <li><strong>Risk and impact assessment</strong> · Safety impact, Customer impact, Business priority</li>
+      <li><strong>Resolution status</strong> · Current status, Root cause (if known), Temporary workaround, Final fix ETA</li>
+      <li><strong>Escalation path</strong> · When to escalate, Who to escalate to, SLA for response</li>
+      <li><strong>Communication log</strong> · Date, who contacted, summary of each interaction</li>
+      <li><strong>Next checkpoint</strong> · Commit dates, responsible owner</li>
+    </ul>
+  </li>
+  <li>일관성을 위해 표와 체크리스트를 넣습니다. <span class="ui">Product Details</span> 섹션에 다음 행을 담은 2열 표를 넣어 달라고 요청합니다: Product line, Model/SKU, Serial Number, Production batch/Lot, Purchase date, Warranty status.</li>
+  <li>표가 올바른지 확인하고, 문제가 있으면 수정을 요청합니다.</li>
+  <li><span class="ui">Required Dealer Follow Up</span> 섹션 끝에 다음 항목의 체크박스를 추가해 달라고 요청합니다: Provide serial number photo, Provide proof of purchase, Run diagnostic steps (attach logs), Confirm shipping address (if replacement), Acknowledge RMA terms.</li>
+  <li>최종 버전이 만족스러우면 메뉴 막대 위 파일 이름을 기억해 둡니다. 다음 단계에서 이 파일을 씁니다.</li>
+  <li><span class="ui">Microsoft 365</span> 탐색 창의 <span class="ui">Agents</span> &gt; <span class="ui">All agents</span>를 선택합니다. <span class="ui">Agent Store</span>의 <span class="ui">Your agents</span>에서 <span class="ui">See more</span>를 선택하고 <span class="ui">Writing Coach</span>를 선택합니다.</li>
+  <li><span class="ui">Writing Coach</span> 에이전트에 앞서 만든 <span class="ui">Dealer Support Template</span> 파일을 OneDrive에서 첨부합니다. B2B 소통에 맞는 더 간결하고 자신감 있는 어조로 다시 써 달라고 요청합니다.</li>
+  <li>결과를 검토합니다. 응답 끝에 무엇을 왜 바꿨는지 설명하는 문구를 확인합니다.</li>
+  <li>데이터가 많아 딜러가 흐름을 따라가기 어려울 수 있습니다. 이슈 요약, 취한 조치, 필요한 다음 단계를 쉽게 따라가도록 논리적 흐름을 개선해 달라고 요청합니다.</li>
+  <li>문서를 검토하고, 개선된 흐름이 왜 더 나은지 설명하는 문구를 확인합니다.</li>
+  <li>이 템플릿을 더 낫게 만들 다른 변경을 물어봅니다.</li>
+  <li>제안 중 한두 가지를 반영한 재설계 버전을 만들어 달라고 요청해도 좋습니다.</li>
+  <li>실무에서는 최종 버전 아래 <span class="ui">Copy Response</span> 아이콘으로 복사해 Word 문서에 붙여 넣어 사용합니다. 최종 템플릿을 보관하려면 지금 그렇게 해 둡니다.</li>
+</ol>
+
+<h3 id="e2t3">과제 3 · Copilot Ideas Coach 에이전트로 문제 해결 가이드 만들기</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/10-Ex2-3-use-ideas-coach-agent-create-guide.html" target="_blank" rel="noopener"><span class="en">Task 3: Use Copilot's Ideas Coach agent to create a troubleshooting guide</span></a></div>
+<p>딜러가 성능 문제, 품질 결함, 설정 어려움, 호환성 질문 같은 같은 유형의 문제 해결을 반복해 요청합니다. 지도부는 모든 제품군에 걸쳐 공유할 표준 단계별 문제 해결 가이드를 원합니다. Ideas Coach 에이전트로 구조와 세분화, 문제 해결 단계를 생성합니다.</p>
+<ol class="steps">
+  <li><span class="ui">Microsoft 365</span> &gt; <span class="ui">Agents</span> &gt; <span class="ui">All agents</span>를 선택합니다. <span class="ui">Your agents</span> &gt; <span class="ui">See more</span>에서 <span class="ui">Idea Coach</span>를 선택합니다.</li>
+  <li>본인이 대규모 B2B 딜러 네트워크를 둔 전문 아웃도어 장비 제조사 Tailwind Traders의 고객 서비스 관리자임을 알리고, 딜러 대면 문제 해결 가이드를 만들어 달라고 요청합니다. B2B 독자를 위한 간결하고 전문적인 언어로 작성하며 다음을 포함하게 합니다: 딜러가 따르는 단계별 분류(triage) 흐름, 흔한 이슈 유형별 빠른 진단 테스트, 딜러가 제공할 증빙 체크리스트, 각 단계의 통과/실패 기준, 흔한 해결책과 임시 우회책, 에스컬레이션 규칙과 다음 단계.</li>
+  <li>응답을 검토합니다. 모든 제품군에 적용되는 일반 템플릿을 만들어 달라고 알립니다.</li>
+  <li>반복 프롬프트로 내용을 확장합니다. 각 응답 뒤 하나의 문서로 합칠지 물어도 마지막까지 미룹니다. 먼저 분류 흐름을 성능 문제, 품질·결함 문제, 안전 우려, 사용성·설정 문제로 나눈 별도 트랙으로 확장하고, 판단 지점과 “if/then” 논리를 포함하게 합니다.</li>
+  <li>문제 해결 시작 전 딜러가 제공할 증빙 체크리스트를 만들어 달라고 요청합니다: photos, proof of purchase, serial number photo, environment details, optional short video.</li>
+  <li>성능, 품질, 안전, 사용성 각 범주별로 딜러가 실행할 빠른 진단 테스트 세 개를 짧고 명확하게 제시해 달라고 요청합니다.</li>
+  <li>문제를 해결하지 못할 때 따를 에스컬레이션 트리거와 지침을 추가해 달라고 요청합니다: safety escalations, repeated failures, out-of-box defects, warranty escalations.</li>
+  <li>내용이 많으니 분류 프로세스를 위한 시각적 순서도를 만들어 함께 쓰게 합니다.</li>
+  <li>순서도에 아이콘과 색 구분을 넣어 달라고 요청합니다. 예: 통과 경로는 Green, 실패 경로는 Red, 필수 단계는 Blue.</li>
+  <li>모든 아이디어를 딜러 대면 가이드에 맞는 깔끔한 개요로 정리해 달라고 요청합니다.</li>
+  <li>테스트에서는 이전 아이디어를 다 담지 않은 개요만 만들기도 했습니다. 그런 경우 이전에 생성한 모든 아이디어를 담아 섹션별 상세 내용이 있는 완전한 핸드북 구조로 확장해 달라고 요청합니다.</li>
+  <li>분류 트랙 순서도에 색 코드가 빠졌으면, 색 코드가 빠졌다고 알리고 이 통합 문서에 색 구분을 포함해 달라고 요청합니다.</li>
+  <li>최종 버전에서 많은 섹션이 실제 내용 대신 “Same as before”로 표시되기도 했습니다. 이 최종 버전에 만족하지만, 복사·붙여넣기가 가능하도록 모든 “Same as before”를 실제 내용으로 반드시 교체해 달라고 요청합니다.</li>
+  <li>에이전트가 제시한 아이디어 중 관심 있는 것을 후속으로 이어가도 좋습니다.</li>
+  <li>만족스러우면 응답 끝의 <span class="ui">Edit in Pages</span> 아이콘을 선택합니다. <span class="ui">Pages</span>에서 <span class="ui">Create</span> &gt; <span class="ui">Document</span>를 선택하면 <span class="ui">Word for the web</span> 문서가 생성됩니다.</li>
+  <li>실무에서는 이 문서를 Writing Coach로 더 다듬을 수 있습니다. 앞 과제에서 다뤘으므로 여기서는 생략합니다.</li>
+</ol>
+
+<h3 id="e2t4">과제 4 · Copilot Chat과 Outlook으로 지원 인사이트 이메일 만들기</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/11-Ex2-4-use-outlook-create-insights-email.html" target="_blank" rel="noopener"><span class="en">Task 4: Use Copilot Chat and Copilot in Outlook to create a Support Insights email</span></a></div>
+<p>지도부는 딜러 네트워크 전반의 해결 추세를 더 잘 파악하길 원합니다. 지난 세 달간 지원에서 일어난 일을 요약한 간결한 이메일을 보냅니다. 제품 이슈·보증 청구 추세, 주목할 에스컬레이션, 조사 대상 패턴, 다음 단계 권고, 교육 기회를 담습니다. Copilot Chat으로 분석과 초안을 만들고 Outlook의 Copilot으로 다듬습니다.</p>
+<div class="box note">
+  <span class="t">참고 · Copilot Chat의 응답 모드</span>
+  <p>Copilot Chat 웹에는 답변에 쓰는 시간과 추론 깊이를 정하는 응답 모드 선택기가 있습니다. 기본은 <span class="ui">Auto</span>입니다. <span class="ui">Work</span> 모드에서는 선택기가 보이지 않고 Copilot이 깊이를 자동 관리하며, <span class="ui">Web</span> 모드로 바꾸면 선택기가 나타납니다. Excel의 응답 선택기는 어떤 AI 모델을 쓸지 정하는 것이라 Chat의 선택기와 다릅니다.</p>
+</div>
+<ol class="steps">
+  <li>다음 링크에서 <a href="https://go.microsoft.com/fwlink/?linkid=2347619" target="_blank" rel="noopener"><span class="ui">TailwindTraders_SupportCaseSummaries.docx</span></a> 파일을 내려받아 OneDrive에 저장합니다.</li>
+  <li>Edge에서 Microsoft 365 홈으로 이동합니다.</li>
+  <li>내부 문서를 검토하는 작업이므로 <span class="ui">Work</span> 옵션을 선택합니다. <span class="ui">Web</span>은 외부 공개 자료를 검색하므로 여기서는 맞지 않습니다. Copilot Chat 프롬프트 필드에 파일을 첨부합니다.</li>
+  <li>첨부한 지원 사례 요약을 검토해 Tailwind Traders 임원 지도부에게 보낼 Outlook 이메일 초안을 작성해 달라고 요청합니다. 상위 이슈 주제, 고객 감정, 딜러 에스컬레이션 패턴, 권장 다음 조치를 포함하고 특정 사례 번호는 넣지 않게 합니다.</li>
+  <li>테스트에서는 두 가지 상황이 있었습니다. Copilot Chat이 초안을 Outlook 새 이메일로 불러오고 버튼이나 링크를 표시한 경우에는 그것을 선택해 Outlook에서 엽니다. 이메일 내용만 만들고 Outlook에 싣지 않은 경우에는 내용을 복사해 Microsoft 365 홈에서 <span class="ui">Outlook</span>을 열고 새 이메일에 붙여 넣습니다.</li>
+  <li>이제 <span class="ui">Outlook on the web</span>에서 Copilot이 만든 이메일 또는 직접 붙여 넣은 이메일이 열려 있어야 합니다.</li>
+</ol>
+<div class="box stop">
+  <span class="t">중요</span>
+  <p>Copilot Chat이 이메일을 만들어 Outlook에서 열면 초안 모드가 아니라 본문에 응답을 직접 표시합니다. 그 뒤 수정하려면 문장이든 문단이든 전체든, 원하는 텍스트를 직접 선택해야 합니다.</p>
+</div>
+<ol class="steps" start="7">
+  <li>첫 문단을 개선하려면 그 문단을 드래그해 전체를 선택합니다. 나타나는 <span class="ui">Open Copilot</span>(연필) 아이콘을 선택합니다.</li>
+  <li>Copilot 창에서 <span class="ui">Auto Rewrite</span>를 선택하면 수정 초안이 별도 창에 표시됩니다. <span class="ui">Replace</span>를 선택해 선택한 문단을 수정 텍스트로 교체합니다.</li>
+  <li><span class="ui">Recommended Actions</span> 섹션 뒤에 새 섹션을 추가합니다. 그 뒤 빈 줄을 선택하고 나타나는 <span class="ui">Open Copilot</span> 아이콘을 선택합니다.</li>
+  <li>프롬프트 필드에 <span class="ui">Risks and Dependencies</span>라는 섹션을 추가해 달라고 요청합니다. 해결되지 않으면 지원 성과나 고객 만족에 악영향을 줄 항목을 짧은 문단으로 짚게 합니다.</li>
+  <li>Copilot이 커서 위치에 새 섹션을 표시하면 만족스러울 때 <span class="ui">Keep it</span>을 선택합니다.</li>
+  <li>실제로는 텍스트가 커서 위치가 아니라 이메일 맨 위에 삽입될 수 있습니다. 현재 <span class="ui">Keep it</span>은 커서나 프롬프트 위치가 아니라 Outlook의 내부 자리 표시자(본문 맨 위)에 내용을 붙입니다. 이 동작이 고쳐질 때까지는 삽입된 텍스트를 선택해 원하는 위치로 잘라 옮겨야 합니다.</li>
+  <li>이메일 어조를 바꿔 봅니다. 본문 전체를 선택하고 <span class="ui">Open Copilot</span>을 선택합니다. 메뉴의 <span class="ui">Change Tone</span>에는 <span class="ui">Direct</span>, <span class="ui">Casual</span>, <span class="ui">Formal</span>, <span class="ui">Like a poem</span>이 있지만, 여기서는 프롬프트 필드에 어조를 더 임원 친화적으로 바꿔 달라고 직접 요청합니다.</li>
+  <li>수정 창에서 결과를 확인합니다. 마음에 안 들면 <span class="ui">Discard</span>, 이 이메일에서는 <span class="ui">Replace</span>를 선택해 변경을 반영합니다.</li>
+  <li>시간이 되면 <span class="ui">Open Copilot</span>의 여러 옵션을 자유롭게 시험해 봅니다.</li>
+</ol>
+
+<h2 id="links">원문 링크</h2>
+<ul>
+  <li><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/01-introduction.html" target="_blank" rel="noopener">Lab Setup / Introduction</a></li>
+  <li><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/02-Ex1-introduction-improve-service-exercise.html" target="_blank" rel="noopener">Exercise 1 · Improve customer service efficiency</a></li>
+  <li><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/03-Ex1-1-use-whiteboard-map-support-journey.html" target="_blank" rel="noopener">Task 1 · Whiteboard support journey</a></li>
+  <li><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/04-Ex1-2-use-teams-prepare-support-meeting.html" target="_blank" rel="noopener">Task 2 · Teams support meeting</a></li>
+  <li><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/05-Ex1-3-use-onenote-create-call-template.html" target="_blank" rel="noopener">Task 3 · OneNote call template</a></li>
+  <li><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/06-Ex1-4-use-analyst-agent-analyze-data.html" target="_blank" rel="noopener">Task 4 · Analyst agent data analysis</a></li>
+  <li><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/07-Ex2-introduction-enhance-resolution-exercise.html" target="_blank" rel="noopener">Exercise 2 · Enhance resolution quality</a></li>
+  <li><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/08-Ex2-1-use-loop-build-troubleshooting-checklist.html" target="_blank" rel="noopener">Task 1 · Loop troubleshooting checklist</a></li>
+  <li><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/09-Ex2-2-use-word-create-response-template.html" target="_blank" rel="noopener">Task 2 · Word and Writing Coach template</a></li>
+  <li><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/10-Ex2-3-use-ideas-coach-agent-create-guide.html" target="_blank" rel="noopener">Task 3 · Ideas Coach troubleshooting guide</a></li>
+  <li><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M09-empower-workforce-copilot-customer-service/11-Ex2-4-use-outlook-create-insights-email.html" target="_blank" rel="noopener">Task 4 · Outlook support insights email</a></li>
+</ul>
+
+<div class="footer">
+  <p>Microsoft Learn 과정 MS-4004의 모듈 09를 한국어로 옮기고 설명을 덧붙인 학습 자료입니다. 화면 이미지와 원문 내용의 저작권은 Microsoft에 있습니다. 제품 화면은 계속 바뀌므로 최신 정보는 원문을 함께 확인하세요.</p>
+  <p>다른 모듈 · <a href="./">MS-4004 코스 개요</a></p>
+</div>
+
+</main>
+</div>
+</body>
+</html>

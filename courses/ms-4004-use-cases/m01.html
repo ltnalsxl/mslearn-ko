@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>임원 업무에서 Copilot 활용하기 · 한국어 가이드</title>
+<meta name="description" content="MS-4004 코스 M01 모듈. 임원이 Microsoft 365 Copilot으로 커뮤니케이션을 종합하고 비즈니스 성과를 이끄는 실습을 한국어로 옮긴 자료입니다.">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+<div class="sitenav"><div class="inner"><a href="../../">Microsoft Learn 한국어판</a><span class="sep">/</span><a href="../../#copilot-studio">Copilot Studio</a><a href="../../#m365-copilot">Microsoft 365 Copilot</a><a href="../../#admin">관리자·보안</a><span class="sep">|</span><a href="./" class="here">MS-4004 직군별 활용</a></div></div>
+<div class="wrap">
+
+<nav class="toc">
+  <h2>모듈 목차</h2>
+  <a href="#top" class="lead">개요와 준비</a>
+  <a href="#setup" class="sub">파일을 OneDrive에 올리기</a>
+  <a href="#prompting" class="sub">효과적인 프롬프트 네 요소</a>
+
+  <a href="#ex1" class="lead">연습 1 · 커뮤니케이션 종합</a>
+  <a href="#ex1-1" class="sub">과제 1 · 프로젝트 커뮤니케이션 종합</a>
+  <a href="#ex1-2" class="sub">과제 2 · 채팅 논의 요약</a>
+  <a href="#ex1-3" class="sub">과제 3 · 여러 프로젝트 비교</a>
+  <a href="#ex1-4" class="sub">과제 4 · 경영진 요약 준비</a>
+
+  <a href="#ex2" class="lead">연습 2 · 비즈니스 성과 이끌기</a>
+  <a href="#ex2-1" class="sub">과제 1 · Word 경영 브리핑</a>
+  <a href="#ex2-2" class="sub">과제 2 · Excel 예산 예측</a>
+  <a href="#ex2-3" class="sub">과제 3 · Planner 프로젝트 계획</a>
+  <a href="#ex2-4" class="sub">과제 4 · 인사이트 에이전트 만들기</a>
+  <a href="#ex2-5" class="sub">과제 5 · 인사이트 에이전트 사용</a>
+
+  <div class="rule"></div>
+  <a href="./" class="lead">코스 개요로</a>
+</nav>
+
+<main id="top">
+
+<header class="hero">
+  <span class="eyebrow">Microsoft Learn 실습 한국어 가이드 · MS-4004 M01</span>
+  <h1>임원 업무에서 Copilot 활용하기</h1>
+  <p class="sub">Microsoft 365 Copilot을 써서 여러 프로젝트의 이메일과 회의, 채팅을 종합하고, Word·Excel·Planner와 에이전트로 경영 의사결정을 뒷받침하는 실습입니다. 원문 랩을 한국어로 옮기고 막히기 쉬운 지점에 설명을 덧붙였습니다.</p>
+  <div class="meta">
+    <span>연습 2개</span>
+    <span>과제 9개</span>
+    <span>약 4시간</span>
+    <span>대상 · 임원</span>
+  </div>
+</header>
+
+<p class="lead-in"><a href="./">코스 개요</a> · <strong>임원</strong> · <a href="m02.html">영업</a> · <a href="m03.html">IT</a> · <a href="m04.html">마케팅</a> · <a href="m05.html">재무</a> · <a href="m06.html">인사</a> · <a href="m07.html">운영</a> · <a href="m08.html">커뮤니케이션</a> · <a href="m09.html">고객 서비스</a> · <a href="m10.html">법무</a></p>
+
+<div class="notice">
+  <span class="t">원문을 함께 확인해 주세요</span>
+  <p>이 문서는 Microsoft Learn 랩 <a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/" target="_blank" rel="noopener">Empower your workforce with Microsoft 365 Copilot use cases</a>의 임원 모듈(M01)을 한국어로 옮기고 설명을 덧붙인 자료입니다. 원문 랩은 영어로만 제공됩니다.</p>
+  <p>Microsoft 365 Copilot은 기능과 화면이 빠르게 바뀝니다. 이 문서는 2026년 9월 기준이므로 정확한 내용은 <strong>각 단원 머리의 원문 링크</strong>를 눌러 최신 상태로 확인해 주세요.</p>
+  <p>입력할 프롬프트는 원문 그대로 두었습니다. 한 글자만 달라도 결과가 달라지므로 영어 표기 그대로 입력하시면 됩니다.</p>
+  <p>화면 이미지와 원문 내용의 저작권은 Microsoft에 있습니다.</p>
+</div>
+
+<div class="key">
+  <div class="t">이 모듈에서 하는 일</div>
+  <p>임원 관점에서 Copilot을 두 방향으로 씁니다. 먼저 Microsoft Teams의 Copilot으로 흩어진 커뮤니케이션을 종합해 프로젝트 현황을 빠르게 파악합니다. 이어 Northwind Traders의 COO 역할을 맡아 Word로 경영 브리핑을 만들고, Excel로 예산을 예측하고, Planner로 프로젝트를 계획하고, 회사 데이터를 지식으로 삼는 Business Insights 에이전트를 만들어 경영진 질문에 답하게 합니다.</p>
+</div>
+
+<h3 id="setup">파일을 OneDrive에 올리기</h3>
+<p>이 랩의 프롬프트는 OneDrive에 있는 파일을 참조합니다. 실습을 시작하기 전에 필요한 파일을 모두 OneDrive에 올립니다. 이 준비 단계는 세 모듈에 공통입니다.</p>
+<ol class="steps">
+  <li>테넌트 공급자가 제공한 가상 머신에 로컬 <span class="ui">Administrator</span> 계정으로 로그인합니다. 암호는 <code>Pa55w.rd</code>입니다.</li>
+  <li>Windows 작업 표시줄에서 <span class="ui">Microsoft Edge</span>를 엽니다.</li>
+  <li>주소 표시줄에 <code>https://www.office.com</code>을 입력합니다.</li>
+  <li><span class="ui">Welcome to Microsoft 365</span>에서 <span class="ui">Sign in</span>을 선택합니다.</li>
+  <li>로그인 화면에서 공급자가 준 사용자 이름(<code>userx@yourtenant.onmicrosoft.com</code> 형식)을 입력하고 <span class="ui">Next</span>를 선택합니다.</li>
+  <li>암호를 입력하고 <span class="ui">Sign in</span>을 선택합니다.</li>
+  <li><span class="ui">Stay signed in</span>이 나오면 <span class="ui">Don't show this again</span>을 선택하고 <span class="ui">Yes</span>를 선택합니다.</li>
+  <li><span class="ui">Microsoft 365</span>에서 <span class="ui">Apps</span> &gt; <span class="ui">OneDrive</span>를 차례로 선택합니다.</li>
+  <li><span class="ui">OneDrive</span> 왼쪽 위에서 <span class="ui">+</span>(추가) &gt; <span class="ui">File upload</span>를 선택합니다.</li>
+  <li><span class="ui">File Explorer</span>에서 <span class="ui">This PC</span> &gt; <span class="ui">Local Disk (C:)</span>로 이동해 <span class="ui">ResourceFiles</span> 폴더를 엽니다.</li>
+  <li>폴더 안의 파일을 모두 선택하고 <span class="ui">Open</span>을 선택해 OneDrive에 올립니다. 업로드가 끝나면 화면 아래에 <span class="ui">Uploaded 29 items to My files</span>가 표시됩니다.</li>
+</ol>
+<div class="box stop">
+  <span class="t">중요</span>
+  <p>Microsoft 365 Copilot은 OneDrive에 저장된 파일만 다룹니다. PC에 로컬로 저장한 파일은 Copilot이 접근할 수 있도록 OneDrive로 옮겨야 합니다.</p>
+</div>
+<div class="box note">
+  <span class="t">파일이 추천 목록에 안 보일 때</span>
+  <p>일부 Copilot 환경은 <span class="ui">Most Recently Used (MRU)</span> 목록의 파일만 참조하고, 다른 환경은 OneDrive를 직접 탐색합니다. 파일이 MRU 목록에 나타나게 하려면 해당 Microsoft 365 앱에서 그 파일을 한 번 열면 됩니다. 그러면 자동으로 목록에 추가됩니다.</p>
+</div>
+
+<h3 id="prompting">효과적인 프롬프트 네 요소</h3>
+<p>Copilot을 잘 쓰는 첫걸음은 프롬프트의 품질입니다. 좋은 프롬프트는 다음 네 요소를 갖춥니다. 이 요소를 늘 염두에 두면 원하는 결과를 정확히 얻기 쉽습니다.</p>
+<div class="cards">
+  <div class="card"><h5>Goal (목표)</h5><p>Copilot이 무엇을 하기를 바라는지 분명히 밝힙니다. 예: “Generate three to five bullet points summarizing the latest project updates.”</p></div>
+  <div class="card"><h5>Context (맥락)</h5><p>왜 필요한지, 누가·무엇이 관련되는지 배경을 줍니다. 예: “Prepare these bullet points for a meeting with Client X about their ‘Phase 3+’ brand campaign.”</p></div>
+  <div class="card"><h5>Sources (원본)</h5><p>어디서 정보를 찾을지 지정합니다. 예: “Focus on emails and Teams chats since June.”</p></div>
+  <div class="card"><h5>Expectations (기대)</h5><p>어떤 형식·어조·상세도로 받을지 정합니다. 예: “Use simple language so I can get up to speed quickly.”</p></div>
+</div>
+
+<!-- ==================== 연습 1 ==================== -->
+<h2 id="ex1">연습 1 · Microsoft Teams에서 커뮤니케이션 통찰 종합</h2>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M01-empower-workforce-copilot-executives/02-Ex1-introduction-synthesize-exercise.html" target="_blank" rel="noopener"><span class="en">Exercise 1: Synthesize communication insights across Microsoft Teams</span></a></div>
+<p>임원에게 시간은 가장 값진 자산입니다. 여러 갈래로 흩어진 이메일과 회의, 채팅을 일일이 뒤지는 대신 Microsoft Teams의 Copilot으로 핵심을 빠르게 종합합니다. Teams 안에서 두 가지 Copilot을 쓸 수 있습니다.</p>
+<div class="cards">
+  <div class="card"><h5>Copilot in Teams</h5><p>Teams 화면에 바로 들어가 있어 회의와 채팅이 진행되는 순간에 돕습니다. 메모를 남기고 대화를 요약하며 후속 작업을 제안합니다. 같은 회의나 채팅의 최근 맥락을 참조하고, 필요할 때 Microsoft Graph로 관련 파일과 이메일, 일정을 끌어옵니다.</p></div>
+  <div class="card"><h5>Copilot Chat within Teams</h5><p>Teams의 <span class="ui">Copilot</span> 단추로 여는 대화형 도우미입니다. Microsoft 365 전반을 아우르며 회고성·전사 질의에 강합니다. 한 주의 회의를 요약하고 프로젝트 현황을 모으며 이메일·채팅·파일·일정을 두루 참조합니다.</p></div>
+</div>
+<div class="box note">
+  <span class="t">참고</span>
+  <p>이 코스에는 가상 데이터가 담긴 Microsoft 365 랩 테넌트가 딸려 있지 않습니다. 이 연습은 본인의 실제 데이터로 진행합니다.</p>
+</div>
+
+<h3 id="ex1-1">과제 1 · Copilot Chat으로 프로젝트 커뮤니케이션 종합</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M01-empower-workforce-copilot-executives/03-Ex1-1-use-teams-synthesize-communications.html" target="_blank" rel="noopener"><span class="en">Exercise 1, Task 1: Use Copilot Chat in Teams to synthesize communications for a project</span></a></div>
+<p>지난 30일 동안 참여한 중요한 프로젝트 하나를 떠올립니다. 수많은 이메일과 회의, 온라인 논의 속에서 이 프로젝트와 관련된 커뮤니케이션의 명확한 요약이 필요합니다. 스레드와 받은 편지함을 직접 뒤지는 대신 Copilot Chat이 핵심 결정, 진행 상황과 마일스톤, 남은 과제와 위험, 새 기회를 간추리게 합니다.</p>
+<ol class="steps">
+  <li>Microsoft Edge에서 <span class="ui">Microsoft 365</span> 홈(<code>https://www.microsoft365.com</code>)에 로그인하고, 탐색 창에서 <span class="ui">Apps</span> &gt; <span class="ui">Teams</span>를 선택합니다.</li>
+  <li><span class="ui">Teams for the web</span>의 왼쪽 탐색 창에서 <span class="ui">Copilot</span>을 선택합니다. Teams 안에 <span class="ui">Microsoft 365 Copilot Chat</span> 창이 열립니다.</li>
+  <li><span class="ui">Copilot Chat</span> 창에 다음 프롬프트를 입력합니다. 중괄호 부분은 본인이 고른 주제로 바꿉니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Summarize all my emails, meetings, and chats over the past 30 days related to {topic of your choice}</div>
+<p class="lead-in">지난 30일 동안 선택한 주제와 관련된 이메일·회의·채팅을 요약해 달라는 요청입니다.</p>
+<ol class="steps" start="4">
+  <li>각 커뮤니케이션 요약이 나오면 화면 아래 프롬프트 입력란 위에 함께 뜨는 추천 프롬프트를 살펴봅니다.</li>
+  <li>임원은 프로젝트마다 처리할 작업 항목을 알아야 합니다. 선택한 주제의 작업 항목을 묻는 추천 프롬프트가 있으면 지금 선택해 제출합니다. 없으면 그 주제와 관련해 열려 있는 작업 항목을 모두 나열해 달라고 직접 입력합니다.</li>
+  <li>응답을 검토한 뒤, 제출한 프롬프트에 따라 Copilot이 만드는 추천 프롬프트가 어떻게 달라지는지 확인합니다.</li>
+  <li>이제 그 주제의 최근 활동을 바탕으로 이해관계자에게 보낼 공지를 초안으로 만들게 합니다. Word나 다른 앱으로 옮길 필요 없이 Teams의 Copilot Chat에게 바로 공지 초안을 요청합니다.</li>
+</ol>
+<div class="box tip">
+  <span class="t">반복해서 파고드는 흐름</span>
+  <p>추천 프롬프트를 이어서 제출할수록 Copilot이 돌려준 데이터에 맞는 새 프롬프트가 매번 함께 나옵니다. 이 설계 덕분에 커뮤니케이션 이력을 더 깊이 파고들면서 공지 생성, 특정 인물이나 팀에 이메일 작성, 마감일 파악, 위험이나 미해결 이슈 식별 같은 후속 작업을 이어서 요청할 수 있습니다.</p>
+</div>
+
+<h3 id="ex1-2">과제 2 · Teams 채팅에서 프로젝트 논의 요약</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M01-empower-workforce-copilot-executives/04-Ex1-2-use-teams-summarize-project.html" target="_blank" rel="noopener"><span class="en">Exercise 1, Task 2: Use Copilot in a Teams chat session to summarize a project discussion</span></a></div>
+<p>앞 과제에서는 직접 만든 프롬프트로 정보를 요청했습니다. 이번에는 Copilot이 Teams에 제공하는 시작 프롬프트를 활용합니다. Copilot이 보여 주는 추천 프롬프트는 선택한 채팅이나 채널의 내용에 따라 달라집니다.</p>
+<ol class="steps">
+  <li><span class="ui">Teams for the web</span> 왼쪽 탐색 막대에서 <span class="ui">Chat</span>을 선택하고, 관심 있는 채팅 스레드를 하나 엽니다. 여러 날에 걸친 스레드, 예컨대 정기 회의 채팅이 좋습니다.</li>
+  <li>채팅 오른쪽 위의 <span class="ui">Copilot</span> 아이콘을 선택합니다.</li>
+  <li>나타난 <span class="ui">Copilot</span> 창에는 “Summarize this discussion”, “What are open items”, “What decisions were made” 같은 일반 프롬프트가 보입니다. 그 아래 <span class="ui">See more</span>를 선택하면 시작 프롬프트가 더 나옵니다. 관심 있는 프롬프트를 하나 선택해 제출합니다.</li>
+  <li>응답에서 문장 끝마다 각주 인용이 붙는 점을 확인합니다. 각주는 해당 문장으로 바로 연결됩니다. 각주를 선택하면 Copilot이 채팅 스레드의 그 메시지로 바로 스크롤합니다. 두세 개를 눌러 이 기능이 얼마나 편한지 확인합니다.</li>
+  <li>특정 인물이 채팅에서 무슨 말을 했는지 궁금할 때가 많습니다. 다음 프롬프트에서 중괄호를 그 사람의 이름으로 바꿔 입력하고 <span class="ui">Send</span> 아이콘을 선택합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>What did {name of the person} say?</div>
+<p class="lead-in">중괄호 자리에 이름을 넣어, 특정 인물이 스레드에서 한 발언을 모아 달라는 요청입니다.</p>
+<ol class="steps" start="6">
+  <li>응답이 나오면 특정 항목의 각주를 선택해 해당 메시지로 바로 이동합니다. 그 사람의 발언을 빠르게 짚어 낼 수 있습니다.</li>
+</ol>
+
+<h3 id="ex1-3">과제 3 · 여러 프로젝트에 걸친 통찰 수집</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M01-empower-workforce-copilot-executives/05-Ex1-3-use-teams-cross-project.html" target="_blank" rel="noopener"><span class="en">Exercise 1, Task 3: Use Copilot Chat in Teams to collect cross-project insights</span></a></div>
+<p>임원은 전략 과제 여러 개를 동시에 챙깁니다. 정보가 이메일·회의·채팅에 흩어져 있으면 진행 상황과 위험, 추세를 프로젝트별로 파악하기가 쉽지 않습니다. Copilot Chat으로 여러 프로젝트의 상태를 빠르게 비교하고, 반복되는 문제를 찾고, 정렬이나 에스컬레이션 기회를 짚어 냅니다.</p>
+<ol class="steps">
+  <li><span class="ui">Teams for the web</span>에서 과제 1처럼 <span class="ui">Copilot Chat</span>을 엽니다.</li>
+  <li>Teams 채팅에 담긴 주제 두 개를 고릅니다. 프롬프트 입력란에서, 지난 30일 동안 두 주제의 진행 상황·위험·핵심 결정을 비교해 달라고 요청합니다. 각 프로젝트의 주요 마일스톤과 업데이트, 내려진 결정, 남은 위험이나 병목, 그리고 두 프로젝트 사이의 추세·반복 이슈·의존 관계를 함께 요약해 달라고 합니다.</li>
+  <li>응답과 Copilot이 제안하는 후속 프롬프트를 검토합니다. 추천 프롬프트를 선택하거나 직접 입력해 관심 영역을 더 파고듭니다.</li>
+  <li>모은 통찰을 명확히 하기 위해, 두 주제를 나란히 비교하는 표를 만들어 달라고 요청합니다. 이 표는 경영진 브리핑과 팀 간 조율 준비에 씁니다.</li>
+  <li>Teams 안에서도 Copilot에게 이메일을 만들게 할 수 있습니다. 선택한 주제 하나에 대해 프로젝트 팀에 보낼 이메일 초안을 요청합니다. 그 주제의 작업 항목과 미해결 위험을 담습니다. Copilot이 Outlook에 실제 이메일을 만들지는 않지만, 만든 내용을 복사해 Outlook의 새 메일에 붙여 넣을 수 있습니다. 이 실습에서는 보내지 않으므로 복사하지 않아도 됩니다.</li>
+</ol>
+
+<h3 id="ex1-4">과제 4 · Copilot으로 경영진 요약 준비</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M01-empower-workforce-copilot-executives/06-Ex1-4-use-teams-prepare-summary.html" target="_blank" rel="noopener"><span class="en">Exercise 1, Task 4: Use Copilot in Teams to prepare an executive summary</span></a></div>
+<p>여러 프로젝트의 커뮤니케이션을 분석한 뒤에는 그 결과를 간결한 경영진용 산출물로 압축해야 합니다. 브리핑 요약, 리더십 업데이트, 발표 슬라이드가 그렇습니다. Copilot이 종합한 통찰을 형식에 맞는 결과물로 바꿔 줍니다.</p>
+<ol class="steps">
+  <li><span class="ui">Teams for the web</span>에서 <span class="ui">Copilot Chat</span>을 엽니다.</li>
+  <li>과제 3에서 모은 통찰을 바탕으로, 두 주제의 핵심 발견·위험·다음 단계를 리더십 회의에서 공유할 수 있는 간결한 경영진 요약으로 만들어 달라고 요청합니다. 중괄호 자리에는 본인의 프로젝트 이름을 넣습니다.</li>
+  <li>응답을 검토합니다. Overview, Highlights, Risks, Recommendations 같은 명확한 절로 나뉘었는지 확인하고, 그렇지 않으면 그렇게 정리해 달라고 요청합니다.</li>
+  <li>이 요약을 슬라이드용 불릿 포인트로 다시 정리해 달라고 요청합니다.</li>
+  <li>다른 팀 발표에도 재활용할 수 있도록, 두 프로젝트 팀과 공유할 짧은 Teams 게시글 초안을 요청합니다.</li>
+  <li>같은 정보를 경영진 브리핑과 팀 커뮤니케이션에 맞게 어떻게 달리 다듬는지 확인합니다. 대상에 따라 일관되면서도 맞춤한 메시지를 만드는 방식입니다.</li>
+  <li>Copilot이 보여 주는 추천 프롬프트를 살펴보고, 분석 통찰을 공유 가능한 커뮤니케이션으로 바꾸는 방식을 자유롭게 시험합니다.</li>
+</ol>
+
+<!-- ==================== 연습 2 ==================== -->
+<h2 id="ex2">연습 2 · Microsoft 365 Copilot으로 비즈니스 성과 이끌기</h2>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M01-empower-workforce-copilot-executives/07-Ex2-introduction-drive-exercise.html" target="_blank" rel="noopener"><span class="en">Exercise 2: Drive business outcomes using Microsoft 365 Copilot</span></a></div>
+<p>이 연습에서는 Northwind Traders의 임원이 되어 Copilot으로 영향력이 큰 작업을 잇달아 처리합니다. Word로 시장 데이터를 요약하고, Excel로 재무 추세를 예측하고, Planner로 전략 과제를 관리하고, Outlook으로 명확하게 소통하는 흐름을 직접 경험합니다.</p>
+<div class="box tip">
+  <span class="t">팁</span>
+  <p>개요에서 다룬 효과적인 프롬프트의 네 요소, 곧 Goal·Context·Sources·Expectations를 이 연습 내내 염두에 둡니다.</p>
+</div>
+<div class="key">
+  <div class="t">시나리오</div>
+  <p>당신은 특수 식음료 전문 중견기업 Northwind Traders의 최고운영책임자(COO)입니다. 운영을 총괄하고 부서 간 프로젝트를 최적화하며 경영진에 전략 통찰을 제공합니다. 오늘은 빠른 의사결정과 전략 계획이 필요한 과제가 이어집니다. Microsoft 365 Copilot으로 데이터를 분석하고 경영 커뮤니케이션을 만들고 프로젝트를 관리하며 통찰을 얻어 비즈니스 성과를 이끕니다.</p>
+</div>
+
+<h3 id="ex2-1">과제 1 · Copilot in Word로 경영 브리핑 보고서 만들기</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M01-empower-workforce-copilot-executives/08-Ex2-1-use-word-create-executive-briefing.html" target="_blank" rel="noopener"><span class="en">Exercise 2, Task 1: Use Copilot in Word to create an executive briefing report</span></a></div>
+<p>COO로서 분기별 실적을 경영진에 설명하는 운영 요약을 준비합니다. Q3가 끝났으니 회사의 Q3 성과를 간결하게 브리핑해야 합니다. Copilot in Word로 원자료를 핵심 통찰과 실행 가능한 권고가 담긴 경영 브리핑 보고서로 바꿉니다.</p>
+<div class="box note">
+  <span class="t">Edit with Copilot 켤 때와 끌 때</span>
+  <p><span class="ui">Edit with Copilot</span>이 켜져 있으면 Copilot이 문서 안에서 직접 작성하고 편집합니다. 문서를 처음부터 만들거나 섹션을 다시 쓰고 요약을 더하는 일을 대개 확인 절차를 거쳐 문서에 바로 적용합니다. 꺼져 있으면 Copilot Chat처럼 동작해 응답만 창에 보여 주고, 무엇을 문서에 넣을지는 사용자가 정합니다. 이 과제는 <span class="ui">Edit with Copilot</span> 기능을 씁니다.</p>
+</div>
+<ol class="steps">
+  <li>다음 링크에서 <a href="https://go.microsoft.com/fwlink/?linkid=2347618" target="_blank" rel="noopener"><span class="ui">Northwind Traders Q3 sales data.xlsx</span></a> 파일을 내려받아 OneDrive에 저장합니다.</li>
+  <li>Microsoft Edge에서 <span class="ui">Microsoft 365</span> 홈(<code>https://www.microsoft365.com</code>)에 로그인하고 <span class="ui">Apps</span> &gt; <span class="ui">Word</span>를 선택합니다.</li>
+  <li><span class="ui">Word for the web</span>에서 빈 문서를 만듭니다.</li>
+  <li><span class="ui">Home</span> 탭 리본에서 <span class="ui">Copilot</span>을 선택합니다. 프롬프트 입력란의 플러스(+) 옆에 <span class="ui">Edit with Copilot</span> 아이콘이 보이는지 확인합니다. 없으면 플러스를 선택하고 드롭다운에서 <span class="ui">Edit with Copilot</span>을 선택합니다.</li>
+  <li>프롬프트 입력란에서 플러스(+)를 선택하고 <span class="ui">Add work content</span>를 선택합니다. 검색란에 <code>Northwind</code>를 입력하고 나타나는 <span class="ui">Northwind Traders Q3 sales data.xlsx</span> 파일을 선택합니다.</li>
+  <li>다음 프롬프트를 제출합니다.</li>
+</ol>
+<div class="box note">
+  <span class="t">참고</span>
+  <p>이 첫 프롬프트는 네 요소를 어떻게 담는지 보여 주려고 본문을 그대로 제공했습니다. 나머지 프롬프트는 직접 작성하되, 이 프롬프트를 본보기로 삼으면 됩니다.</p>
+</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>As the COO at Northwind Traders, I need you to create a strategic briefing report for our Senior Leadership Team that’s based on the company’s Q3 sales performance data, which can be found in the attached Northwind Traders Q3 sales data.xlsx file. This file contains detailed sales data for our Q3 performance this year, along with year-over-year growth percentages for Q3 revenue and profit by category and region. Please create a professional executive briefing report in Word that summarizes Q3 sales trends and highlights emerging opportunities and potential risks. The format of the report should include an executive summary, a bulleted list of key insights (including top-performing categories and regions, areas with declining performance, and emerging opportunities), and a clear year-over-year analysis (including charts) of revenue and profit growth by category and region.</div>
+<ol class="steps" start="7">
+  <li>응답 끝에서 <span class="ui">Copy response</span> 아이콘을 선택합니다. 문서 맨 앞을 선택하고 붙여 넣습니다(<span class="ui">Ctrl+V</span>).</li>
+  <li>문서를 검토합니다. 다음 분기 전략에 대한 권고를 빠뜨렸다면, Copilot 창에서 제안 이니셔티브·위험 완화 전략·성장 가속 아이디어를 담은 Q4 Strategic Recommendations 섹션을 추가해 달라고 요청합니다.</li>
+  <li>결과가 마음에 들면 <span class="ui">Copy response</span> 아이콘을 선택하고, 문서에서 넣고 싶은 위치에 붙여 넣습니다.</li>
+  <li>마지막 데이터 시각화가 아쉽다면, 지역과 카테고리별 Q3 매출을 비교하는 차트를 만들어 달라고 요청합니다.</li>
+  <li>차트가 만족스러우면 <span class="ui">Copy response</span> 아이콘을 선택해 가장 효과적인 위치에 붙여 넣습니다.</li>
+  <li>최종본을 OneDrive에 <span class="ui">Q3 Executive Briefing.docx</span>로 저장합니다. 이 파일은 과제 4에서 만드는 Business Insights 에이전트의 지식 원본으로 씁니다.</li>
+  <li>경영 회의 발표를 대비해, 리더십이 보고서를 읽은 뒤 물을 만한 전략 질문 10개와 각 질문에 대한 권장 답변을 만들어 달라고 요청합니다.</li>
+  <li>Copilot 창의 질문과 답변을 검토하고 응답 끝에서 <span class="ui">Copy response</span> 아이콘을 선택합니다. 새 빈 문서에 붙여 넣어 본인 준비용으로 저장합니다.</li>
+</ol>
+
+<h3 id="ex2-2">과제 2 · Copilot in Excel로 예산 예측 분석</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M01-empower-workforce-copilot-executives/09-Ex2-2-use-excel-perform-budget-analysis.html" target="_blank" rel="noopener"><span class="en">Exercise 2, Task 2: Use Copilot in Excel to perform budget forecast analysis</span></a></div>
+<p>Q4를 앞두고 Northwind Traders의 재무 성과를 예측하고 운영비를 최적화할 지점을 찾습니다. Copilot in Excel로 예산 데이터를 분석하고 매출과 비용을 추정하며 what-if 시나리오를 시뮬레이션합니다.</p>
+<div class="box note">
+  <span class="t">Excel의 두 가지 Copilot과 모델 선택기</span>
+  <p>Excel에서는 데이터에 대해 질문하는 표준 Copilot 프롬프트와, 워크시트·표·수식을 직접 바꾸는 <span class="ui">Edit with Copilot</span>을 씁니다. 빠른 질문이나 간단한 요약에는 표준 프롬프트를, 데이터 정리·수식 추가·표 재구성 같은 직접 편집에는 <span class="ui">Edit with Copilot</span>을 씁니다. 이 과제는 <span class="ui">Edit with Copilot</span>을 씁니다. 또한 Excel의 응답 제어 선택기는 어떤 AI 모델이 작업할지 고르는 것으로, 추론 깊이를 고르는 Copilot Chat의 선택기와 다릅니다. 이 과제는 기본값 <span class="ui">Auto</span>를 그대로 둡니다.</p>
+</div>
+<ol class="steps">
+  <li>다음 링크에서 <a href="https://go.microsoft.com/fwlink/?linkid=2347811" target="_blank" rel="noopener"><span class="ui">Northwind Traders Q4 budget forecast.xlsx</span></a> 파일을 내려받아 OneDrive에 저장합니다.</li>
+  <li>Microsoft Edge에서 <span class="ui">Microsoft 365</span> 탭으로 이동해 <span class="ui">Apps</span> &gt; <span class="ui">Excel</span>을 선택합니다.</li>
+  <li><span class="ui">Excel for the web</span>에서 <span class="ui">Upload a file</span>을 선택하고 <span class="ui">Northwind Traders Q4 budget forecast.xlsx</span> 파일을 엽니다.</li>
+  <li><span class="ui">Home</span> 탭 리본에서 <span class="ui">Copilot</span>을 선택하고 응답 모드 선택기를 <span class="ui">Auto</span>로 둡니다. 프롬프트 입력란에 <span class="ui">Edit with Copilot</span> 아이콘이 보이는지 확인하고, 없으면 플러스를 선택해 활성화합니다.</li>
+  <li>활성 통합 문서를 분석해 다음 분기의 예상 매출과 비용을 예측해 달라고 요청합니다. 과지출 가능 영역을 짚고 비용 절감 기회를 제안하며 핵심 재무 지표를 요약하는 차트와 표를 만들어 달라고 합니다.</li>
+  <li>분석이 기대만큼 상세하지 않다면 고급 분석 모드를 요청합니다. 이 모드는 스프레드시트를 계산 기반으로 더 깊이 들여다보며 비교와 추세 식별을 수행합니다. 다음 프롬프트를 입력합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Use advanced analysis mode to provide deeper results. Identify key trends, outliers, and drivers, and explain what they mean. Explore patterns in this data and forecast potential outcomes.</div>
+<div class="box stop">
+  <span class="t">중요</span>
+  <p>고급 분석 모드는 더 깊은 추론을 제공하는 AI 모델을 고르는 것과 다릅니다. 모델 선택은 Copilot이 프롬프트를 해석하고 결과를 설명하는 방식에 영향을 주고, 고급 분석 모드는 Python 기반 계산과 다단계 추론 같은 계산 중심 분석으로 작업 수행 방식 자체를 바꿉니다. 모델을 골랐다고 고급 분석이 자동으로 켜지지는 않습니다.</p>
+</div>
+<ol class="steps" start="7">
+  <li>고급 분석 결과 끝에서 <span class="ui">Add to new sheet</span> 아이콘을 선택합니다. 새 시트에 복사가 끝나면 데이터를 살펴보고 시트 이름을 <span class="ui">Analysis</span>로 바꿉니다.</li>
+  <li><span class="ui">Q4_Forecast</span> 시트로 돌아가, 매출이 10% 감소하는 “What-if Scenario”를 만들고 현금 흐름에 미치는 영향을 표시해 달라고 요청합니다.</li>
+  <li>생성되면 <span class="ui">Add to new sheet</span> 아이콘을 선택합니다. 새 시트 복사가 끝나면 데이터를 살펴보고 시트 이름을 <span class="ui">Sales decline</span>으로 바꿉니다.</li>
+  <li><span class="ui">Q4_Forecast</span> 시트로 돌아가 다음 시각화를 생성해 달라고 요청합니다. 시간이 부족하면 일부만 만들어도 됩니다.
+    <ul>
+      <li><strong>Revenue vs. Expenses by Month</strong> · Q4의 예상 매출과 비용을 비교하는 묶은 세로 막대형 차트</li>
+      <li><strong>Profit Margin by Category</strong> · 카테고리별 마진 고저를 보여 주는 가로 막대형 차트</li>
+      <li><strong>Regional Performance Overview</strong> · 지역별 매출 기여를 보여 주는 누적 세로 막대형 차트</li>
+      <li><strong>Operational Cost Breakdown</strong> · Supply Chain·Marketing·Labor 비용 비중을 보여 주는 원형 차트</li>
+    </ul>
+  </li>
+  <li>필요하면 <span class="ui">Q4_Forecast</span> 시트로 돌아가 Copilot 창 아래 추천 프롬프트를 살펴보고, 더 깊은 분석을 자유롭게 시험합니다.</li>
+  <li><span class="ui">Northwind Traders Q4 budget forecast.xlsx</span> 파일을 저장합니다. 이 파일은 과제 4의 Business Insights 에이전트 지식 원본으로 씁니다.</li>
+</ol>
+
+<h3 id="ex2-3">과제 3 · Planner의 AI Project Manager 에이전트로 프로젝트 계획 만들기</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M01-empower-workforce-copilot-executives/10-Ex2-3-use-planner-create-project-plan.html" target="_blank" rel="noopener"><span class="en">Exercise 2, Task 3: Use the AI Project Manager agent in Planner to create a new project plan</span></a></div>
+<p>Northwind Traders가 새 유기농 스낵 라인 출시를 준비합니다. 마케팅·생산·영업이 얽힌 부서 간 과제입니다. 임원 스폰서로서 Microsoft Planner의 AI Project Manager 에이전트로 제품 출시 계획을 만들고 정리하며 진행을 모니터링합니다.</p>
+<div class="box stop">
+  <span class="t">중요</span>
+  <p>Planner의 Copilot은 Microsoft Teams의 Planner 앱에서 먼저 나와 점진적으로 배포되고 있습니다. 웹(planner.microsoft.com)이나 예전 진입점에서는 <span class="ui">Copilot</span> 단추가 아직 없거나 Premium 플랜이 필요할 수 있습니다. 이 실습에서는 Teams의 Planner 앱을 씁니다.</p>
+</div>
+<ol class="steps">
+  <li>Microsoft Edge에서 <span class="ui">Microsoft 365</span> 홈으로 이동해 <span class="ui">Apps</span> &gt; <span class="ui">Teams</span>를 선택합니다.</li>
+  <li><span class="ui">Teams for the web</span> 탐색 창에서 <span class="ui">View more apps</span>(줄임표) 아이콘을 선택합니다. <span class="ui">Planner</span>가 보이면 선택하고, 없으면 검색란에 <code>Planner</code>를 입력해 선택합니다.</li>
+  <li><span class="ui">Planner</span> 페이지에서 <span class="ui">My Plans</span>를 선택하고 <span class="ui">+New plan</span> 단추를 선택합니다.</li>
+  <li><span class="ui">Create new</span> 창에서 <span class="ui">Premium</span> 타일을 선택합니다. “Timeline, goals, and new AI features” 설명을 확인합니다.</li>
+  <li><span class="ui">Name</span> 필드에 <code>New organic snack line</code>을 입력합니다. <span class="ui">Add to a group</span>은 비워 두고 <span class="ui">Create</span>를 선택합니다.</li>
+  <li>플랜 창 오른쪽 아래의 “Chat with your AI Project Manager agent” 아이콘을 선택합니다.</li>
+  <li><span class="ui">Project Manager agent</span> 창에서 <span class="ui">Create</span> 단추를 선택합니다. 입력란에 “Build a plan for”가 채워지면 그 뒤에 다음 텍스트를 이어서 입력합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Northwind Traders’ new organic snack line. The plan should include tasks for Marketing, Production, Logistics, and Sales departments. Assign deadlines, owners, and dependencies.</div>
+<ol class="steps" start="8">
+  <li>제안된 계획을 검토합니다. <span class="ui">Go to Board</span>를 선택해 보드에 어떻게 나타나는지 봅니다. 테스트에서는 에이전트가 지정하지 않은 부서를 추가하기도 했으니 본인 버전도 확인하고, 각 열에 작업을 자유롭게 더합니다.</li>
+  <li><span class="ui">Go to Goals</span>를 선택해 결과를 검토하고 필요한 대로 조정합니다.</li>
+  <li>이해관계자를 위한 자동 진행 업데이트를 만들 수 있는지 에이전트에게 물어봅니다.</li>
+  <li>응답과 입력란 위의 추천 프롬프트를 살펴보고 시험합니다.</li>
+  <li>이 계획의 시각적 타임라인을 내보내 달라고 요청합니다. 경영진에 배포할 용도입니다.</li>
+  <li>타임라인이 생성되면 다운로드 버전을 제공하는 추천 프롬프트를 선택합니다. 없으면 직접 요청합니다. 집필 시점에는 이미지나 다운로드 링크가 제공되지 않았지만, 이 에이전트는 아직 개선 중이라 실습 시점에는 가능할 수 있습니다. 가능하면 타임라인을 내려받아 OneDrive에 저장하고 과제 4에서 씁니다.</li>
+</ol>
+
+<h3 id="ex2-4">과제 4 · Northwind Business Insights 에이전트 만들기</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M01-empower-workforce-copilot-executives/11-Ex2-4-create-business-insights-agent.html" target="_blank" rel="noopener"><span class="en">Exercise 2, Task 4: Create a Northwind Business Insights agent</span></a></div>
+<p>정기 보고를 기다리는 대신, 성과 지표를 상시 모니터링하고 새 이슈를 알리는 Northwind Business Insights 에이전트를 만듭니다. 이 과제는 프로그래밍이 필요 없는 Copilot Studio lite(Agent Builder) 환경을 씁니다.</p>
+<ol class="steps">
+  <li>Microsoft Edge에서 새 탭을 열고 Microsoft 365를 엽니다.</li>
+  <li>탐색 창에서 <span class="ui">New agent</span>를 선택합니다. Copilot Studio의 <span class="ui">Agent Builder</span>가 열리고 <span class="ui">New agent</span> 페이지가 나타납니다. 다음 프롬프트를 입력하고 전송(오른쪽 화살표) 아이콘을 선택합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Create an agent titled Northwind Business Insights Agent. The purpose of this agent is to provide responses to questions related to Northwind Traders' Sales performance, Supply chain health, Customer sentiment, and Results compared to the Q4 budget forecast. The agent should only use the files assigned to it as knowledge sources. The agent is intended for an executive audience.</div>
+<ol class="steps" start="3">
+  <li><span class="ui">Agent Builder</span> 폼이 나타납니다. 위에는 <span class="ui">Describe</span> 탭(대화형, 기본 표시)과 <span class="ui">Configure</span> 탭(상세 설정)이 있습니다. Copilot이 에이전트를 만들 때까지 1~2분 기다립니다.</li>
+  <li><span class="ui">Configure</span> 탭을 선택해 Copilot이 입력을 바탕으로 무엇을 만들었는지 확인합니다.</li>
+  <li><span class="ui">Name</span>과 <span class="ui">Description</span>이 채워졌는지 확인하고, <span class="ui">Instructions</span> 필드까지 내려가 Copilot이 생성한 지침의 수준을 살펴봅니다.</li>
+  <li>지침에 항목을 더하려면 <span class="ui">Describe</span> 탭에서 다음 프롬프트를 입력합니다.</li>
+</ol>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Update the Instructions to include the following item: When generating responses, the agent should:
+- Flag missing or incomplete information
+- Never invent data or rely on sources outside the defined knowledge source documents
+- Stay within the Northwind Traders’ business context</div>
+<ol class="steps" start="7">
+  <li>지침 갱신 응답을 검토합니다. <span class="ui">Configure</span> 탭에서 <span class="ui">Instructions</span>로 내려가 새 지침이 추가됐는지 확인합니다.</li>
+  <li><span class="ui">Describe</span> 탭에서, 이 에이전트를 개선할 다른 지침을 추천해 달라고 Copilot에게 물어봅니다.</li>
+  <li>추천이 마음에 들면 모두 지침에 추가해 달라고 요청합니다.</li>
+  <li>갱신되면 <span class="ui">Configure</span> 탭에서 새로 추가된 항목을 확인합니다.</li>
+  <li><span class="ui">Knowledge</span> 섹션으로 내려가 <span class="ui">Search all websites</span> 토글이 꺼져 있는지 확인합니다. 켜져 있으면 지금 끕니다.</li>
+  <li><span class="ui">Upload from device</span> 아이콘을 선택하고 OneDrive에서 과제 1의 <span class="ui">Q3 Executive Briefing.docx</span>와 과제 2의 <span class="ui">Northwind Traders Q4 budget forecast.xlsx</span> 파일을 지식 원본으로 선택합니다.</li>
+  <li><span class="ui">Suggested prompts</span>는 Copilot에게 생성을 맡기거나 직접 만들 수 있습니다. <span class="ui">Describe</span> 탭에서 추천 프롬프트 세 개를 생성해 달라고 요청합니다. 각 프롬프트에 제목과 메시지가 있는 점을 확인합니다.</li>
+  <li><span class="ui">Configure</span> 탭의 <span class="ui">Suggested prompts</span> 섹션에서 <span class="ui">Add a suggested prompt</span>을 선택해, 아래 여섯 개 중 두세 개를 골라 직접 추가합니다.</li>
+</ol>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Title</th><th>Message</th></tr></thead>
+<tbody>
+<tr><td>Top risks</td><td>What are the top risks to meeting our Q4 revenue forecast?</td></tr>
+<tr><td>Customer sentiment trends</td><td>Summarize customer sentiment trends from the latest reports.</td></tr>
+<tr><td>Budget vs. Sales</td><td>Compare actual sales performance to the Q4 budget forecast.</td></tr>
+<tr><td>Bottlenecks</td><td>Identify supply chain bottlenecks that could affect Q4 delivery timelines.</td></tr>
+<tr><td>Top performing product categories</td><td>Highlight the top-performing product categories based on recent sales data.</td></tr>
+<tr><td>Emerging market trends</td><td>What emerging market trends should we watch for in the next quarter?</td></tr>
+</tbody>
+</table>
+</div>
+<div class="box note">
+  <span class="t">참고</span>
+  <p>Customer sentiment trends 프롬프트는 지식 원본에 그 데이터가 없다는 점에서 흥미롭습니다. 이 프롬프트를 넣었을 때 에이전트가 어떻게 반응하는지 확인해 보세요.</p>
+</div>
+<ol class="steps" start="15">
+  <li>추천 프롬프트 몇 개를 테스트해 에이전트가 지식 원본에서 데이터를 제대로 끌어오는지 확인합니다.</li>
+  <li>만족스러우면 <span class="ui">Create</span> 단추를 선택해 에이전트를 만듭니다.</li>
+  <li>생성 완료 대화 상자에서 <span class="ui">Go to agent</span>를 선택합니다.</li>
+</ol>
+<div class="box note">
+  <span class="t">참고</span>
+  <p>이 단계에서 에이전트는 본인만 접근하는 비공개 상태입니다. 실제로 여러 팀원이 쓰려면 공유해야 하지만, 이 실습은 본인 테넌트 안에서 진행하므로 공유는 필요 없습니다.</p>
+</div>
+
+<h3 id="ex2-5">과제 5 · Northwind Business Insights 에이전트로 경영진 질문에 답하기</h3>
+<div class="srclink"><span class="lbl">원문</span><a href="https://microsoftlearning.github.io/MS-4004-Empower-workforce-copilot-use-cases/Instructions/Labs/M01-empower-workforce-copilot-executives/12-Ex2-5-use-business-insights-agent.html" target="_blank" rel="noopener"><span class="en">Exercise 2, Task 5: Use the Northwind Business Insights Agent to answer executive questions</span></a></div>
+<p>만든 에이전트로 경영진 수준의 질문에 답하는 연습을 합니다. Q3 매출 데이터와 Q4 예산 예측을 바탕으로 질문하며, 에이전트가 지식 원본에서 정보를 제대로 참조하는지 확인합니다.</p>
+<ol class="steps">
+  <li>앞 과제를 마친 뒤 <span class="ui">Northwind Business Insights Agent</span>가 브라우저에 열려 있어야 합니다.</li>
+  <li>아래 질문을 출발점으로 삼아 Northwind Traders의 성과·예측·위험을 다양하게 물어봅니다. 응답은 조금씩 다를 수 있으며, 아래 샘플 답변은 정확성 확인용입니다.</li>
+</ol>
+<div class="box note">
+  <span class="t">참고</span>
+  <p>에이전트가 제공하는 통찰은 매번 다를 수 있습니다. 아래 예시는 기대할 수 있는 통찰의 유형을 보여 줍니다. 아래 질문은 에이전트에 입력하는 프롬프트이므로 영어 표기 그대로 씁니다.</p>
+</div>
+
+<h4>Q4 예산 예측 질문</h4>
+<div class="prompt"><span class="prompt-label">질문</span>What is the projected revenue and profit margin for Beverages in North America for December, and what insights can you draw from this information?</div>
+<p class="lead-in">샘플 답변: 예상 매출 101,996 USD, 마진 0.16(16%). 16% 마진은 꾸준한 수익성을 뜻하지만 일부 카테고리(예: Condiments 최대 29%)보다 낮아, 비용 부담이나 가격 경쟁 압력이 있을 수 있습니다. 12월은 명절 수요로 매출이 견조하지만, 마진은 프로모션 할인이나 물류비 증가가 수익성을 눌렀을 가능성을 시사합니다. 완충 여력이 상대적으로 얇으므로 공급망 차질이나 비용 상승이 빠르게 마진을 잠식할 수 있습니다. 프리미엄 포지셔닝이나 비용 최적화로 마진을 20% 가까이 끌어올릴 여지를 검토할 만합니다.</p>
+<div class="prompt"><span class="prompt-label">질문</span>Provide a list of the top three product categories and regions that have the highest projected risk factor in Q4? How can Northwind Traders mitigate these risks?</div>
+<p class="lead-in">샘플 답변: 위험이 큰 상위 세 곳은 Condiments·North America(0.29, 공급망 변동), Condiments·Asia(0.29, 안정), Dairy·Europe(0.28, 수요 변동)입니다. 공급망 변동에는 공급처 다변화, 안전 재고 확대, 지역 조달 활용이 유효합니다. 수요 변동에는 유연한 가격 전략, 계절 프로모션, 예측 정확도 개선이 필요합니다. 카테고리 전반으로는 시나리오 계획, 비용 최적화, 실시간 위험 모니터링을 갖춥니다. 경영진 실행 과제로 Condiments 공급망 복원력 우선, Europe Dairy 수요 촉진, Q4 스트레스 테스트(예: +10% 비용, -15% 수요)를 제시합니다.</p>
+
+<h4>Q3 매출 데이터 질문</h4>
+<div class="prompt"><span class="prompt-label">질문</span>What was the total revenue and profit for Snacks in North America in Q3? Provide a breakdown by month and overall totals.</div>
+<p class="lead-in">샘플 답변: 7월 매출 51,551 USD·이익 5,670.61 USD, 8월 매출 23,890 USD·이익 3,344.60 USD, 9월 매출 30,627 USD·이익 10,413.18 USD. Q3 합계 매출 106,068 USD, 이익 19,428.39 USD.</p>
+<div class="prompt"><span class="prompt-label">질문</span>How did profit margins for Dairy in Asia change from July through September? What might explain this change?</div>
+<p class="lead-in">샘플 답변: 7월 0.15(15%), 8월 0.22(22%), 9월 0.27(27%)로 꾸준히 상승했습니다. 초기의 높은 물류비가 안정되며 비용이 낮아졌고, 늦여름·초가을 수요 증가로 규모의 경제가 작동했으며, 8~9월의 가격 조정과 운영 효율화가 마진 개선을 뒷받침했을 수 있습니다.</p>
+
+<h4>문서 간 교차 질문</h4>
+<div class="prompt"><span class="prompt-label">질문</span>How do the projected profit margins for Q4 compare to actual margins in Q3 for Condiments in North America? Provide key insight analysis.</div>
+<p class="lead-in">샘플 답변: Q3 실제 마진은 7월 0.15, 8월 0.20, 9월 0.12였고, Q4 예상 마진은 10월 0.26, 11월 0.29, 12월 0.17입니다. 10~11월에 크게 개선돼 11월 29%로 정점을 찍으며, 이는 Q3 최고치(8월 20%)보다 9%p 높습니다. 12월은 17%로 낮아지지만 9월 12%보다는 높습니다. 전반적으로 Q4는 공급망 안정과 가격 최적화에 힘입어 강한 회복세이며, 연말 운영에서는 비용 통제와 마진 방어가 필요합니다.</p>
+<div class="prompt"><span class="prompt-label">질문</span>What “what-if” scenarios should executives be most concerned about, given recent sales and forecasted risks?</div>
+<p class="lead-in">샘플 답변: Q4 예측의 what-if 시나리오는 공급망 비용 +10%, 수요 -15%, 마케팅 지출 +8%, 인건비 급등 +12%입니다. 최근 일부 카테고리·지역의 부진을 고려하면 “수요 감소”와 “인건비 급등”이 특히 우려됩니다. 마진이 얇은 카테고리(예: 전년 대비 이익 41% 감소한 Asia Snacks)는 추가 비용을 흡수하기 어려워 마케팅 확대가 오히려 손실을 키울 수 있습니다. Q4 마진이 견조할 것으로 보이는 Asia·Europe Dairy는 인건비가 갑자기 오르면 수익성이 눌릴 수 있습니다.</p>
+<ol class="steps" start="3">
+  <li>위 질문 외에 본인만의 질문도 한두 개 던집니다. 각 답변이 올바른 데이터 원본을 참조하고 명확하고 실행 가능한 통찰을 주는지 확인합니다.</li>
+</ol>
+
+<div class="footer">
+  <p>Microsoft Learn 코스 MS-4004의 임원 모듈(M01)을 한국어로 옮기고 설명을 덧붙인 학습 자료입니다. 화면 이미지와 원문 내용의 저작권은 Microsoft에 있습니다. 제품 화면은 계속 바뀌므로 최신 정보는 각 단원 머리의 원문 링크를 함께 확인하세요.</p>
+  <p>다른 모듈 · <a href="./">코스 개요</a> · <a href="m02.html">영업</a> · <a href="m03.html">IT</a></p>
+</div>
+
+</main>
+</div>
+</body>
+</html>
