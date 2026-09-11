@@ -172,7 +172,7 @@
   <li><span class="ui">New chat</span>을 선택하고 채팅 영역에서 대화를 시작합니다.</li>
   <li>다음 프롬프트에서 대괄호 자리 표시자를 본인 회사 값으로 바꿔 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Find information about [Interviewer's Name] and their role at [Company Name].</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>[Interviewer's Name]에 관한 정보와 [Company Name]에서 맡은 역할을 찾아 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Find information about [Interviewer's Name] and their role at [Company Name].</span></div>
 <p>면접관의 이름과 회사에서 맡은 역할에 관한 정보를 찾아 달라는 프롬프트입니다. <code>[Interviewer's Name]</code>은 나를 면접할 사람 이름으로, <code>[Company Name]</code>은 회사 이름으로 바꿉니다.</p>
 <ol class="steps" start="4">
   <li>Copilot의 답변을 살펴보고 관심 분야, 최근 프로젝트, 공개 발언 등 참고할 만한 배경을 메모합니다.</li>
@@ -183,12 +183,12 @@
 <ol class="steps">
   <li>같은 Copilot Chat 대화에서 다음을 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Provide an overview of [department name] at [Company Name]. What are their current focus areas or recent initiatives?</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>[Company Name]의 [department name]을 개괄해 줘. 지금 집중하는 분야나 최근 추진하는 과제는 뭐야?<span class="prompt-src"><span class="prompt-label">원문</span>Provide an overview of [department name] at [Company Name]. What are their current focus areas or recent initiatives?</span></div>
 <p>해당 부서의 개요와 현재 집중 분야, 최근 추진 과제를 정리해 달라는 프롬프트입니다.</p>
 <div class="box tip">
   <span class="t">Researcher 에이전트로 더 깊게</span>
   <p>이 단계는 <span class="ui">Researcher</span> 에이전트로도 해 볼 수 있습니다. 왼쪽 탐색 창에서 <span class="ui">Researcher</span>를 선택한 뒤 다음을 입력합니다.</p>
-  <div class="prompt"><span class="prompt-label">프롬프트</span>Research [Company Name]'s [department name]. Summarize their current priorities, recent news, and any publicly available strategic initiatives.</div>
+  <div class="prompt"><span class="prompt-label">프롬프트</span>[Company Name]의 [department name]을 조사해 줘. 현재 우선순위, 최근 소식, 공개된 전략 추진 과제를 정리해 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Research [Company Name]'s [department name]. Summarize their current priorities, recent news, and any publicly available strategic initiatives.</span></div>
   <p>Researcher는 여러 단계에 걸쳐 웹을 조사하고 여러 출처를 종합해, 단일 프롬프트보다 더 폭넓은 브리핑을 돌려줍니다. 두 결과를 비교하면 깊이 차이를 확인할 수 있습니다.</p>
 </div>
 <ol class="steps" start="2">
@@ -201,7 +201,7 @@
   <li>같은 대화를 이어 갑니다.</li>
   <li>다음 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Based on this department's focus areas, generate a list of likely interview questions for a [job title] role.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>이 부서의 집중 분야를 바탕으로 [job title] 직무 면접에서 나올 만한 질문 목록을 만들어 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Based on this department's focus areas, generate a list of likely interview questions for a [job title] role.</span></div>
 <p>앞에서 파악한 부서의 집중 분야를 바탕으로, 해당 직무 면접에서 나올 만한 질문 목록을 만들어 달라는 프롬프트입니다. <code>[job title]</code>은 지원하는 직무 이름으로 바꿉니다.</p>
 <ol class="steps" start="3">
   <li>생성된 질문 목록을 검토합니다.</li>
@@ -212,7 +212,7 @@
 <ol class="steps">
   <li>같은 대화에서 다음을 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Draft concise answers for each of the questions in the previous response. Write in first person and focus on specific examples rather than general statements.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>앞의 답변에 나온 질문마다 간결한 답변 초안을 작성해 줘. 1인칭으로 쓰고, 일반적인 이야기보다 구체적인 사례를 중심으로 써 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Draft concise answers for each of the questions in the previous response. Write in first person and focus on specific examples rather than general statements.</span></div>
 <p>앞선 질문마다 간결한 답변을 1인칭으로, 일반론 대신 구체적 사례 중심으로 작성해 달라는 프롬프트입니다.</p>
 <ol class="steps" start="2">
   <li>각 답변을 검토합니다. Copilot의 초안은 완성본이 아니라 출발점입니다. 본인의 실제 경험을 반영하도록 계속 프롬프트를 주며 다듬고, 직접 손보는 과정을 거칩니다.</li>
@@ -239,7 +239,7 @@
   <li>오른쪽 위 <span class="ui">Copilot</span> 아이콘을 선택해 Copilot Chat 측면 창을 엽니다.</li>
   <li>다음 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Draft a brief thank you note to [Interviewer's Name] following our interview today for the [job title] role at [Company Name]. Keep it professional and genuine, and limit it to three short paragraphs.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>오늘 [Company Name]의 [job title] 면접을 본 뒤 [Interviewer's Name]에게 보낼 짧은 감사 메일 초안을 작성해 줘. 전문적이면서 진솔한 어조로 쓰고, 짧은 세 문단으로 제한해 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Draft a brief thank you note to [Interviewer's Name] following our interview today for the [job title] role at [Company Name]. Keep it professional and genuine, and limit it to three short paragraphs.</span></div>
 <p>오늘 면접에 대한 짧고 진솔한 감사 메일을, 전문적인 어조로 세 문단 이내로 작성해 달라는 프롬프트입니다. 대괄호 값은 실제 면접관 이름, 직무, 회사 이름으로 바꿉니다.</p>
 <ol class="steps" start="5">
   <li>초안을 검토하고 실제 대화 내용에 맞게 어조와 세부 표현을 조정합니다.</li>
@@ -266,7 +266,7 @@
   <li><code>https://m365.cloud.microsoft</code>으로 이동해 <strong>Microsoft 365 Copilot</strong> 앱을 엽니다. 왼쪽 탐색 창에서 <span class="ui">Idea Coach</span>를 선택합니다. 보이지 않으면 <span class="ui">More agents</span>를 선택하고 검색창에 <code>Idea Coach</code>를 입력해 에이전트를 고른 뒤 <span class="ui">Add</span>를 선택합니다.</li>
   <li><span class="ui">Message Idea Coach</span> 상자에 다음 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>I need to present a Chai Tea product strategy for Latin America to regional vice presidents and a CFO. The CFO focuses on return on investment and market opportunity. Identify three to four key messages and suggest a narrative arc for an eight-slide executive presentation.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>라틴 아메리카 Chai Tea 제품 전략을 지역 부사장들과 CFO에게 발표해야 해. CFO는 투자 수익률과 시장 기회에 관심이 많아. 핵심 메시지 서너 개를 뽑고, 여덟 장짜리 경영진 발표에 맞는 이야기 구조를 제안해 줘.<span class="prompt-src"><span class="prompt-label">원문</span>I need to present a Chai Tea product strategy for Latin America to regional vice presidents and a CFO. The CFO focuses on return on investment and market opportunity. Identify three to four key messages and suggest a narrative arc for an eight-slide executive presentation.</span></div>
 <p>지역 부사장과 CFO를 대상으로 한 라틴 아메리카 Chai Tea 전략 발표에서, 핵심 메시지 서너 개와 8슬라이드 임원용 발표의 전개 흐름을 제안해 달라는 프롬프트입니다.</p>
 <ol class="steps" start="3">
   <li>Idea Coach가 돌려준 핵심 메시지와 구성을 검토합니다. 다음 생성 프롬프트를 쓸 때 참고할 수 있도록 이 결과를 화면에 띄워 둡니다.</li>
@@ -283,7 +283,7 @@
   <li>캔버스 오른쪽 아래의 <span class="ui">Copilot</span> 아이콘을 선택합니다.</li>
   <li>다음 생성 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Create an 8-slide executive presentation on Contoso's Chai Tea strategy for Latin America. Use the Promotion Plan document for the business strategy and recommended actions. Pull market opportunity data and regional trends from the Market Analysis Report document to support the market slides. Tone: executive—confident and data-driven. Audience: regional VPs and a CFO who value brevity and clear return on investment framing.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Contoso의 라틴 아메리카 Chai Tea 전략을 담은 8장짜리 경영진 발표 자료를 만들어 줘. 사업 전략과 권장 조치는 Promotion Plan 문서를 참고하고, 시장 슬라이드를 뒷받침할 시장 기회 데이터와 지역 동향은 Market Analysis Report 문서에서 가져와 줘. 어조는 경영진에 맞게 자신감 있고 데이터 중심으로 하고, 대상은 간결함과 명확한 투자 수익률 논리를 중요하게 여기는 지역 부사장들과 CFO야.<span class="prompt-src"><span class="prompt-label">원문</span>Create an 8-slide executive presentation on Contoso's Chai Tea strategy for Latin America. Use the Promotion Plan document for the business strategy and recommended actions. Pull market opportunity data and regional trends from the Market Analysis Report document to support the market slides. Tone: executive—confident and data-driven. Audience: regional VPs and a CFO who value brevity and clear return on investment framing.</span></div>
 <p>Promotion Plan 문서에서 사업 전략과 권고 행동을, Market Analysis Report 문서에서 시장 기회 데이터와 지역 추세를 가져와 8슬라이드 임원용 발표를 만들어 달라는 프롬프트입니다. 어조와 청중까지 지정합니다.</p>
 <ol class="steps" start="4">
   <li><span class="ui">Add work content</span>으로 <strong>Promotion Plan for Chai Tea in Latin America.docx</strong>와 <strong>Market Analysis Report for Mystic Spice Premium Chai Tea.docx</strong>를 첨부합니다. <code>/</code>를 입력하거나 <span class="ui">+</span> → <span class="ui">Add work content</span>를 선택하면 됩니다. 두 문서를 첨부한 뒤 이를 주요 원본으로 사용합니다.</li>
@@ -296,13 +296,13 @@
 <ol class="steps">
   <li>Copilot 창에 다음 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Generate speaker notes for all slides in this presentation. Keep the speaker notes professional and concise.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>이 발표 자료의 모든 슬라이드에 발표자 노트를 만들어 줘. 발표자 노트는 전문적이면서 간결하게 써 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Generate speaker notes for all slides in this presentation. Keep the speaker notes professional and concise.</span></div>
 <p>모든 슬라이드에 전문적이고 간결한 발표자 노트를 생성해 달라는 프롬프트입니다.</p>
 <ol class="steps" start="2">
   <li>시장 기회나 ROI 데이터를 다루는 슬라이드로 이동합니다.</li>
   <li>다음 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Rewrite the speaker notes on this slide to sound authoritative and data-focused. I'm presenting market opportunity and return on investment figures to a CFO who asks hard questions. Help me project confidence and anticipate pushback.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>이 슬라이드의 발표자 노트를 권위 있고 데이터 중심으로 들리게 다시 써 줘. 날카로운 질문을 던지는 CFO에게 시장 기회와 투자 수익률 수치를 발표할 거야. 자신감 있게 전달하고 예상되는 반박에도 대비할 수 있게 도와줘.<span class="prompt-src"><span class="prompt-label">원문</span>Rewrite the speaker notes on this slide to sound authoritative and data-focused. I'm presenting market opportunity and return on investment figures to a CFO who asks hard questions. Help me project confidence and anticipate pushback.</span></div>
 <p>까다로운 질문을 하는 CFO 앞에서 시장 기회와 ROI 수치를 발표한다고 보고, 이 슬라이드의 노트를 권위 있고 데이터 중심으로 다시 써 달라는 프롬프트입니다.</p>
 <ol class="steps" start="4">
   <li>발표자 노트를 표시합니다. 아래 방법 중 하나를 씁니다.
@@ -319,7 +319,7 @@
 <ol class="steps">
   <li>차트가 있는 슬라이드로 이동해 Copilot 창에 다음 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Explain the content in this chart so I can more easily understand and discuss the content as I present it to leadership.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>이 차트의 내용을 설명해 줘. 경영진에게 발표할 때 내용을 더 쉽게 이해하고 이야기할 수 있게 해 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Explain the content in this chart so I can more easily understand and discuss the content as I present it to leadership.</span></div>
 <p>경영진 앞에서 발표할 때 쉽게 이해하고 설명할 수 있도록 이 차트 내용을 풀어 달라는 프롬프트입니다.</p>
 <ol class="steps" start="2">
   <li>차트가 무엇을 보여 주는지, 그 데이터가 맥락에서 어떤 의미인지, 주변 슬라이드의 흐름과 어떻게 맞물리는지 Copilot의 설명을 검토합니다.</li>
@@ -330,7 +330,7 @@
 <ol class="steps">
   <li>Copilot 창에 다음 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Give me improvement tips for this presentation, both overall and slide by slide. Focus on narrative coherence, clarity of the executive message, and any slides where the data could be better supported.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>이 발표 자료를 전체적으로, 그리고 슬라이드별로 개선할 팁을 알려 줘. 이야기의 일관성, 핵심 메시지의 명확성, 데이터 근거를 더 보강할 수 있는 슬라이드를 중심으로 살펴봐 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Give me improvement tips for this presentation, both overall and slide by slide. Focus on narrative coherence, clarity of the executive message, and any slides where the data could be better supported.</span></div>
 <p>전체와 슬라이드별로 개선 팁을 달라는 프롬프트입니다. 흐름의 일관성, 임원용 메시지의 명료성, 데이터 근거가 약한 슬라이드에 초점을 둡니다.</p>
 <ol class="steps" start="2">
   <li>Copilot의 답변을 검토하고, 이 랩에서 익힌 Copilot 기능으로 필요한 변경을 적용합니다.</li>
@@ -353,7 +353,7 @@
   <li>빈 문서 위쪽의 캔버스 프롬프트 상자 <span class="ui">Describe what you'd like to draft with Copilot</span>을 선택합니다.</li>
   <li>다음 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Create a project report that includes an executive summary, introduction, product description, project objectives, and discussion. Use the linked document as a content resource.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Executive Summary, Introduction, Product Description, Project Objectives, Discussion을 포함하는 프로젝트 보고서를 작성해 줘. 링크된 문서를 참고 자료로 활용해 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Create a project report that includes an executive summary, introduction, product description, project objectives, and discussion. Use the linked document as a content resource.</span></div>
 <p>요약, 서론, 제품 설명, 프로젝트 목표, 논의로 구성된 프로젝트 보고서를 만들되 연결한 문서를 콘텐츠 자료로 쓰라는 프롬프트입니다.</p>
 <ol class="steps" start="4">
   <li>슬래시(<code>/</code>)에 이어 문서 이름을 입력해 문서 참조를 추가합니다. <strong>/Market Analysis Report for Mystic Spice Premium Chai Tea.docx</strong>를 드롭다운 목록에서 선택하거나, <span class="ui">Files</span>를 선택해 파일을 찾습니다.</li>
@@ -367,7 +367,7 @@
   <li>제품 설명 문단을 선택합니다. 나타나는 플로팅 도구 모음에서 <span class="ui">Edit with Copilot</span>을 선택합니다.</li>
   <li>다음 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Rewrite the Product Description section to be more detailed and engaging for a senior business audience. Keep the tone professional.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Product Description 섹션을 고위 비즈니스 독자에게 맞게 더 상세하고 흥미롭게 다시 써 줘. 어조는 전문적으로 유지해 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Rewrite the Product Description section to be more detailed and engaging for a senior business audience. Keep the tone professional.</span></div>
 <p>제품 설명 섹션을 고위 비즈니스 청중에게 더 상세하고 흥미롭게, 전문적인 어조를 유지하며 다시 써 달라는 프롬프트입니다.</p>
 <ol class="steps" start="3">
   <li>다시 작성된 문장을 검토하고 <span class="ui">Done</span>을 선택해 원래 문장을 교체합니다.</li>
@@ -379,7 +379,7 @@
   <li>현재 형식을 볼 수 있도록 프로젝트 목표(Project Objectives) 섹션으로 이동합니다.</li>
   <li>Copilot 창에 다음 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Turn the Project Objectives section into a table with columns for objectives, rationale, success metrics, target channels, and priority.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Project Objectives 섹션을 목표, 근거, 성공 지표, 대상 채널, 우선순위 열로 이루어진 표로 바꿔 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Turn the Project Objectives section into a table with columns for objectives, rationale, success metrics, target channels, and priority.</span></div>
 <p>프로젝트 목표 섹션을 목표, 근거, 성공 지표, 대상 채널, 우선순위 열을 가진 표로 바꿔 달라는 프롬프트입니다.</p>
 <ol class="steps" start="3">
   <li>생성된 표를 검토하고 <span class="ui">Done</span>을 선택해 삽입합니다.</li>
@@ -394,7 +394,7 @@
   <li>Word 문서에서 검토할 섹션을 고릅니다. 요약(Executive Summary)이 시작하기 좋습니다.</li>
   <li>Writing Coach에 초점을 좁힌 질문을 입력하고, 이어서 Word 문서의 텍스트를 붙여 넣습니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Review this text for clarity and tone. Suggest specific improvements: [paste text]</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>이 텍스트를 명확성과 어조 측면에서 검토해 줘. 구체적인 개선안을 제안해 줘: [paste text]<span class="prompt-src"><span class="prompt-label">원문</span>Review this text for clarity and tone. Suggest specific improvements: [paste text]</span></div>
 <p>이 텍스트를 명료성과 어조 측면에서 검토하고 구체적인 개선안을 제안해 달라는 프롬프트입니다. <code>[paste text]</code> 자리에는 문서에서 복사한 실제 텍스트를 붙여 넣습니다.</p>
 <ol class="steps" start="5">
   <li>피드백을 검토하고 Word 문서에 변경을 적용합니다.</li>
@@ -439,7 +439,7 @@
   <li><span class="ui">Post in channel</span>을 선택해 <span class="ui">Launch Planning</span> 채널의 메시지 작성기를 엽니다.</li>
   <li>다음 텍스트를 메시지 상자에 붙여 넣습니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">메시지</span>Hi team! As we gear up for the Contoso Connect product launch, I want to make sure we're all aligned on priorities. I have a few ideas to share and I'd love to hear your thoughts on what will resonate most with our customers.</div>
+<div class="prompt"><span class="prompt-label">메시지</span>안녕하세요, 팀 여러분! Contoso Connect 제품 출시를 준비하면서 우선순위를 다 같이 맞추고 싶습니다. 몇 가지 아이디어를 나누고 싶고, 고객에게 가장 와닿을 만한 게 무엇일지 여러분 생각도 듣고 싶습니다.<span class="prompt-src"><span class="prompt-label">원문</span>Hi team! As we gear up for the Contoso Connect product launch, I want to make sure we're all aligned on priorities. I have a few ideas to share and I'd love to hear your thoughts on what will resonate most with our customers.</span></div>
 <p>출시 준비에 앞서 우선순위를 맞추자는 팀 안내 메시지입니다. 이 원문을 그대로 붙여 넣은 뒤 Copilot으로 다듬습니다.</p>
 <ol class="steps" start="8">
   <li>게시하기 전에 메시지 상자 아래 펜 아이콘(<span class="ui">Rewrite with Copilot</span>)을 선택합니다.</li>
@@ -454,9 +454,9 @@
 <ol class="steps">
   <li><span class="ui">Launch Planning</span> 채널을 연 상태에서 메시지를 두세 개 더 올려 스레드를 채웁니다. 예를 들면 다음과 같습니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">메시지 1</span>One idea is running a live demo event for our top enterprise customers.</div>
-<div class="prompt"><span class="prompt-label">메시지 2</span>Early access pricing worked well for our last launch — we should revisit that.</div>
-<div class="prompt"><span class="prompt-label">메시지 3</span>I'll reach out to marketing about the collateral timeline. Can someone check on demo environment availability?</div>
+<div class="prompt"><span class="prompt-label">메시지 1</span>아이디어 하나는 주요 엔터프라이즈 고객을 위한 라이브 데모 행사를 여는 겁니다.<span class="prompt-src"><span class="prompt-label">원문</span>One idea is running a live demo event for our top enterprise customers.</span></div>
+<div class="prompt"><span class="prompt-label">메시지 2</span>지난번 출시 때 얼리 액세스 가격 정책이 효과가 좋았으니, 이번에도 다시 검토해 봐야 할 것 같습니다.<span class="prompt-src"><span class="prompt-label">원문</span>Early access pricing worked well for our last launch — we should revisit that.</span></div>
+<div class="prompt"><span class="prompt-label">메시지 3</span>마케팅 팀에 홍보 자료 일정을 확인해 볼게요. 데모 환경 가능 여부는 누가 좀 확인해 주시겠어요?<span class="prompt-src"><span class="prompt-label">원문</span>I'll reach out to marketing about the collateral timeline. Can someone check on demo environment availability?</span></div>
 <p>라이브 데모, 얼리 액세스 가격, 자료 일정과 데모 환경 확인 등 서로 다른 논점을 담은 메시지 예시입니다. 이렇게 맥락을 쌓아야 요약이 의미를 가집니다.</p>
 <ol class="steps" start="2">
   <li>메시지를 올린 뒤 채널 오른쪽 위 <span class="ui">Open agents and bots</span> 아이콘을 선택합니다.</li>
@@ -464,13 +464,13 @@
   <li>Channel Agent 게시물에서 <span class="ui">Ask me a question</span>을 선택합니다.</li>
   <li>다음 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>What ideas and open questions came up in this thread?</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>이 스레드에서 어떤 아이디어와 미해결 질문이 나왔는지 알려 줘.<span class="prompt-src"><span class="prompt-label">원문</span>What ideas and open questions came up in this thread?</span></div>
 <p>이 스레드에서 나온 아이디어와 미해결 질문이 무엇인지 요약해 달라는 프롬프트입니다.</p>
 <ol class="steps" start="6">
   <li>요약을 검토합니다. 번호가 붙은 인용을 선택하면 채널에서 원본 메시지를 볼 수 있습니다.</li>
   <li>이어서 후속 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Create a short list of discussion topics I could use as a meeting agenda.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>회의 안건으로 쓸 수 있는 논의 주제를 짧은 목록으로 만들어 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Create a short list of discussion topics I could use as a meeting agenda.</span></div>
 <p>회의 안건으로 쓸 논의 주제를 짧은 목록으로 만들어 달라는 프롬프트입니다. 이 목록은 다음 연습에서 씁니다.</p>
 
 <h3 id="l4e3">연습 3 · Facilitator를 켜고 회의 예약</h3>
@@ -482,12 +482,12 @@
   <li><span class="ui">Teams meeting</span>이 켜져 있는지 확인합니다.</li>
   <li>회의 설명에 연습 2에서 Channel Agent가 뽑아 준 주제로 짧은 안건을 입력합니다. 예를 들면 다음과 같습니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">안건</span>Agenda: Customer engagement ideas (10 min), Launch timeline review (15 min), Demo environment check (5 min), Task assignments (10 min), Wrap-up (5 min)</div>
+<div class="prompt"><span class="prompt-label">안건</span>안건: 고객 참여 아이디어(10분), 출시 일정 검토(15분), 데모 환경 점검(5분), 작업 배정(10분), 마무리(5분)<span class="prompt-src"><span class="prompt-label">원문</span>Agenda: Customer engagement ideas (10 min), Launch timeline review (15 min), Demo environment check (5 min), Task assignments (10 min), Wrap-up (5 min)</span></div>
 <p>고객 참여 아이디어, 출시 일정 검토, 데모 환경 확인, 작업 배정, 마무리로 이어지는 시간 배분 안건 예시입니다.</p>
 <div class="box tip">
   <span class="t">Copilot에게 안건을 맡기려면</span>
   <p>안건도 Copilot이 초안해 줄 수 있습니다. New event 창 오른쪽 위의 Copilot 아이콘을 선택하고 다음을 입력합니다.</p>
-  <div class="prompt"><span class="prompt-label">프롬프트</span>Draft a meeting description for a product launch planning session covering customer engagement ideas, timeline review, and task assignments.</div>
+  <div class="prompt"><span class="prompt-label">프롬프트</span>고객 참여 아이디어, 일정 검토, 작업 배정을 다루는 제품 출시 기획 회의의 설명을 작성해 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Draft a meeting description for a product launch planning session covering customer engagement ideas, timeline review, and task assignments.</span></div>
 </div>
 <ol class="steps" start="6">
   <li><span class="ui">Options</span>를 선택해 <span class="ui">Meeting options</span> 대화 상자를 엽니다.</li>
@@ -513,12 +513,12 @@
 <ol class="steps" start="3">
   <li>제안된 프롬프트 중 하나를 선택하거나, Copilot 채팅 창에 직접 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>What should I know about the agenda or attendees before this meeting?</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>이 회의 전에 안건이나 참석자에 관해 알아 둬야 할 게 있으면 알려 줘.<span class="prompt-src"><span class="prompt-label">원문</span>What should I know about the agenda or attendees before this meeting?</span></div>
 <p>회의 전에 안건이나 참석자에 대해 알아 둘 점을 정리해 달라는 프롬프트입니다.</p>
 <ol class="steps" start="4">
   <li>후속 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Draft a brief opening statement I can use to kick off the meeting.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>회의를 시작할 때 쓸 수 있는 짧은 인사말 초안을 작성해 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Draft a brief opening statement I can use to kick off the meeting.</span></div>
 <p>회의를 시작할 때 쓸 짧은 개회 발언을 작성해 달라는 프롬프트입니다.</p>
 <ol class="steps" start="5">
   <li>답변을 검토합니다. Copilot이 회의 제목, 설명, 사용 가능한 맥락을 활용해 관련 결과를 만드는 방식을 확인합니다.</li>
@@ -546,12 +546,12 @@
   <li><span class="ui">Allow editing</span>이 선택돼 있는지 확인합니다.</li>
   <li>Copilot 창에 다음 프롬프트를 입력해 제출합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Summarize the dataset and provide an overview of the key metrics.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>데이터셋을 요약하고 핵심 지표의 개요를 알려 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Summarize the dataset and provide an overview of the key metrics.</span></div>
 <p>데이터셋을 요약하고 핵심 지표의 개요를 제공해 달라는 프롬프트입니다. Copilot이 데이터의 요약본에 해당하는 새 시트를 만들 수 있습니다.</p>
 <ol class="steps" start="5">
   <li>이어서 다음 프롬프트를 입력합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Create a new sheet with a table showing the key patterns in the data.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>데이터의 핵심 패턴을 보여 주는 표를 새 시트에 만들어 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Create a new sheet with a table showing the key patterns in the data.</span></div>
 <p>데이터의 핵심 패턴을 보여 주는 표를 새 시트에 만들어 달라는 프롬프트입니다.</p>
 <ol class="steps" start="6">
   <li>Copilot이 생성한 표를 검토합니다.</li>
@@ -563,7 +563,7 @@
   <li>열려 있는 Copilot 창을 이어서 씁니다.</li>
   <li>다음 프롬프트를 입력해 제출합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Create a new sheet with a line chart of Total Chai Sales (units) over the months.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>월별 Total Chai Sales (units) 꺾은선 차트를 새 시트에 만들어 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Create a new sheet with a line chart of Total Chai Sales (units) over the months.</span></div>
 <p>월별 Total Chai Sales(units)를 꺾은선 차트로 새 시트에 만들어 달라는 프롬프트입니다.</p>
 <ol class="steps" start="3">
   <li>월별 Total Chai Sales(units) 차트를 검토합니다.</li>
@@ -575,12 +575,12 @@
   <li>열려 있는 Copilot 창을 이어서 씁니다.</li>
   <li>다음 프롬프트를 입력해 제출합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Create a new sheet with a bar chart comparing Artisanal Chai Sales (units) and Premade Chai Sales (units) for each month.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>월별로 Artisanal Chai Sales (units)와 Premade Chai Sales (units)를 비교하는 막대 차트를 새 시트에 만들어 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Create a new sheet with a bar chart comparing Artisanal Chai Sales (units) and Premade Chai Sales (units) for each month.</span></div>
 <p>월별로 Artisanal Chai Sales(units)와 Premade Chai Sales(units)를 비교하는 막대 차트를 새 시트에 만들어 달라는 프롬프트입니다.</p>
 <ol class="steps" start="3">
   <li>여름철은 판매 편차가 큰 경우가 많습니다. 다음 프롬프트를 입력해 제품 실적을 비교합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Summarize the total sales (units) for Artisanal Chai and Premade Chai over the summer.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>여름철 Artisanal Chai와 Premade Chai의 총 판매량(units)을 요약해 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Summarize the total sales (units) for Artisanal Chai and Premade Chai over the summer.</span></div>
 <p>여름철 Artisanal Chai와 Premade Chai의 총 판매(units)를 요약해 달라는 프롬프트입니다.</p>
 <ol class="steps" start="4">
   <li>Copilot이 "여름"의 범위를 명확히 하려고 확인 질문을 할 수 있습니다. 원하는 기준을 입력한 뒤 결과를 검토합니다. 다음 연습을 위해 Copilot 창은 열어 둡니다.</li>
@@ -591,7 +591,7 @@
 <ol class="steps">
   <li>Copilot 창에 다음 프롬프트를 입력해 제출합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Predict next quarter's Artisanal and Premade Chai sales using the best forecasting method based on historical performance, and include model diagnostics.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>과거 실적을 바탕으로 가장 적합한 예측 방법을 골라 다음 분기의 Artisanal Chai와 Premade Chai 판매량을 예측하고, 모델 진단 결과도 포함해 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Predict next quarter's Artisanal and Premade Chai sales using the best forecasting method based on historical performance, and include model diagnostics.</span></div>
 <p>과거 실적을 바탕으로 가장 적합한 예측 방법을 골라 다음 분기의 Artisanal·Premade Chai 판매를 예측하고 모델 진단까지 포함해 달라는 프롬프트입니다. Copilot이 Python 코드를 생성해 실행하고 예측 시트와 차트를 만듭니다.</p>
 <ol class="steps" start="2">
   <li>Copilot의 응답과 예측 결과를 검토하고 <span class="ui">Done</span>을 선택해 변경을 확정합니다.</li>
@@ -606,7 +606,7 @@
   <li><span class="ui">+</span> 아이콘을 선택하고 OneDrive에서 <strong>Contoso Chai Tea market trends.xlsx</strong> 파일을 첨부합니다.</li>
   <li>다음 프롬프트를 입력해 제출합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Compare Artisanal Chai and Premade Chai sales performance across the year and identify which product showed stronger growth.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>한 해 동안 Artisanal Chai와 Premade Chai의 판매 실적을 비교하고 어느 제품이 더 강한 성장을 보였는지 알려 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Compare Artisanal Chai and Premade Chai sales performance across the year and identify which product showed stronger growth.</span></div>
 <p>연간 Artisanal Chai와 Premade Chai의 판매 실적을 비교하고 어느 제품이 더 강한 성장을 보였는지 찾아 달라는 프롬프트입니다.</p>
 <ol class="steps" start="5">
   <li>답변을 검토합니다. Analyst 에이전트가 Excel에서 분석한 것과 같은 데이터셋에서 비교와 패턴을 드러내는 방식을 확인합니다. 여러 파일을 다룰 때 특히 유용한 채팅 기반 방식입니다.</li>
@@ -617,7 +617,7 @@
 <ol class="steps">
   <li>열려 있는 Copilot Analyst 에이전트 창에 다음 프롬프트를 입력해 제출합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Provide a summary of the top 5 key insights from the analysis of the Contoso Chai Tea market trends data.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Contoso Chai Tea 시장 동향 데이터 분석에서 얻은 상위 5개 핵심 인사이트를 요약해 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Provide a summary of the top 5 key insights from the analysis of the Contoso Chai Tea market trends data.</span></div>
 <p>Contoso Chai Tea 시장 추세 데이터 분석에서 얻은 상위 5개 핵심 인사이트를 요약해 달라는 프롬프트입니다.</p>
 <ol class="steps" start="2">
   <li>요약을 검토합니다. 이 내용으로 팀을 더 빠르게 이해시킬 수 있습니다.</li>

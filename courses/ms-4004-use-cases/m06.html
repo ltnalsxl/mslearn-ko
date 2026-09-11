@@ -144,7 +144,7 @@
   <span class="t">참고</span>
   <p>이 첫 프롬프트는 네 요소를 반영한 예시로 원문을 그대로 제공합니다. 이후 프롬프트는 직접 작성하되, 이 프롬프트를 본보기로 삼으십시오.</p>
 </div>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Summarize the dataset in Contoso_HR_ManagerMetrics.xlsx and identify which HR metrics most strongly indicate manager effectiveness. This task is part of an HR review at Contoso to evaluate manager strengths and development opportunities, such as high attrition or low training completion. Use the columns provided in the file (Engagement Score, Attrition Rate, Training Completion, Average Team Tenure, Internal Promotions, Performance Rating). Present the results in a clear, concise table with actionable insights that can be included in a report.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>Contoso_HR_ManagerMetrics.xlsx의 데이터셋을 요약하고, 어떤 HR 지표가 관리자 역량을 가장 잘 보여 주는지 찾아 줘. 이 작업은 Contoso의 HR 검토 과정 중 하나로, 높은 이직률이나 낮은 교육 이수율 같은 관리자의 강점과 개발 필요 영역을 평가하는 데 쓰여. 파일에 있는 열(Engagement Score, Attrition Rate, Training Completion, Average Team Tenure, Internal Promotions, Performance Rating)을 활용해 줘. 결과는 보고서에 바로 넣을 수 있도록 실행 가능한 인사이트를 담은 명확하고 간결한 표로 정리해 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Summarize the dataset in Contoso_HR_ManagerMetrics.xlsx and identify which HR metrics most strongly indicate manager effectiveness. This task is part of an HR review at Contoso to evaluate manager strengths and development opportunities, such as high attrition or low training completion. Use the columns provided in the file (Engagement Score, Attrition Rate, Training Completion, Average Team Tenure, Internal Promotions, Performance Rating). Present the results in a clear, concise table with actionable insights that can be included in a report.</span></div>
 <ol class="steps" start="6">
   <li>새 시트의 결과를 검토합니다.</li>
   <li>Excel에서는 Copilot이 사용할 워크북에 있어야 합니다. <span class="ui">Sheet1</span>을 선택하고, engagement score가 70% 미만이면서 attrition rate가 15%를 넘는 관리자를 찾아 새 시트에 표시해 달라고 요청합니다.</li>
@@ -286,17 +286,21 @@
   <li>탐색 창에서 <span class="ui">New agent</span>를 선택합니다. Copilot Studio의 <span class="ui">Agent Builder</span>가 열리며 <span class="ui">New agent</span> 페이지가 나타납니다.</li>
   <li>다음 프롬프트를 입력하고 보내기(오른쪽 화살표) 아이콘을 선택합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Create an agent titled HR Self-Service Assistant. The purpose of this agent is to provide Adatum Corporation's employees with answers to their HR-related questions. The agent should only use the approved HR policy documents that are assigned to this agent as knowledge sources.</div>
+<div class="prompt"><span class="prompt-label">프롬프트</span>HR Self-Service Assistant라는 이름으로 에이전트를 만들어 줘. 이 에이전트의 목적은 Adatum Corporation 직원들의 HR 관련 질문에 답하는 거야. 에이전트는 할당된 승인된 HR 정책 문서만 지식 원본으로 사용하게 해 줘.<span class="prompt-src"><span class="prompt-label">원문</span>Create an agent titled HR Self-Service Assistant. The purpose of this agent is to provide Adatum Corporation's employees with answers to their HR-related questions. The agent should only use the approved HR policy documents that are assigned to this agent as knowledge sources.</span></div>
 <ol class="steps" start="5">
   <li>양식 위쪽에 <span class="ui">Describe</span> 탭과 <span class="ui">Configure</span> 탭이 있습니다. Copilot이 에이전트를 만드는 데 1~2분 기다리면 <span class="ui">Agent preview</span> 창에 이름과 설명이 나타납니다.</li>
   <li><span class="ui">Configure</span> 탭을 선택합니다. <span class="ui">Name</span>과 <span class="ui">Description</span>이 채워져 있습니다. 아래로 스크롤해 <span class="ui">Instructions</span> 필드에서 Copilot이 생성한 상세 지침을 확인합니다.</li>
   <li><span class="ui">Describe</span> 탭에서 다음 프롬프트로 지침에 항목 몇 가지를 더하도록 요청합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">프롬프트</span>Update the Instructions to include the following items:
+<div class="prompt"><span class="prompt-label">프롬프트</span>다음 항목을 지침에 추가해 줘.
+- 모든 답변에 출처를 표시해 줘
+- 추측하지 마. 정보가 없거나 모호하면 그 사실을 알리고, 예를 들어 “지정된 HR 자료에서 확인된 답을 찾지 못했습니다. HR 지원팀에 문의하거나 HR 정책 포털을 확인해 주세요.”처럼 정중한 대체 답변을 제공해 줘
+- 민감하거나 개별 사안에 해당하는 주제(급여 세부 사항, 의료 정보, 관리자 전용 정책)는 개인정보를 배려한 문구로 정중히 답변을 거절하고, 예를 들어 “개인정보나 민감한 정보는 확인하거나 알려 드릴 수 없습니다. 개별 지원이 필요하면 HR 지원팀에 문의해 주세요.”처럼 안내해 줘
+- 전문 용어는 피하고, 필요하면 간단히 뜻을 설명해 줘<span class="prompt-src"><span class="prompt-label">원문</span>Update the Instructions to include the following items:
 - Cite a source for every answer.
 - Don’t speculate. If information is missing or ambiguous, flag the gap and provide a polite fallback response, such as: “I don’t have a verified answer in the assigned HR sources. Please contact HR Support or see the HR Policy Portal."
 - Politely decline sensitive or case‑specific topics (compensation details, medical data, manager‑only policies) with a privacy‑aware message and redirect: “I can’t access or share personal/sensitive information. Please contact HR Support for individualized assistance.”
-- Avoid jargon; define terms briefly if needed.</div>
+- Avoid jargon; define terms briefly if needed.</span></div>
 <ol class="steps" start="8">
   <li>Copilot의 응답을 검토합니다. <span class="ui">Configure</span> 탭의 <span class="ui">Instructions</span>에서 요청한 항목이 추가됐는지 확인합니다.</li>
   <li>지침을 더 개선할 방법을 <span class="ui">Describe</span> 탭에서 추천해 달라고 요청합니다. 마음에 들면 모두 지침에 추가해 달라고 하고, <span class="ui">Configure</span> 탭에서 추가 항목을 확인합니다.</li>
@@ -305,12 +309,12 @@
   <li><span class="ui">Suggested prompts</span>는 생성하게 하거나 직접 만들 수 있습니다. <span class="ui">Describe</span> 탭에서 제안 프롬프트 3개를 만들어 달라고 요청합니다. 각 프롬프트에 제목과 메시지가 있는 것을 확인합니다.</li>
   <li><span class="ui">Configure</span> 탭의 <span class="ui">Suggested prompts</span>에서 <span class="ui">Add a suggested prompt</span>를 선택합니다. HR 관련 프롬프트 6개가 표시됩니다. 마음에 드는 두세 개를 골라 추가합니다.</li>
 </ol>
-<div class="prompt"><span class="prompt-label">Title · Relocation Policy</span>What is Adatum’s relocation policy for employees who are moving due to a promotion?</div>
-<div class="prompt"><span class="prompt-label">Title · Benefits Enrollment &amp; Plan Changes</span>When is the next open enrollment window for benefits, and how do I change my medical or dental plan?</div>
-<div class="prompt"><span class="prompt-label">Title · Paid time off (PTO) &amp; Leave</span>How does PTO accrue at Adatum, what is the year‑end carryover policy, and how do I submit a PTO request?</div>
-<div class="prompt"><span class="prompt-label">Title · Promotion Criteria</span>What are the general promotion criteria for moving from an individual contributor role to a manager role at Adatum?</div>
-<div class="prompt"><span class="prompt-label">Title · Paydays, Deductions, and Pay Statements</span>When are regular paydays, where can I find my pay statements, and how are common deductions (benefits, taxes, retirement) handled?</div>
-<div class="prompt"><span class="prompt-label">Title · Parental Leave</span>What is Adatum’s parental leave policy?</div>
+<div class="prompt"><span class="prompt-label">Title · Relocation Policy</span>승진으로 이사하는 직원에게 적용되는 Adatum의 이주 지원 정책이 뭔지 알려 줘<span class="prompt-src"><span class="prompt-label">원문</span>What is Adatum’s relocation policy for employees who are moving due to a promotion?</span></div>
+<div class="prompt"><span class="prompt-label">Title · Benefits Enrollment &amp; Plan Changes</span>다음 복리후생 등록 기간이 언제인지, 그리고 의료보험이나 치과보험 플랜은 어떻게 바꾸는지 알려 줘<span class="prompt-src"><span class="prompt-label">원문</span>When is the next open enrollment window for benefits, and how do I change my medical or dental plan?</span></div>
+<div class="prompt"><span class="prompt-label">Title · Paid time off (PTO) &amp; Leave</span>Adatum에서 PTO가 어떻게 쌓이는지, 연말 이월 정책은 어떤지, PTO 신청은 어떻게 하는지 알려 줘<span class="prompt-src"><span class="prompt-label">원문</span>How does PTO accrue at Adatum, what is the year‑end carryover policy, and how do I submit a PTO request?</span></div>
+<div class="prompt"><span class="prompt-label">Title · Promotion Criteria</span>Adatum에서 실무자 역할에서 관리자 역할로 승진하는 일반적인 기준이 뭔지 알려 줘<span class="prompt-src"><span class="prompt-label">원문</span>What are the general promotion criteria for moving from an individual contributor role to a manager role at Adatum?</span></div>
+<div class="prompt"><span class="prompt-label">Title · Paydays, Deductions, and Pay Statements</span>정기 급여일은 언제인지, 급여명세서는 어디서 확인하는지, 일반적인 공제 항목(복리후생, 세금, 퇴직연금)은 어떻게 처리되는지 알려 줘<span class="prompt-src"><span class="prompt-label">원문</span>When are regular paydays, where can I find my pay statements, and how are common deductions (benefits, taxes, retirement) handled?</span></div>
+<div class="prompt"><span class="prompt-label">Title · Parental Leave</span>Adatum의 육아 휴직 정책이 뭔지 알려 줘<span class="prompt-src"><span class="prompt-label">원문</span>What is Adatum’s parental leave policy?</span></div>
 <ol class="steps" start="14">
   <li>제안 프롬프트 몇 개를 시험해 에이전트가 지식 원본에서 데이터를 제대로 가져오는지 확인합니다.</li>
   <li>결과가 만족스러우면 <span class="ui">Create</span> 버튼을 선택합니다.</li>
@@ -337,7 +341,22 @@
   <span class="t">참고</span>
   <p>이 첫 프롬프트는 네 요소를 반영한 예시로 원문을 그대로 제공합니다. 이후 프롬프트는 직접 작성하되, 이 프롬프트를 본보기로 삼으십시오.</p>
 </div>
-<div class="prompt"><span class="prompt-label">프롬프트</span>As the HR Analyst at Adatum Corporation, I’ve been tasked with creating a company-wide launch announcement for an employee community post. Adatum is introducing the HR Self-Service Assistant, a new Copilot agent designed to help employees get instant answers to HR questions about company policies, benefits, leave, and more—anytime, anywhere.
+<div class="prompt"><span class="prompt-label">프롬프트</span>나는 Adatum Corporation의 HR 분석가이고, 직원 커뮤니티 게시글로 올릴 전사 출시 공지를 작성하는 업무를 맡았어. Adatum은 언제 어디서든 회사 정책, 복리후생, 휴가 등 HR 관련 질문에 즉시 답을 얻을 수 있도록 돕는 새 Copilot 에이전트, HR Self-Service Assistant를 도입하려고 해.
+
+이 공지는 다양한 구성원의 인지도와 참여를 높이기 위해 Viva Engage에 게시할 계획이야. 이 공지의 초안을 작성해 줄 수 있어? 다음 내용을 담은 명확하고 흥미로운 Viva Engage 게시글이어야 해.
+- HR Self-Service Assistant의 목적과 지금 이 에이전트가 왜 유용한지 설명해 줘
+- 직원들이 이 어시스턴트에게서 무엇을 기대할 수 있는지 설명해 줘(예: 답할 수 있는 질문 유형, HR 정보 접근성을 어떻게 높이는지, 개인정보 보호 방침 등)
+- 직원들이 어시스턴트에 접근하고 사용하는 간단한 방법을 안내해 줘(어디서 찾는지, 대화는 어떻게 시작하는지, 좋은 답을 얻는 팁 등)
+- 반응과 댓글로 초기 참여를 유도하고, 피드백을 남기거나 도움이 될 만한 동료를 태그하도록 권장해 줘
+
+공지에는 다음 요건과 제약 사항도 반영해 줘.
+- 대상: 부서와 지역을 아우르는 모든 직원(현장 근무, 원격 근무, 하이브리드 근무 포함)
+- 어조: 친근하고 우호적이며 포용적이고, Adatum의 가치와 맞아야 함
+- 스타일: 짧은 문단, 훑어보기 쉬운 소제목, 자료나 도움말 가이드로 연결되는 링크나 자리표시자 1~2개, 명확한 행동 유도 문구
+- 관련 해시태그 3~4개를 추가하고(예: #AdatumHR #SelfService #EmployeeSupport #AskHR), HR 커뮤니티를 언급해 줘
+- 전문 용어는 피하고 명확성과 접근성을 우선해 줘
+
+이번 이니셔티브를 시작하게 되어 기쁘고, 모두에게 HR 지원을 더 쉽게 만들고 싶어. 공지는 직원들이 어시스턴트를 써 보고 경험을 공유하며, 우리가 이 도구를 모두를 위해 더 낫게 개선하도록 돕고 싶다는 내용을 담아 줘.<span class="prompt-src"><span class="prompt-label">원문</span>As the HR Analyst at Adatum Corporation, I’ve been tasked with creating a company-wide launch announcement for an employee community post. Adatum is introducing the HR Self-Service Assistant, a new Copilot agent designed to help employees get instant answers to HR questions about company policies, benefits, leave, and more—anytime, anywhere.
 
 I plan to publish the announcement in Viva Engage to maximize awareness and encourage engagement across our diverse workforce. Can you draft this announcement for me? It should be a clear, engaging Viva Engage post that:
 - Explains the purpose of the HR Self-Service Assistant and why it’s valuable now
@@ -352,7 +371,7 @@ The announcement should include the following expectations and constraints:
 - Add 3–4 relevant hashtags (for example, #AdatumHR #SelfService #EmployeeSupport #AskHR) and mention the HR community
 - Avoid jargon; prioritize clarity and accessibility
 
-We’re excited to kick off this initiative and make HR support easier for everyone. The announcement should encourage employees to try the assistant, share their experiences, and help us improve the tool for all.</div>
+We’re excited to kick off this initiative and make HR support easier for everyone. The announcement should encourage employees to try the assistant, share their experiences, and help us improve the tool for all.</span></div>
 <ol class="steps" start="8">
   <li>생성된 공지를 검토합니다. 다음 단계에서 게시 전에 다듬습니다.</li>
   <li>공지의 첫 문장을 검토합니다. Copilot은 흔히 “We’re excited to announce…” 같은 일반적 도입으로 시작합니다. 직원에게 직접 말하듯, 이 에이전트가 왜 중요한지 강조하고 대화체로 첫 1~2문장을 다시 써 달라고 요청합니다. 기업 공지에서 개인적 초대로 톤을 바꿉니다.</li>
